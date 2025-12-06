@@ -1,0 +1,9 @@
+/* Custom small styles if needed */
+html {
+  scroll-behavior: smooth;
+}
+
+
+html, body, #root {
+  height: 100%;
+}
