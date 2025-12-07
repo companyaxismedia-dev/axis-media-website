@@ -11,13 +11,11 @@ import {
   FaTwitter
 } from "react-icons/fa";
 
-// 🔐 EmailJS constants
 const EMAILJS_SERVICE_ID = "service_0jfwrha";
-const EMAILJS_ADMIN_TEMPLATE_ID = "template_wo6zhf9"; 
-const EMAILJS_USER_TEMPLATE_ID = "template_542lto6"; 
+const EMAILJS_ADMIN_TEMPLATE_ID = "template_wo6zhf9";
+const EMAILJS_USER_TEMPLATE_ID = "template_542lto6";
 const EMAILJS_PUBLIC_KEY = "KjcYCDj8wNF2MoHdf";
 
-// Google Sheet URL
 const GOOGLE_SHEET_URL =
   "https://script.google.com/macros/s/AKfycbwQIaVQst61Ma7AwqJIPmDziqvVJjISBgbiEobdb2_IoEAgPDYTksrKL0YkRyJ7Gopi4g/exec";
 
@@ -42,7 +40,6 @@ export default function ContactCTA() {
     setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
-  // VALIDATION
   const validate = () => {
     const newErrors = {};
 
@@ -61,7 +58,6 @@ export default function ContactCTA() {
     return Object.keys(newErrors).length === 0;
   };
 
-  // SAVE TO GOOGLE SHEETS
   const sendToGoogleSheet = async () => {
     try {
       await fetch(GOOGLE_SHEET_URL, {
@@ -74,7 +70,6 @@ export default function ContactCTA() {
     }
   };
 
-  // AUTO WHATSAPP OPEN
   const openWhatsApp = () => {
     const msg = encodeURIComponent(
       `Hi, I'm ${formData.name}. I am interested in ${formData.issue}.`
@@ -82,7 +77,6 @@ export default function ContactCTA() {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
   };
 
-  // SUBMIT FUNCTION
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
@@ -90,7 +84,6 @@ export default function ContactCTA() {
     setIsSubmitting(true);
 
     try {
-      // 1️⃣ Admin Email
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_ADMIN_TEMPLATE_ID,
@@ -98,7 +91,6 @@ export default function ContactCTA() {
         EMAILJS_PUBLIC_KEY
       );
 
-      // 2️⃣ User Confirmation Email
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_USER_TEMPLATE_ID,
@@ -106,13 +98,9 @@ export default function ContactCTA() {
         EMAILJS_PUBLIC_KEY
       );
 
-      // 3️⃣ Save to Google Sheet
       await sendToGoogleSheet();
-
-      // 4️⃣ Open WhatsApp
       openWhatsApp();
 
-      // 5️⃣ Show success popup + reset form
       setSent(true);
       setFormData({
         name: "",
@@ -132,7 +120,12 @@ export default function ContactCTA() {
   };
 
   return (
-    <section id="contactcta" className="relative py-24 overflow-hidden text-white">
+    <section
+      id="contactcta"
+      className="relative py-24 text-white"
+      style={{ backgroundColor: "#073762" }} // ⭐ FIXED FULL BLUE BACKGROUND
+    >
+
       {/* SUCCESS POPUP */}
       {sent && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
@@ -160,15 +153,16 @@ export default function ContactCTA() {
 
       {/* SOCIAL ICONS */}
       <div className="flex justify-center gap-6 text-3xl my-6">
-        <a href="#" className="hover:text-blue-400"><FaFacebook /></a>
-        <a href="#" className="hover:text-pink-400"><FaInstagram /></a>
-        <a href="#" className="hover:text-blue-600"><FaLinkedin /></a>
+        <a href="#" className="hover:text-blue-300"><FaFacebook /></a>
+        <a href="#" className="hover:text-pink-300"><FaInstagram /></a>
+        <a href="#" className="hover:text-blue-500"><FaLinkedin /></a>
         <a href="#" className="hover:text-blue-300"><FaTwitter /></a>
       </div>
 
       {/* FORM */}
       <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl p-10 max-w-3xl mx-auto">
         <form onSubmit={handleSubmit} className="space-y-6">
+          
           {/* Name + Email */}
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
@@ -242,6 +236,7 @@ export default function ContactCTA() {
           >
             {isSubmitting ? "Sending..." : "Submit"}
           </button>
+
         </form>
       </div>
     </section>

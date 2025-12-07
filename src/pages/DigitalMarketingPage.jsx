@@ -4,11 +4,8 @@ import DigitalMarketing from "../components/DigitalMarketing";
 
 export default function DigitalMarketingPage() {
   return (
-    <div className="pt-24" style={{ backgroundColor: "#90EE90" }}>
-      
-      {/* ⭐ ONLY COMPONENT — NO DUPLICATE SECTIONS */}
+    <div className="pt-0 m-0 p-0 bg-transparent">
       <DigitalMarketing />
-
     </div>
   );
 }

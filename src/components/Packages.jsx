@@ -99,7 +99,7 @@ export default function Packages() {
   const [line, setLine] = useState(0);
   const [text, setText] = useState("");
 
-  // TYPEWRITER (No lag)
+  // TYPEWRITER EFFECT
   useEffect(() => {
     let i = 0;
     const t = setInterval(() => {
@@ -118,10 +118,8 @@ export default function Packages() {
 
   return (
     <section className="relative py-24 bg-gradient-to-br from-green-200 via-green-300 to-emerald-300 overflow-hidden">
-
       <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
 
-        {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-green-900">
           {text}
         </h2>
@@ -130,11 +128,9 @@ export default function Packages() {
           Select the package that fits your business needs perfectly.
         </p>
 
-        {/* PACKAGES GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {packages.map((pkg, i) => (
-            <div key={i} className={`package-card rounded-2xl p-6 ${pkg.color}`}>
-
+            <div key={i} className={`rounded-2xl p-6 ${pkg.color}`}>
               <h3 className="text-2xl font-bold mb-4">{pkg.name}</h3>
 
               <div className="overflow-y-auto pr-3 pb-4" style={{ height: "220px" }}>
@@ -155,10 +151,10 @@ export default function Packages() {
           ))}
         </div>
 
-        {/* EXTRA DETAILS SECTION */}
         <h3 className="text-3xl font-bold text-center text-green-900 mt-20 mb-6">
           How Our Packages Help You
         </h3>
+
         <ul className="grid sm:grid-cols-2 gap-6 text-lg text-green-950">
           {[
             "Boost your online visibility",
@@ -175,6 +171,7 @@ export default function Packages() {
         <h3 className="text-3xl font-bold text-center text-green-900 mt-20 mb-6">
           Our Simple Process
         </h3>
+
         <div className="grid sm:grid-cols-3 gap-8">
           {[
             { step: "01", title: "Plan", text: "We understand your requirements." },

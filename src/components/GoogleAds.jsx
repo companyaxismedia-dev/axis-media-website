@@ -1,3 +1,4 @@
+// src/components/GoogleAds.jsx
 import React, { useEffect, useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 
@@ -37,7 +38,7 @@ const adsServices = [
     description: "AI-powered cross-platform advertising.",
     image: "https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg",
     color: "bg-pink-600",
-  }
+  },
 ];
 
 const headingLines = [
@@ -48,11 +49,10 @@ const headingLines = [
 ];
 
 export default function GoogleAds() {
-
   const [line, setLine] = useState(0);
   const [text, setText] = useState("");
 
-  // ⭐ Typewriter
+  // ⭐ Typewriter effect
   useEffect(() => {
     let i = 0;
     const typing = setInterval(() => {
@@ -63,24 +63,24 @@ export default function GoogleAds() {
         setTimeout(() => {
           setLine((prev) => (prev + 1) % headingLines.length);
           setText("");
-        }, 1000);
+        }, 900);
       }
-    }, 70);
+    }, 60);
 
     return () => clearInterval(typing);
   }, [line]);
 
   return (
-    <section className="py-24 relative text-white">
+    <section className="py-24 relative text-white overflow-hidden">
 
-      {/* ⭐ Gradient Background (Sky Blue → Dark Blue) */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#87CEFA] to-[#0A1A3A] opacity-90"></div>
+      {/* ⭐ Premium Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0A1A3A] via-[#0F264D] to-[#1B3A6F] opacity-95"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4">
-          <span className="bg-gradient-to-r from-blue-300 to-purple-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-blue-300 to-purple-400 bg-clip-text text-transparent">
             {text}
           </span>
         </h2>
@@ -94,10 +94,10 @@ export default function GoogleAds() {
           {adsServices.map((card, i) => (
             <div
               key={i}
-              className={`${card.color} rounded-2xl p-6 shadow-xl`}
+              className={`${card.color} rounded-2xl p-6 shadow-xl transition-transform hover:scale-[1.05]`}
               style={{
-                animation: "fadeUp 1.3s ease forwards",
-                animationDelay: `${i * 0.4}s`,
+                animation: "fadeUp 1.2s ease forwards",
+                animationDelay: `${i * 0.35}s`,
                 opacity: 0,
               }}
             >
@@ -121,7 +121,6 @@ export default function GoogleAds() {
 
         {/* Extra Section */}
         <div className="mt-20 max-w-5xl mx-auto">
-
           <h3 className="text-3xl font-bold text-center text-green-300 mb-6">
             How Google Ads Helps Your Business
           </h3>
@@ -131,44 +130,44 @@ export default function GoogleAds() {
               "Instantly reach customers searching for your services",
               "Boost visibility across Google & YouTube",
               "Generate high-quality business leads",
-              "Track performance with detailed analytics"
+              "Track performance with detailed analytics",
             ].map((t, i) => (
               <li className="flex items-center gap-3" key={i}>
                 <FaCheckCircle className="text-green-400" /> {t}
               </li>
             ))}
           </ul>
-
-          <h3 className="text-3xl font-bold text-center text-blue-300 mt-16 mb-6">
-            Our Simple Process
-          </h3>
-
-          <div className="grid sm:grid-cols-3 gap-8">
-            {[
-              { step: "01", title: "Plan", text: "Understanding your business goals." },
-              { step: "02", title: "Launch", text: "Creating high-performing campaigns." },
-              { step: "03", title: "Grow", text: "Optimizing & scaling results." }
-            ].map((box, i) => (
-              <div key={i} className="bg-white/10 p-6 rounded-xl border border-white/20 shadow-xl text-center">
-                <h1 className="text-4xl font-bold text-green-300 mb-2">{box.step}</h1>
-                <h2 className="text-xl font-bold">{box.title}</h2>
-                <p className="text-white/80 mt-2">{box.text}</p>
-              </div>
-            ))}
-          </div>
         </div>
 
+        {/* Simple Process */}
+        <h3 className="text-3xl font-bold text-center text-blue-300 mt-16 mb-6">
+          Our Simple Process
+        </h3>
+
+        <div className="grid sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {[
+            { step: "01", title: "Plan", text: "Understanding your business goals." },
+            { step: "02", title: "Launch", text: "Creating high-performing campaigns." },
+            { step: "03", title: "Grow", text: "Optimizing & scaling results." },
+          ].map((box, i) => (
+            <div
+              key={i}
+              className="bg-white/10 p-6 rounded-xl border border-white/20 shadow-xl text-center"
+            >
+              <h1 className="text-4xl font-bold text-green-300 mb-2">{box.step}</h1>
+              <h2 className="text-xl font-bold">{box.title}</h2>
+              <p className="text-white/80 mt-2">{box.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <style>
-        {`
-          @keyframes fadeUp {
-            0% { opacity: 0; transform: translateY(25px); }
-            100% { opacity: 1; transform: translateY(0); }
-          }
-        `}
-      </style>
+      <style>{`
+        @keyframes fadeUp {
+          0% { opacity: 0; transform: translateY(25px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </section>
   );
 }
-

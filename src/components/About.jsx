@@ -108,7 +108,7 @@ export default function About() {
   return (
     <section className="
       relative py-24 text-white overflow-hidden
-      bg-gradient-to-br from-[#0A1D56] via-[#1D5FA7] to-[#8FD9E8]
+      bg-[#0A1D56]   /* 🔥 FIXED: NO DOUBLE COLOR */
     ">
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">

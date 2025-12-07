@@ -55,68 +55,18 @@ const allServices = [
     color: "bg-pink-500",
     image: "https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg",
   },
-  {
-    title: "Video Editing",
-    desc: "Eye-catching reels, shorts and promo videos.",
-    icon: <FaVideo className="text-4xl text-white" />,
-    color: "bg-red-500",
-    image: "https://images.pexels.com/photos/276024/pexels-photo-276024.jpeg",
-  },
-  {
-    title: "Social Media Management",
-    desc: "We fully manage your social media brand identity.",
-    icon: <FaUsers className="text-4xl text-white" />,
-    color: "bg-yellow-500",
-    image: "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg",
-  },
-  {
-    title: "Brand Identity",
-    desc: "Make your brand powerful with complete identity creation.",
-    icon: <FaPalette className="text-4xl text-white" />,
-    color: "bg-orange-500",
-    image: "https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg",
-  },
-  {
-    title: "Content Creation",
-    desc: "High-quality content for all social platforms.",
-    icon: <FaBullhorn className="text-4xl text-white" />,
-    color: "bg-teal-500",
-    image: "https://images.pexels.com/photos/4145352/pexels-photo-4145352.jpeg",
-  },
-  {
-    title: "Lead Generation",
-    desc: "High converting campaigns built for your business.",
-    icon: <FaChartLine className="text-4xl text-white" />,
-    color: "bg-lime-600",
-    image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
-  },
-  {
-    title: "Business Consulting",
-    desc: "Grow your business with expert digital consulting.",
-    icon: <FaUsers className="text-4xl text-white" />,
-    color: "bg-cyan-600",
-    image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
-  },
 ];
 
-/* -------------------------------------------------------
-   ⭐ SENTENCES (TYPEWRITER)
-------------------------------------------------------- */
+/* ⭐ Typewriter Sentences */
 const sentences = [
   "All Your Digital Services in One Place",
-  "From Websites to Marketing – Everything You Need",
   "Grow Faster with Professional Online Services",
   "Smart Digital Solutions for Modern Businesses",
-  "Services Designed to Bring You Real Results",
 ];
 
 export default function ServicesGrid() {
   const [lineIndex, setLineIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
-  const [batchStart, setBatchStart] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(0);
-
-  const CARDS_PER_BATCH = 6;
 
   /* ⭐ Typewriter Effect */
   useEffect(() => {
@@ -136,151 +86,104 @@ export default function ServicesGrid() {
     return () => clearInterval(typer);
   }, [lineIndex]);
 
-  /* ⭐ Card Animation */
-  useEffect(() => {
-    setVisibleCount(0);
-    const timers = [];
-    for (let i = 0; i < CARDS_PER_BATCH; i++) {
-      timers.push(setTimeout(() => setVisibleCount((prev) => prev + 1), i * 900));
-    }
-
-    timers.push(
-      setTimeout(
-        () => setBatchStart((prev) => (prev + CARDS_PER_BATCH) % allServices.length),
-        CARDS_PER_BATCH * 900 + 6500
-      )
-    );
-
-    return () => timers.forEach((t) => clearTimeout(t));
-  }, [batchStart]);
-
-  const batchCards = [...Array(CARDS_PER_BATCH)].map((_, i) => {
-    const idx = (batchStart + i) % allServices.length;
-    return allServices[idx];
-  });
-
   return (
-    <div className="pt-28 pb-20 relative overflow-hidden">
+    <div className="pt-24 pb-20 relative overflow-hidden">
 
-      {/* ⭐ Background */}
-      <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg')] bg-cover bg-center opacity-50 blur-sm"></div>
+      {/* ⭐ Dark Background Like Hero */}
+      <div className="absolute inset-0 bg-[#0B0F2A]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F2A] via-[#101632] to-[#060812]" />
+
+      {/* ⭐ Center Glow */}
+      <div className="absolute inset-0 flex justify-center">
+        <div className="w-[600px] h-[600px] rounded-full 
+                        bg-[radial-gradient(circle,rgba(100,70,255,0.25),transparent_70%)]
+                        blur-3xl opacity-40" />
+      </div>
 
       <div className="relative z-10">
 
         {/* ⭐ Heading */}
         <div className="text-center mb-12 px-4">
-          <h1 className="text-3xl md:text-5xl font-extrabold text-green-700 min-h-[70px]">
+          <h1 className="text-3xl md:text-5xl font-extrabold min-h-[70px]
+                         bg-gradient-to-r from-purple-300 via-blue-300 to-cyan-300
+                         text-transparent bg-clip-text">
             {displayText}
           </h1>
 
-          <p className="max-w-3xl mx-auto mt-6 text-xl md:text-2xl font-bold text-black/90">
-            Explore our powerful digital services built for your business growth.
+          <p className="max-w-3xl mx-auto mt-6 text-xl md:text-2xl font-semibold text-gray-300">
+            Explore our powerful digital services designed for real business growth.
           </p>
         </div>
 
         {/* ⭐ Service Cards */}
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6">
-          {batchCards.map((s, i) => {
-            const isVisible = i < visibleCount;
-
-            return (
-              <div
-                key={i}
-                className={`rounded-2xl shadow-xl p-5 ${s.color}
-                transition-all duration-700 transform
-                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
-                hover:scale-[1.05] hover:-rotate-1 hover:shadow-2xl`}
-              >
-                <div className="overflow-hidden rounded-xl mb-4 h-40">
-                  <img
-                    src={s.image}
-                    alt={s.title}
-                    className="w-full h-full object-cover hover:scale-125 transition-all duration-700"
-                  />
-                </div>
-
-                <div className="flex justify-center mb-3">{s.icon}</div>
-
-                <h3 className="text-2xl font-bold text-white">{s.title}</h3>
-                <p className="text-white mt-2 text-sm">{s.desc}</p>
+          {allServices.map((s, i) => (
+            <div
+              key={i}
+              className={`rounded-2xl shadow-xl p-5 ${s.color}
+                          transition-all duration-700 transform
+                          hover:scale-[1.05] hover:-rotate-1 hover:shadow-2xl`}
+            >
+              <div className="overflow-hidden rounded-xl mb-4 h-40">
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  className="w-full h-full object-cover hover:scale-125 transition-all duration-700"
+                />
               </div>
-            );
-          })}
+              <div className="flex justify-center mb-3">{s.icon}</div>
+              <h3 className="text-2xl font-bold text-white">{s.title}</h3>
+              <p className="text-white mt-2 text-sm">{s.desc}</p>
+            </div>
+          ))}
         </div>
 
-        {/* ⭐ EXTRA DETAILS */}
-        <div className="mt-24 max-w-6xl mx-auto px-6">
+        {/* ⭐ WHY CHOOSE US — ADDED SAME AS PAGE VERSION */}
+        <h2 className="text-3xl font-extrabold text-center text-transparent 
+                       bg-clip-text bg-gradient-to-r from-purple-300 via-blue-300 to-cyan-300 
+                       mt-24 mb-10">
+          Why Choose Axis Media?
+        </h2>
 
-          {/* How We Help */}
-          <h2 className="text-3xl font-bold text-center text-green-700 mb-8">
-            How Our Services Help Your Business
-          </h2>
+        <ul className="grid sm:grid-cols-2 gap-6 text-lg text-gray-300 max-w-4xl mx-auto px-6">
+          {[
+            "Highly skilled digital experts",
+            "Premium quality at affordable pricing",
+            "Fast delivery with excellent support",
+            "Guaranteed business growth focus",
+          ].map((item, i) => (
+            <li key={i} className="flex items-center gap-3">
+              <FaCheckCircle className="text-green-400 text-xl" /> {item}
+            </li>
+          ))}
+        </ul>
 
-          <ul className="grid sm:grid-cols-2 gap-6 text-lg text-black">
-            {[
-              "We build modern websites that convert visitors into customers",
-              "We create powerful digital marketing campaigns",
-              "We manage your brand and social media presence",
-              "We help you generate high-quality business leads",
-            ].map((item, i) => (
-              <li key={i} className="flex items-center gap-3">
-                <FaCheckCircle className="text-green-600" /> {item}
-              </li>
-            ))}
-          </ul>
+        {/* ⭐ SIMPLE PROCESS */}
+        <h2 className="text-3xl font-extrabold text-center text-transparent 
+                       bg-clip-text bg-gradient-to-r from-purple-300 via-blue-300 to-cyan-300 
+                       mt-24 mb-10">
+          Our Simple Process
+        </h2>
 
-          {/* Simple Process */}
-          <h2 className="text-3xl font-bold text-center text-green-700 mt-20 mb-8">
-            Our Simple Process
-          </h2>
-
-          <div className="grid sm:grid-cols-3 gap-10 text-center">
-            {[
-              { step: "01", title: "Plan", text: "Understanding your goals & needs." },
-              { step: "02", title: "Execute", text: "Launching high-performing campaigns." },
-              { step: "03", title: "Grow", text: "Scaling results and business growth." },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="bg-white/80 text-black p-6 rounded-xl border shadow-lg"
-              >
-                <h2 className="text-4xl font-bold text-green-700">{item.step}</h2>
-                <h3 className="text-xl font-bold">{item.title}</h3>
-                <p className="mt-2">{item.text}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Why Choose Us */}
-          <h2 className="text-3xl font-bold text-center text-green-700 mt-20 mb-8">
-            Why Choose Axis Media
-          </h2>
-
-          <ul className="grid sm:grid-cols-2 gap-6 text-lg text-black">
-            {[
-              "Highly skilled digital team",
-              "Affordable packages for all businesses",
-              "Premium quality with fast delivery",
-              "Dedicated support & guidance",
-            ].map((item, i) => (
-              <li key={i} className="flex items-center gap-3">
-                <FaCheckCircle className="text-blue-600" /> {item}
-              </li>
-            ))}
-          </ul>
-
+        <div className="grid sm:grid-cols-3 gap-10 text-center px-6 max-w-6xl mx-auto">
+          {[
+            { step: "01", title: "Plan", text: "We understand your business needs." },
+            { step: "02", title: "Execute", text: "We launch high-performing strategies." },
+            { step: "03", title: "Grow", text: "We scale your results consistently." },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-white/10 border border-white/20 p-8 rounded-2xl 
+                         backdrop-blur-xl shadow-xl hover:scale-[1.04] transition"
+            >
+              <h2 className="text-5xl font-extrabold text-purple-300">{item.step}</h2>
+              <h3 className="text-2xl font-bold mt-3 text-white">{item.title}</h3>
+              <p className="text-gray-300 mt-2">{item.text}</p>
+            </div>
+          ))}
         </div>
 
       </div>
     </div>
-  );
-}
-
-/* ⭐ Section Title Component */
-function SectionTitle({ title }) {
-  return (
-    <h2 className="text-3xl font-bold text-center text-green-700 mt-20 mb-8">
-      {title}
-    </h2>
   );
 }

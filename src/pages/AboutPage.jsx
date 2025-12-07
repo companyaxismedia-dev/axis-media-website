@@ -4,24 +4,36 @@ import About from "../components/About";
 
 export default function AboutPage() {
   return (
-    <div className="pt-24" style={{ backgroundColor: "#06497dff" }}> {/* Lavender Blush / Soft Pink */}
+    <div className="pt-24 bg-[#0A1D56]"> 
+      {/* Same color as About.jsx background start point */}
+
       <About />
 
-      <div className="container mx-auto px-6 py-16 text-black">
-        <h2 className="text-4xl font-bold mb-6 text-center">About Axis Media</h2>
-        <p className="text-center mb-12 max-w-3xl mx-auto">
-          We are a full-service digital agency providing professional web development, marketing, and branding solutions for businesses worldwide.
+      {/* EXTRA INFO SECTION — Optional */}
+      <div className="container mx-auto px-6 py-16 text-white">
+        <h2 className="text-4xl font-bold mb-6 text-center">
+          About Axis Media
+        </h2>
+
+        <p className="text-center mb-12 max-w-3xl mx-auto text-white/90">
+          We are a full-service digital agency providing professional web
+          development, marketing, and branding solutions for businesses
+          worldwide.
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-2xl transition duration-300">
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 text-white p-6 rounded-xl shadow-xl">
             <h3 className="font-semibold text-xl mb-2">Our Mission</h3>
-            <p>Deliver high-quality digital solutions that help businesses grow online.</p>
+            <p>
+              Deliver high-quality digital solutions that help businesses grow online.
+            </p>
           </div>
 
-          <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-2xl transition duration-300">
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 text-white p-6 rounded-xl shadow-xl">
             <h3 className="font-semibold text-xl mb-2">Our Vision</h3>
-            <p>Become a trusted digital partner for brands seeking excellence in the online space.</p>
+            <p>
+              Become a trusted digital partner for brands seeking excellence in the online space.
+            </p>
           </div>
         </div>
       </div>
