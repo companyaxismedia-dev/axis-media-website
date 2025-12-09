@@ -6,94 +6,111 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
+import axisLogo from "../assets/axisLogo.jpeg";
 
 export default function Footer() {
   return (
-    <footer className="text-white">
-      {/* MAIN FOOTER */}
-      <div
-        className="pt-16 pb-10 px-6"
-        style={{
-          background: "linear-gradient(135deg, #041A3A 0%, #0A2A5E 60%, #0F3B8F 100%)",
-        }}
-      >
-        <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
-          {/* LOGO + DESCRIPTION */}
-          <div className="max-w-sm">
-            <h3 className="text-3xl font-extrabold tracking-wide">AXIS MEDIA</h3>
+    <footer className="text-white relative overflow-hidden">
 
-            <p className="text-gray-300 mt-4 leading-relaxed">
+      {/* 🔥 BACKGROUND WITH GRADIENT + GLOW */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#041A3A] via-[#082F62] to-[#0F3B8F]"></div>
+      <div className="absolute top-10 right-10 w-[400px] h-[400px] bg-blue-500/20 blur-[180px] rounded-full"></div>
+      <div className="absolute bottom-0 left-10 w-[350px] h-[350px] bg-purple-500/20 blur-[200px] rounded-full"></div>
+
+      <div className="relative pt-16 pb-10 px-6 z-10">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+
+          {/* 🔵 LOGO + ABOUT */}
+          <div className="max-w-sm">
+
+            {/* GLASS LOGO BOX */}
+            <div className="bg-white/90 p-4 w-32 h-32 rounded-2xl shadow-2xl flex items-center justify-center backdrop-blur-lg">
+              <img
+                src={axisLogo}
+                alt="Axis Media Logo"
+                className="w-full h-full object-contain rounded-xl"
+              />
+            </div>
+
+            <p className="text-gray-200 mt-5 leading-relaxed text-[15px]">
               Axis Media is a digital marketing and web development agency
               helping global brands grow with high-quality marketing, design,
               technology and growth strategy.
             </p>
           </div>
 
-          {/* For Businesses */}
+          {/* BUSINESS SECTION */}
           <div>
-            <h4 className="text-xl font-semibold mb-4 text-blue-200">
-              For Businesses
-            </h4>
-            <ul className="space-y-2 text-gray-300">
-              <li className="hover:text-white cursor-pointer">Marketing Services</li>
-              <li className="hover:text-white cursor-pointer">Website Solutions</li>
-              <li className="hover:text-white cursor-pointer">SEO Strategy</li>
-              <li className="hover:text-white cursor-pointer">FAQs</li>
+            <h4 className="text-xl font-semibold mb-4 text-blue-200">For Businesses</h4>
+            <ul className="space-y-2 text-gray-200">
+              {["Marketing Services", "Website Solutions", "SEO Strategy", "FAQs"].map(
+                (item, i) => (
+                  <li
+                    key={i}
+                    className="hover:text-white cursor-pointer transition-all hover:translate-x-1"
+                  >
+                    {item}
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
-          {/* For Agencies */}
+          {/* AGENCY SECTION */}
           <div>
-            <h4 className="text-xl font-semibold mb-4 text-blue-200">
-              For Agencies
-            </h4>
-            <ul className="space-y-2 text-gray-300">
-              <li className="hover:text-white cursor-pointer">Partner With Us</li>
-              <li className="hover:text-white cursor-pointer">Submit Your Agency</li>
-              <li className="hover:text-white cursor-pointer">Sponsorships</li>
-              <li className="hover:text-white cursor-pointer">All Agencies</li>
+            <h4 className="text-xl font-semibold mb-4 text-blue-200">For Agencies</h4>
+            <ul className="space-y-2 text-gray-200">
+              {["Partner With Us", "Submit Your Agency", "Sponsorships", "All Agencies"].map(
+                (item, i) => (
+                  <li
+                    key={i}
+                    className="hover:text-white cursor-pointer transition-all hover:translate-x-1"
+                  >
+                    {item}
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
-          {/* Get in Touch */}
+          {/* CONTACT SECTION */}
           <div>
-            <h4 className="text-xl font-semibold mb-4 text-blue-200">
-              Get in Touch
-            </h4>
+            <h4 className="text-xl font-semibold mb-4 text-blue-200">Get in Touch</h4>
 
-            <p className="text-gray-300">Delhi NCR, India</p>
-            <p className="text-gray-300 mt-1">companyaxismedia@gmail.com</p>
-            <p className="text-gray-300 mt-1">+91 9871584001</p>
+            <p className="text-gray-200">Delhi NCR, India</p>
+            <p className="text-gray-200 mt-1">companyaxismedia@gmail.com</p>
+            <p className="text-gray-200 mt-1">+91 9871584001</p>
 
-            <a
-              href="#contact"
-              className="block mt-4 text-blue-300 hover:text-white"
-            >
-              Contact Us
-            </a>
-
-            {/* Social Icons */}
-            <div className="flex gap-5 mt-6 text-2xl">
-              <FaLinkedinIn className="hover:text-blue-300 cursor-pointer" />
-              <FaInstagram className="hover:text-blue-300 cursor-pointer" />
-              <FaFacebookF className="hover:text-blue-300 cursor-pointer" />
-              <FaTwitter className="hover:text-blue-300 cursor-pointer" />
-              <FaYoutube className="hover:text-blue-300 cursor-pointer" />
+            {/* SOCIAL ICONS */}
+            <div className="flex gap-4 mt-6 text-xl">
+              {[FaLinkedinIn, FaInstagram, FaFacebookF, FaTwitter, FaYoutube].map(
+                (Icon, i) => (
+                  <div
+                    key={i}
+                    className="p-3 bg-white/10 rounded-full backdrop-blur-md 
+                               hover:bg-white/20 transition cursor-pointer"
+                  >
+                    <Icon className="hover:scale-110 transition" />
+                  </div>
+                )
+              )}
             </div>
           </div>
         </div>
 
-        {/* Bottom Links */}
+        {/* BOTTOM LINKS */}
         <div className="max-w-7xl mx-auto pt-10">
-          <div className="border-t border-blue-900/40 pt-6 flex flex-wrap justify-center gap-6 text-gray-400 text-sm">
-            <span className="hover:text-white cursor-pointer">Sitemap</span>
-            <span className="hover:text-white cursor-pointer">Terms of Use</span>
-            <span className="hover:text-white cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-white cursor-pointer">Accessibility</span>
-            <span className="hover:text-white cursor-pointer">Fraud Protection</span>
+          <div className="border-t border-white/20 pt-6 flex flex-wrap justify-center gap-6 text-gray-300 text-sm">
+            {["Sitemap", "Terms of Use", "Privacy Policy", "Accessibility", "Fraud Protection"].map(
+              (link, i) => (
+                <span key={i} className="hover:text-white cursor-pointer transition-all">
+                  {link}
+                </span>
+              )
+            )}
           </div>
 
-          <p className="text-center text-gray-400 mt-4 text-sm">
+          <p className="text-center text-gray-300 mt-4 text-sm">
             © {new Date().getFullYear()} Axis Media, All Rights Reserved
           </p>
         </div>

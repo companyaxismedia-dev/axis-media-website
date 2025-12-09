@@ -1,12 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { FaRocket, FaBullhorn, FaChartLine, FaUsers, FaCheckCircle } from "react-icons/fa";
+import {
+  FaRocket,
+  FaBullhorn,
+  FaChartLine,
+  FaUsers,
+  FaCheckCircle,
+  FaHandshake,
+  FaMobileAlt,
+  FaSearch,
+  FaBullseye,
+  FaChartBar,
+  FaMagic,
+} from "react-icons/fa";
 
 export default function GrowBusinessPage() {
   const lines = [
-    "Grow Your Business With Smart Strategies 🚀",
-    "Boost Your Sales With Digital Marketing",
-    "Increase Visibility With SEO & Branding",
-    "Build A Strong Online Presence",
+    "Grow Your Business With Powerful Digital Strategies 🚀",
+    "Get More Customers & Boost Your Sales",
+    "Rank Higher on Google With SEO",
+    "Build Strong Online Presence Across Platforms",
   ];
 
   const [index, setIndex] = useState(0);
@@ -22,142 +34,200 @@ export default function GrowBusinessPage() {
         setTimeout(() => {
           setDisplayText("");
           setIndex((prev) => (prev + 1) % lines.length);
-        }, 1000);
+        }, 800);
       }
-    }, 70);
+    }, 60);
     return () => clearInterval(typing);
   }, [index]);
 
   return (
-    <section className="relative py-24 text-white">
+    <div className="text-white bg-gradient-to-b from-[#052b23] via-[#063a30] to-[#084d3f]">
 
-      {/* ⭐ NEW DARK GREEN BACKGROUND GRADIENT */}
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-green-800 to-green-600 -z-10"></div>
+      {/* HERO SECTION */}
+      <section
+        className="relative py-56 text-center bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1600')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
 
-      {/* Heading */}
-      <h1 className="text-center text-3xl md:text-4xl lg:text-5xl font-extrabold mb-10 drop-shadow-[0_0_25px_rgba(0,180,255,0.9)]">
-        {displayText}
-        <span className="border-r-4 border-blue-300 animate-pulse ml-2"></span>
-      </h1>
+        <div className="relative z-10">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-xl">
+            {displayText}
+            <span className="animate-pulse border-r-2 ml-1"></span>
+          </h1>
 
-      {/* Description */}
-      <p className="max-w-4xl mx-auto text-center text-gray-200 text-lg mb-16 px-6 leading-relaxed">
-        Every business needs a powerful online presence and smart strategies to grow.
-        We help companies scale through modern websites, SEO, digital marketing,
-        Google Ads, branding, and result-driven online marketing solutions.
-      </p>
+          <p className="max-w-3xl mx-auto text-gray-200 text-lg mt-6 font-light drop-shadow-md">
+            We help businesses grow through websites, SEO, Google Ads, branding,
+            automation & complete digital marketing solutions.
+          </p>
 
-      {/* Feature Cards */}
-      <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10 px-6">
-        <Card
-          icon={<FaRocket className="text-blue-400 text-4xl mx-auto" />}
-          title="High-Converting Websites"
-          text="We design modern websites that turn visitors into customers."
-        />
-        <Card
-          icon={<FaChartLine className="text-green-400 text-4xl mx-auto" />}
-          title="SEO & Google Ranking"
-          text="Rank on Google & attract organic customers consistently."
-        />
-        <Card
-          icon={<FaBullhorn className="text-pink-400 text-4xl mx-auto" />}
-          title="Digital Marketing"
-          text="Google Ads, Meta Ads, Social Media Growth, Brand Awareness."
-        />
-        <Card
-          icon={<FaUsers className="text-yellow-300 text-4xl mx-auto" />}
-          title="Brand Identity & Growth"
-          text="Logos, brand design, content & strategies that build trust."
-        />
-      </div>
+          <a
+            href="/contact"
+            className="inline-block mt-8 bg-green-500 hover:bg-green-600 px-10 py-3 rounded-xl shadow-xl font-semibold"
+          >
+            Book Free Growth Consultation →
+          </a>
+        </div>
+      </section>
 
-      {/* Extra Sections */}
-      <ExtraSections />
+      {/* FEATURE CARDS */}
+      <section className="py-24">
+        <FeatureCards />
+      </section>
 
-      {/* CTA Button */}
-      <div className="text-center mt-20">
+      {/* WHY GROW BUSINESS */}
+      <section className="py-24 px-6 max-w-7xl mx-auto text-center">
+        <h2 className="text-4xl font-bold mb-6 text-white">
+          Why Growing Your Business Matters
+        </h2>
+
+        <p className="text-gray-200 max-w-3xl mx-auto text-lg mb-14 font-light">
+          Visibility, trust, engagement — these are the pillars of business success.
+          Our strategies help you attract the right audience & convert them into paying customers.
+        </p>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {[
+            { icon: <FaBullseye />, title: "Targeted Customer Reach" },
+            { icon: <FaChartBar />, title: "Boost Sales & Conversions" },
+            { icon: <FaSearch />, title: "Improve Google Visibility" },
+            { icon: <FaMobileAlt />, title: "Grow Social Media Presence" },
+            { icon: <FaHandshake />, title: "Build Brand Trust" },
+            { icon: <FaMagic />, title: "Premium Brand Identity" },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-white/10 p-8 rounded-xl border border-white/10 shadow-xl backdrop-blur-md"
+            >
+              <div className="text-5xl text-green-300 mb-4 mx-auto drop-shadow-lg">
+                {item.icon}
+              </div>
+              <h3 className="font-bold text-xl text-white">{item.title}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SERVICES GRID */}
+      <section className="py-24 bg-[#07352c] bg-opacity-90 shadow-inner">
+        <h2 className="text-4xl font-bold text-center mb-12 text-white">
+          Services That Help Your Business Grow Faster
+        </h2>
+
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+          {[
+            "Website Development",
+            "Google Ads (Instant Leads)",
+            "Meta Ads / Instagram Ads",
+            "SEO – Rank #1 on Google",
+            "Branding & Logo Design",
+            "Social Media Management",
+            "Business Automation",
+            "Email + WhatsApp Marketing",
+            "Creative Content Designing",
+          ].map((service, i) => (
+            <div
+              key={i}
+              className="p-6 bg-white/10 rounded-xl border border-white/10 shadow-lg backdrop-blur-md"
+            >
+              <FaCheckCircle className="text-green-300 text-3xl mb-3 drop-shadow-lg" />
+              <h3 className="text-xl text-white font-semibold">{service}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* OUR PROCESS */}
+      <section className="py-24 px-6 max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-14 text-white">
+          How We Grow Your Business
+        </h2>
+
+        <div className="space-y-10">
+          {[
+            {
+              step: "1. Strategy & Market Research",
+              text: "We analyze your industry & audience to build a winning plan.",
+            },
+            {
+              step: "2. Branding & Positioning",
+              text: "We create a professional brand identity that stands out.",
+            },
+            {
+              step: "3. Advertising & SEO",
+              text: "We run PPC Ads + SEO for maximum visibility & customers.",
+            },
+            {
+              step: "4. Optimization & Scaling",
+              text: "We track data & scale revenue using performance analytics.",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-white/10 p-8 rounded-lg border border-white/10 shadow-xl backdrop-blur-md"
+            >
+              <h3 className="text-2xl font-bold text-white mb-2">{item.step}</h3>
+              <p className="text-gray-200 text-lg">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 text-center bg-green-700 shadow-lg">
+        <h2 className="text-4xl font-bold mb-4">Ready to Grow Your Business?</h2>
+        <p className="text-lg text-gray-200 mb-6">
+          Get a free strategy session with our marketing experts.
+        </p>
+
         <a
           href="/contact"
-          className="px-10 py-4 text-xl font-semibold rounded-xl bg-blue-600 hover:bg-blue-700 shadow-xl transition"
+          className="bg-white text-green-700 font-bold px-10 py-3 rounded-xl shadow-xl hover:bg-gray-200"
         >
-          Get Free Business Consultation
+          Get Free Consultation →
         </a>
-      </div>
-    </section>
+      </section>
+    </div>
+  );
+}
+
+/* FEATURE CARDS */
+function FeatureCards() {
+  return (
+    <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10 px-6">
+      <Card
+        icon={<FaRocket className="text-blue-300 text-4xl mx-auto drop-shadow-lg" />}
+        title="High-Converting Websites"
+        text="Custom-built websites designed to generate real customers."
+      />
+      <Card
+        icon={<FaChartLine className="text-green-300 text-4xl mx-auto drop-shadow-lg" />}
+        title="SEO Ranking"
+        text="Rank on Google with advanced SEO optimization."
+      />
+      <Card
+        icon={<FaBullhorn className="text-pink-300 text-4xl mx-auto drop-shadow-lg" />}
+        title="Digital Advertising"
+        text="Google & Meta Ads for instant, high-quality leads."
+      />
+      <Card
+        icon={<FaUsers className="text-yellow-300 text-4xl mx-auto drop-shadow-lg" />}
+        title="Brand Identity"
+        text="Professional branding that builds customer trust."
+      />
+    </div>
   );
 }
 
 function Card({ icon, title, text }) {
   return (
-    <div
-      className="
-        bg-white/10 backdrop-blur-xl 
-        border border-white/10 
-        p-6 rounded-2xl shadow-lg 
-        hover:scale-105 hover:shadow-[0_0_20px_rgba(0,180,255,0.4)]
-        transition text-center
-      "
-    >
+    <div className="bg-white/10 p-8 rounded-xl shadow-xl backdrop-blur-md text-center border border-white/10">
       {icon}
-      <h3 className="text-xl font-bold mt-3 mb-2">{title}</h3>
-      <p className="text-gray-200">{text}</p>
+      <h3 className="text-xl text-white font-bold mt-4">{title}</h3>
+      <p className="text-gray-200 mt-2">{text}</p>
     </div>
-  );
-}
-
-function ExtraSections() {
-  return (
-    <div className="mt-24 max-w-6xl mx-auto px-6">
-      <SectionTitle title="How We Grow Your Business" />
-      <ul className="grid sm:grid-cols-2 gap-6 text-gray-200 text-lg">
-        {[
-          "We create modern & responsive websites",
-          "We improve your Google ranking with SEO",
-          "We run high-converting Google Ads campaigns",
-          "We manage Social Media for consistent growth",
-        ].map((item, i) => (
-          <li key={i} className="flex items-center gap-3">
-            <FaCheckCircle className="text-blue-300" /> {item}
-          </li>
-        ))}
-      </ul>
-
-      <SectionTitle title="Our Simple Process" />
-      <div className="grid sm:grid-cols-3 gap-10 text-center">
-        {[
-          { step: "01", title: "Research", text: "We study your market & competitors." },
-          { step: "02", title: "Strategy", text: "We create a plan tailored to your business goals." },
-          { step: "03", title: "Growth", text: "We launch campaigns & scale your business." },
-        ].map((item, i) => (
-          <div key={i} className="bg-white/10 p-6 rounded-2xl shadow-lg border border-white/10">
-            <h2 className="text-4xl font-bold text-blue-300 mb-2">{item.step}</h2>
-            <h3 className="text-xl font-bold">{item.title}</h3>
-            <p className="text-gray-200">{item.text}</p>
-          </div>
-        ))}
-      </div>
-
-      <SectionTitle title="Why Choose Us" />
-      <ul className="grid sm:grid-cols-2 gap-6 text-gray-200 text-lg">
-        {[
-          "5+ Years of Digital Marketing Experience",
-          "Industry-Level Website Development",
-          "Affordable Pricing & Premium Quality",
-          "Dedicated Support & Fast Work Delivery",
-        ].map((item, i) => (
-          <li key={i} className="flex items-center gap-3">
-            <FaCheckCircle className="text-green-300" /> {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function SectionTitle({ title }) {
-  return (
-    <h2 className="text-3xl font-bold text-center text-green-300 mt-20 mb-6">
-      {title}
-    </h2>
   );
 }
