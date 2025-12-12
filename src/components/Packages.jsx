@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+// src/components/Packages.jsx
+import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 
 const packages = [
@@ -88,46 +89,81 @@ const packages = [
   },
 ];
 
-const lines = [
-  "Affordable Website Packages",
-  "Premium Plans for Every Business",
-  "Boost Your Online Presence",
-  "Choose the Perfect Plan for You",
-];
-
 export default function Packages() {
-  const [line, setLine] = useState(0);
-  const [text, setText] = useState("");
-
-  // TYPEWRITER EFFECT
-  useEffect(() => {
-    let i = 0;
-    const t = setInterval(() => {
-      setText(lines[line].slice(0, i));
-      i++;
-      if (i > lines[line].length) {
-        clearInterval(t);
-        setTimeout(() => {
-          setText("");
-          setLine((prev) => (prev + 1) % lines.length);
-        }, 800);
-      }
-    }, 60);
-    return () => clearInterval(t);
-  }, [line]);
-
   return (
     <section className="relative py-24 bg-gradient-to-br from-green-200 via-green-300 to-emerald-300 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
 
+        {/* ============================================================
+              ⭐ NEW PREMIUM HERO SECTION (Do NOT remove old code)
+        ============================================================ */}
+        <div className="grid md:grid-cols-2 gap-14 items-center mb-24 text-left">
+
+          {/* LEFT SIDE CONTENT */}
+          <div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-green-900 leading-snug mb-6">
+              Choose The Perfect Website Package  
+              <span className="text-green-700"> For Your Business</span>
+            </h2>
+
+            <p className="text-lg text-green-800 leading-relaxed mb-6">
+              Whether you are a startup, small business, or growing brand—our 
+              website packages are designed to give you everything you need: 
+              professional design, SEO optimization, fast performance, security, 
+              and complete scalability.  
+            </p>
+
+            <ul className="space-y-4 text-green-900 text-lg">
+              <li className="flex gap-3">
+                <FaCheckCircle className="text-green-700 mt-1" />
+                Professional & modern website layouts
+              </li>
+              <li className="flex gap-3">
+                <FaCheckCircle className="text-green-700 mt-1" />
+                Free domain, hosting & SSL options available
+              </li>
+              <li className="flex gap-3">
+                <FaCheckCircle className="text-green-700 mt-1" />
+                SEO-ready pages for better Google ranking
+              </li>
+              <li className="flex gap-3">
+                <FaCheckCircle className="text-green-700 mt-1" />
+                Mobile-friendly & fast-loading designs
+              </li>
+              <li className="flex gap-3">
+                <FaCheckCircle className="text-green-700 mt-1" />
+                Perfect for service, business & eCommerce websites
+              </li>
+            </ul>
+
+            <button className="mt-8 bg-green-700 text-white py-3 px-8 rounded-xl font-semibold hover:bg-green-800 transition">
+              Get Free Package Consultation
+            </button>
+          </div>
+
+          {/* RIGHT SIDE LARGE IMAGE */}
+          <div className="flex justify-center">
+            <img
+              src="https://images.pexels.com/photos/6476808/pexels-photo-6476808.jpeg"
+              alt="Website Pricing Plans"
+              className="rounded-3xl shadow-2xl w-full max-w-lg object-cover"
+            />
+          </div>
+
+        </div>
+        {/* ============================ END NEW HERO SECTION ============================ */}
+
+
+        {/* OLD HEADING (Kept same as requested) */}
         <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-green-900">
-          {text}
+          Affordable Website Packages
         </h2>
 
         <p className="text-lg text-green-800 mb-12">
           Select the package that fits your business needs perfectly.
         </p>
 
+        {/* PACKAGES GRID — YOUR ORIGINAL CODE */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {packages.map((pkg, i) => (
             <div key={i} className={`rounded-2xl p-6 ${pkg.color}`}>
@@ -151,6 +187,7 @@ export default function Packages() {
           ))}
         </div>
 
+        {/* WHY OUR PACKAGES HELP YOU */}
         <h3 className="text-3xl font-bold text-center text-green-900 mt-20 mb-6">
           How Our Packages Help You
         </h3>
@@ -168,6 +205,7 @@ export default function Packages() {
           ))}
         </ul>
 
+        {/* PROCESS SECTION */}
         <h3 className="text-3xl font-bold text-center text-green-900 mt-20 mb-6">
           Our Simple Process
         </h3>

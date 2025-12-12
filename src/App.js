@@ -2,18 +2,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import ServicesGrid from "./components/ServicesGrid";
-import DigitalMarketing from "./components/DigitalMarketing";
-import Portfolio from "./components/Portfolio";
-import About from "./components/About";
-import Contact from "./components/ContactCTA";
-import GoogleAds from "./components/GoogleAds";
-import GrowBusiness from "./components/GrowBusiness";
-import Packages from "./components/Packages";
 import Footer from "./components/Footer";
 
-// PAGES
+import HomePage from "./pages/HomePage";
+
 import DigitalMarketingPage from "./pages/DigitalMarketingPage";
 import AboutPage from "./pages/AboutPage";
 import ContactCTAPage from "./pages/ContactCTAPage";
@@ -23,16 +15,19 @@ import PortfolioPage from "./pages/PortfolioPage";
 import ServicesGridPage from "./pages/ServicesGridPage";
 import GrowBusinessPage from "./pages/GrowBusinessPage";
 
-// DETAIL PAGES
 import ServiceDetailPage from "./pages/ServiceDetailPage";
 import DigitalMarketingDetailPage from "./pages/DigitalMarketingDetailPage";
 import PortfolioDetailPage from "./pages/PortfolioDetailPage";
 import GoogleAdsDetailsPage from "./pages/GoogleAdsDetailsPage";
 
-// INDUSTRIES
 import IndustriesPage from "./pages/IndustriesPage";
 import CategoryPage from "./pages/CategoryPage";
 import IndustryDetailPage from "./pages/IndustryDetailPage";
+
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import ResetPasswordPage from "./pages/ResetPasswordPage";
 
 function App() {
   return (
@@ -40,36 +35,18 @@ function App() {
       <Navbar />
 
       <Routes>
-        {/* HOME */}
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <ServicesGrid />
-              <DigitalMarketing />
-              <Portfolio />
-              <GoogleAds />
-              <About />
-              <Packages />
-              <GrowBusiness />
-              <Contact />
-            </>
-          }
-        />
 
-        {/* MAIN PAGES */}
+        {/* ✅ HOMEPAGE ROUTE */}
+        <Route path="/" element={<HomePage />} />
+
+        {/* Static Pages */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
+
         <Route path="/digital-marketing" element={<DigitalMarketingPage />} />
-
-        {/* ⭐ FIXED — NOW WORKING */}
         <Route path="/services-grid" element={<ServicesGridPage />} />
-
-        {/* DETAIL ROUTES */}
-        <Route path="/services/:slug" element={<ServiceDetailPage />} />
-        <Route path="/digital-marketing/:slug" element={<DigitalMarketingDetailPage />} />
-        <Route path="/portfolio/:slug" element={<PortfolioDetailPage />} />
-        <Route path="/google-ads/:slug" element={<GoogleAdsDetailsPage />} />
-
         <Route path="/google-ads" element={<GoogleAdsPage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/about" element={<AboutPage />} />
@@ -77,10 +54,17 @@ function App() {
         <Route path="/contact" element={<ContactCTAPage />} />
         <Route path="/grow-business" element={<GrowBusinessPage />} />
 
-        {/* INDUSTRIES */}
+        {/* Detail Pages */}
+        <Route path="/services/:slug" element={<ServiceDetailPage />} />
+        <Route path="/digital-marketing/:slug" element={<DigitalMarketingDetailPage />} />
+        <Route path="/portfolio/:slug" element={<PortfolioDetailPage />} />
+        <Route path="/google-ads/:slug" element={<GoogleAdsDetailsPage />} />
+
+        {/* Industries */}
         <Route path="/industries" element={<IndustriesPage />} />
         <Route path="/industries/:category" element={<CategoryPage />} />
         <Route path="/industry/:name" element={<IndustryDetailPage />} />
+
       </Routes>
 
       <Footer />

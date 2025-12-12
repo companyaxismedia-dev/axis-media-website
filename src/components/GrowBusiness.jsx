@@ -1,46 +1,17 @@
-import React, { useEffect, useState } from "react";
+// src/components/GrowBusiness.jsx
+import React from "react";
 import { FaRocket, FaBullhorn, FaChartLine, FaUsers, FaCheckCircle } from "react-icons/fa";
 
 export default function GrowBusiness() {
-  const lines = [
-    "Grow Your Business With Smart Strategies 🚀",
-    "Boost Your Sales With Digital Marketing",
-    "Increase Visibility With SEO & Branding",
-    "Build A Strong Online Presence",
-  ];
-
-  const [index, setIndex] = useState(0);
-  const [displayText, setDisplayText] = useState("");
-
-  useEffect(() => {
-    let i = 0;
-
-    const typing = setInterval(() => {
-      setDisplayText(lines[index].slice(0, i));
-      i++;
-
-      if (i > lines[index].length) {
-        clearInterval(typing);
-        setTimeout(() => {
-          setDisplayText("");
-          setIndex((prev) => (prev + 1) % lines.length);
-        }, 1000);
-      }
-    }, 70);
-
-    return () => clearInterval(typing);
-  }, [index]);
-
   return (
     <section className="relative py-24 text-white overflow-hidden">
 
       {/* ⭐ NEW GREEN GRADIENT BACKGROUND */}
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-green-800 to-green-600 -z-10"></div>
 
-      {/* ⭐ Typewriter Heading */}
+      {/* ⭐ STATIC HEADING (NO TYPEWRITER, NO CURSOR, NO LAG) */}
       <h1 className="text-center text-3xl md:text-5xl font-extrabold mb-10 drop-shadow-[0_0_25px_rgba(0,180,255,0.6)]">
-        {displayText}
-        <span className="border-r-2 border-blue-300 animate-pulse ml-2"></span>
+        Grow Your Business With Smart Strategies 🚀
       </h1>
 
       {/* Description */}

@@ -71,11 +71,13 @@ export default function Portfolio() {
     >
       <div className="max-w-7xl mx-auto px-4">
 
-        {/* TITLE */}
+        {/* ⭐ STATIC PREMIUM TITLE (No typewriter) */}
         <h2 className="text-5xl font-extrabold text-center mb-3 text-gray-900">
           Our Portfolio
         </h2>
-        <p className="text-center text-gray-700 max-w-2xl mx-auto mb-10 text-lg">
+
+        {/* OPTIONAL SOFT ANIMATED SUBTITLE (No lag, no flicker) */}
+        <p className="text-center text-gray-700 max-w-2xl mx-auto mb-10 text-lg animate-fadeIn">
           Selected projects — built with modern UI, branding, performance and SEO.
         </p>
 
@@ -102,6 +104,7 @@ export default function Portfolio() {
                   <img
                     src={p.image}
                     alt={p.title}
+                    loading="lazy"
                     className="w-full h-full object-cover hover:scale-110 transition duration-700"
                   />
                 </div>
@@ -147,6 +150,7 @@ export default function Portfolio() {
                 <img
                   src={tech.img}
                   alt={tech.title}
+                  loading="lazy"
                   className="h-28 w-28 mx-auto object-contain mb-4"
                 />
                 <h4 className="text-2xl font-semibold mb-2">{tech.title}</h4>

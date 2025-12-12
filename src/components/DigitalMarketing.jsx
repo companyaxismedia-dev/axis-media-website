@@ -1,45 +1,89 @@
 // src/components/DigitalMarketing.jsx
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import dmServicesData from "../data/dmServicesData";
 
-const lines = [
-  "Smart Strategies For Fast Business Growth",
-  "Boost Your Digital Reach With Modern Marketing",
-  "High-ROI Ads For Every Business Category",
-];
-
 export default function DigitalMarketing() {
-  const [lineIndex, setLineIndex] = useState(0);
-  const [displayText, setDisplayText] = useState("");
-
-  // TYPEWRITER EFFECT
-  useEffect(() => {
-    let char = 0;
-    const type = setInterval(() => {
-      setDisplayText(lines[lineIndex].slice(0, char));
-      char++;
-      if (char > lines[lineIndex].length) {
-        clearInterval(type);
-        setTimeout(() => {
-          setLineIndex((prev) => (prev + 1) % lines.length);
-          setDisplayText("");
-        }, 900);
-      }
-    }, 70);
-    return () => clearInterval(type);
-  }, [lineIndex]);
-
   return (
     <section className="py-24 bg-gradient-to-b from-[#EEF3FF] to-[#F3E8FF]">
       <div className="max-w-7xl mx-auto px-4">
 
-        {/* TYPEWRITER HEADING */}
+        {/* ===========================
+            ⭐ NEW HERO SECTION ADDED ⭐
+        ============================ */}
+        <div className="grid md:grid-cols-2 gap-14 items-center mb-24">
+
+          {/* LEFT SIDE CONTENT */}
+          <div>
+            <h2 className="text-4xl md:text-5xl font-extrabold leading-snug mb-6">
+              Grow Your Business With  
+              <span className="text-blue-600"> Powerful Digital Marketing</span>
+            </h2>
+
+            <p className="text-gray-700 text-lg leading-relaxed mb-6">
+              We help businesses increase visibility, attract more customers, 
+              and scale faster with high-performing digital marketing strategies.  
+              From social media ads to SEO, content, branding, and automation —  
+              we handle everything needed to grow your business online.
+            </p>
+
+            <ul className="space-y-4 text-gray-700">
+              <li className="flex items-start gap-3">
+                <FaCheckCircle className="text-blue-600 mt-1" />
+                Result-driven campaigns built for higher ROI
+              </li>
+              <li className="flex items-start gap-3">
+                <FaCheckCircle className="text-blue-600 mt-1" />
+                Perfect for small businesses, startups & enterprises
+              </li>
+              <li className="flex items-start gap-3">
+                <FaCheckCircle className="text-blue-600 mt-1" />
+                Branding + Ads + SEO + Website optimization
+              </li>
+              <li className="flex items-start gap-3">
+                <FaCheckCircle className="text-blue-600 mt-1" />
+                Targeted advertising for maximum conversions
+              </li>
+              <li className="flex items-start gap-3">
+                <FaCheckCircle className="text-blue-600 mt-1" />
+                Expert team with years of real marketing experience
+              </li>
+              <li className="flex items-start gap-3">
+                <FaCheckCircle className="text-blue-600 mt-1" />
+                Transparent reporting & performance tracking
+              </li>
+            </ul>
+
+            <NavLink
+              to="/contact"
+              className="inline-block mt-8 py-3 px-8 bg-blue-600 text-white 
+                       rounded-xl font-semibold hover:bg-blue-700 transition"
+            >
+              Get Free Marketing Consultation
+            </NavLink>
+          </div>
+
+          {/* RIGHT SIDE LARGE IMAGE */}
+          <div className="flex justify-center">
+            <img
+              src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+              alt="Digital Marketing Team"
+              className="rounded-3xl shadow-2xl w-full max-w-lg object-cover"
+            />
+          </div>
+
+        </div>
+        {/* ===========================
+            ⭐ END OF NEW SECTION ⭐
+        ============================ */}
+
+
+        {/* STATIC HEADING — NO LAG */}
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4">
           <span className="text-transparent bg-clip-text bg-gradient-to-r 
                            from-purple-500 via-blue-400 to-blue-500">
-            {displayText}
+            Smart Strategies For Fast Business Growth
           </span>
         </h2>
 
@@ -55,7 +99,11 @@ export default function DigitalMarketing() {
               className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all"
             >
               <div className="overflow-hidden rounded-xl h-40 mb-4">
-                <img src={s.heroImage} className="w-full h-full object-cover" />
+                <img
+                  src={s.heroImage}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               <h3 className="text-2xl font-bold text-gray-900 mb-2">{s.title}</h3>
@@ -70,7 +118,8 @@ export default function DigitalMarketing() {
 
               <NavLink
                 to="/contact"
-                className="w-full block text-center py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
+                className="w-full block text-center py-2 rounded-lg bg-blue-600 
+                           text-white font-semibold hover:bg-blue-700 transition"
               >
                 Enquire Now
               </NavLink>

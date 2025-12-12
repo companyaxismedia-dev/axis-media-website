@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+// src/components/GoogleAds.jsx
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
 
@@ -42,13 +43,6 @@ const adsServices = [
   },
 ];
 
-const headingLines = [
-  "Powerful Google Ads Campaigns",
-  "Reach Customers Instantly",
-  "Boost Leads & Conversions",
-  "Grow with Smart Advertising",
-];
-
 const techIcons = [
   {
     title: "Google Search",
@@ -83,35 +77,13 @@ const techIcons = [
 ];
 
 export default function GoogleAds() {
-  const [line, setLine] = useState(0);
-  const [text, setText] = useState("");
-
-  // ⭐ Typewriter Animation
-  useEffect(() => {
-    let i = 0;
-    const typing = setInterval(() => {
-      setText(headingLines[line].slice(0, i));
-      i++;
-
-      if (i > headingLines[line].length) {
-        clearInterval(typing);
-        setTimeout(() => {
-          setLine((prev) => (prev + 1) % headingLines.length);
-          setText("");
-        }, 800);
-      }
-    }, 60);
-
-    return () => clearInterval(typing);
-  }, [line]);
-
   return (
     <section className="py-24 bg-[#F3F6FF]">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* HEADING */}
+        {/* STATIC HEADING (NO TYPEWRITER, NO LAG) */}
         <h2 className="text-5xl font-extrabold text-center mb-4 text-gray-900">
-          {text}
+          Powerful Google Ads Campaigns
         </h2>
 
         <p className="text-center text-gray-600 text-lg max-w-3xl mx-auto mb-14">
@@ -119,7 +91,7 @@ export default function GoogleAds() {
           quality leads, and grow your business faster.
         </p>
 
-        {/* ⭐ GOOGLE ADS CARDS */}
+        {/* ADS CARDS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {adsServices.map((card, i) => (
             <div
@@ -130,6 +102,7 @@ export default function GoogleAds() {
                 <img
                   src={card.image}
                   alt={card.title}
+                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-110 transition duration-700"
                 />
               </div>
@@ -142,7 +115,6 @@ export default function GoogleAds() {
                 {card.description}
               </p>
 
-              {/* ⭐ More Details Button */}
               <NavLink
                 to={`/google-ads/${card.slug}`}
                 className="block w-full text-center py-2 mb-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold"
@@ -150,7 +122,6 @@ export default function GoogleAds() {
                 More Details →
               </NavLink>
 
-              {/* ⭐ Enquire Now opens Contact Page */}
               <NavLink
                 to="/contact"
                 className="block w-full text-center py-2 bg-yellow-500 hover:bg-yellow-600 text-black rounded-lg font-semibold"
@@ -161,7 +132,7 @@ export default function GoogleAds() {
           ))}
         </div>
 
-        {/* ⭐ TECHNOLOGY SECTION */}
+        {/* TECHNOLOGY SECTION */}
         <div className="mt-24 bg-white p-12 rounded-3xl shadow-xl border border-gray-200">
           <h3 className="text-4xl font-bold text-center mb-12 text-gray-900">
             Technologies We Use for Google Ads
@@ -184,7 +155,7 @@ export default function GoogleAds() {
           </div>
         </div>
 
-        {/* ⭐ BUSINESS BENEFITS */}
+        {/* BENEFITS */}
         <div className="mt-20 max-w-5xl mx-auto">
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-6">
             Why Choose Google Ads?
@@ -205,7 +176,7 @@ export default function GoogleAds() {
           </ul>
         </div>
 
-        {/* ⭐ PROCESS SECTION */}
+        {/* PROCESS SECTION */}
         <h3 className="text-3xl font-bold text-center text-gray-900 mt-16 mb-6">
           Our Simple Process
         </h3>
