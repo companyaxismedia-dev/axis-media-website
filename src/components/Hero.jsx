@@ -8,7 +8,6 @@ export default function Hero() {
     "Boost Your Online Presence With Smart Strategies",
   ];
 
-  // Background image list
   const bgImages = [
     "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
     "https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1600&q=80",
@@ -22,21 +21,18 @@ export default function Hero() {
   const [currentLine, setCurrentLine] = useState(0);
   const [displayText, setDisplayText] = useState("");
 
-  // Auto-change background with fade animation
   useEffect(() => {
     const changeBg = setInterval(() => {
-      setFade(false); // start fade-out
-
+      setFade(false);
       setTimeout(() => {
         setBgIndex((prev) => (prev + 1) % bgImages.length);
-        setFade(true); // fade-in new image
-      }, 600); // fade-out duration
+        setFade(true);
+      }, 600);
     }, 6000);
 
     return () => clearInterval(changeBg);
   }, []);
 
-  // Typewriter effect
   useEffect(() => {
     let index = 0;
     const typing = setInterval(() => {
@@ -56,26 +52,19 @@ export default function Hero() {
   }, [currentLine]);
 
   return (
-    <header className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
+    <header className="relative min-h-screen flex items-center justify-center overflow-hidden pt-40">
 
-      {/* ⭐ AUTO CHANGING BACKGROUND IMAGE + SMOOTH FADE EFFECT */}
       <div
         className={`absolute inset-0 bg-cover bg-center transition-opacity duration-[1200ms] ${fade ? "opacity-100" : "opacity-0"}`}
-        style={{
-          backgroundImage: `url(${bgImages[bgIndex]})`,
-        }}
+        style={{ backgroundImage: `url(${bgImages[bgIndex]})` }}
       ></div>
 
-      {/* ⭐ DARK OVERLAY */}
       <div className="absolute inset-0 bg-black/60"></div>
 
-      {/* ⭐ Glow Lights */}
       <div className="absolute top-1/3 -left-20 w-[600px] h-[600px] bg-purple-500/25 blur-[150px] rounded-full"></div>
       <div className="absolute top-10 -right-20 w-[600px] h-[600px] bg-blue-500/25 blur-[150px] rounded-full"></div>
 
-      {/* ⭐ MAIN CONTENT */}
       <div className="relative z-10 max-w-4xl text-center text-white px-6">
-
         <h1 className="text-4xl md:text-6xl font-extrabold leading-snug drop-shadow-xl">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-blue-300 to-cyan-300">
             {displayText}

@@ -1,124 +1,161 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+// src/components/Portfolio.jsx
+import React from "react";
+import { NavLink } from "react-router-dom";
+import portfolioItems from "../data/portfolioData";
 
 export default function Portfolio() {
-  const portfolioItems = [
+  const techIcons = [
     {
-      title: "Puja Portfolio Website",
-      image:
-        "https://s3-alpha.figma.com/hub/file/2756242010/25c6912f-5dd2-4801-8f94-b752e9930134-cover.png",
-      link: "https://puja-portfolio-ten.vercel.app/",
+      title: "HTML5",
+      img: "https://cdn-icons-png.flaticon.com/512/919/919827.png",
+      desc: "SEO-friendly HTML structure for fast professional websites."
     },
     {
-      title: "Foodify E-Commerce Website",
-      image:
-        "https://downloadpsd.cc/wp-content/uploads/Online-Food-Delivery-Website-Template-Free-PSD.jpg",
-      link: "https://e-commerce-foodify-website.vercel.app/",
+      title: "CSS3",
+      img: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_640.png",
+      desc: "Modern UI, animations, transitions & responsive layouts."
     },
     {
-      title: "Online Food Ordering Platform",
-      image: "https://i.ytimg.com/vi/x1RtPQ6XApo/maxresdefault.jpg",
-      link: "https://food-ordering-website-ruddy.vercel.app/",
+      title: "JavaScript",
+      img: "http://pluspng.com/img-png/logo-javascript-png--784.png",
+      desc: "Interactive UI, dynamic features, API integration & automation."
     },
     {
-      title: "Personal Portfolio",
-      image:
-        "https://colorlib.com/wp/wp-content/uploads/sites/2/squarespace-portfolio-website-builder.jpg",
-      link: "https://pujashukla2003.github.io/personal-portfolio/",
+      title: "Java",
+      img: "https://logos-world.net/wp-content/uploads/2022/07/Java-Logo.jpg",
+      desc: "Secure enterprise-level backend systems."
+    },
+    {
+      title: "Python",
+      img: "https://www.clipartmax.com/png/middle/434-4343754_python-logo.png",
+      desc: "AI, ML, automation, backend APIs & dashboards."
+    },
+    {
+      title: "C++",
+      img: "https://www.freeiconspng.com/uploads/c--logo-icon-0.png",
+      desc: "High performance computing & optimized algorithms."
+    },
+    {
+      title: "MySQL",
+      img: "https://www.vhv.rs/dpng/d/543-5438423_mysql-logo-hd-png-download.png",
+      desc: "Secure relational database for professional apps."
+    },
+    {
+      title: "MongoDB",
+      img: "https://vectorseek.com/wp-content/uploads/2023/10/Mongodb-Icon-Logo-Vector.svg-.png",
+      desc: "Fast NoSQL DB used for modern dynamic web applications."
+    },
+    {
+      title: ".NET",
+      img: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_640.png",
+      desc: ".NET framework used for enterprise backends & APIs."
+    },
+    {
+      title: "WordPress",
+      img: "https://static.vecteezy.com/system/resources/previews/020/336/054/original/wordpress-logo-wordpress-icon-transparent-png-free-vector.jpg",
+      desc: "CMS for dynamic websites, ecommerce & business portals."
     },
   ];
 
   return (
     <section
       id="portfolio"
-      className="py-20 relative scroll-mt-20 text-white"
+      className="
+        py-20 
+        bg-gradient-to-b 
+        from-[#E8FBEA] 
+        via-[#DFF9E8] 
+        to-[#CCF3DA] 
+        text-gray-900
+      "
     >
-      {/* BACKGROUND GOLD-BLACK GRADIENT */}
-      <div
-        className="absolute inset-0 -z-10"
-        style={{
-          background:
-            "linear-gradient(135deg, #0D0D0D 0%, #5A3E18 40%, #D4A847 100%)",
-        }}
-      ></div>
+      <div className="max-w-7xl mx-auto px-4">
 
-      <div className="relative w-full px-4 sm:px-6 lg:px-10">
-        <h2 className="text-4xl font-bold text-center mb-4 text-yellow-300 drop-shadow-xl">
+        {/* TITLE */}
+        <h2 className="text-5xl font-extrabold text-center mb-3 text-gray-900">
           Our Portfolio
         </h2>
-        <p className="text-center text-yellow-100 max-w-2xl mx-auto mb-12">
-          Some of our latest website designs and development work — built with
-          modern UI, animations & smooth performance.
+        <p className="text-center text-gray-700 max-w-2xl mx-auto mb-10 text-lg">
+          Selected projects — built with modern UI, branding, performance and SEO.
         </p>
 
-        <Swiper
-          spaceBetween={30}
-          slidesPerView={1}
-          grabCursor
-          style={{ paddingBottom: "40px" }}
-          breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {portfolioItems.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl shadow-lg border border-white/20 transition duration-300 overflow-hidden group hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(255,215,128,0.5)]">
-
-                <div className="overflow-hidden h-60">
+        {/* PORTFOLIO CAROUSEL */}
+        <div className="overflow-x-auto no-scrollbar py-4">
+          <div className="flex gap-8 w-max">
+            {portfolioItems.slice(0, 9).map((p) => (
+              <article
+                key={p.slug}
+                className="
+                  min-w-[440px] 
+                  bg-white 
+                  text-gray-900 
+                  rounded-3xl 
+                  shadow-xl 
+                  p-6 
+                  flex-shrink-0 
+                  border border-gray-200 
+                  hover:shadow-2xl 
+                  transition
+                "
+              >
+                <div className="h-52 overflow-hidden rounded-xl mb-4">
                   <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    src={p.image}
+                    alt={p.title}
+                    className="w-full h-full object-cover hover:scale-110 transition duration-700"
                   />
                 </div>
 
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-semibold mb-3 text-yellow-200">
-                    {item.title}
-                  </h3>
+                <h3 className="text-2xl font-bold mb-2">{p.title}</h3>
+                <p className="text-gray-700 mb-5">{p.shortDesc}</p>
 
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-6 py-2 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold rounded-lg shadow-md transition"
+                <div className="flex justify-between items-center">
+                  <NavLink
+                    to={`/portfolio/${p.slug}`}
+                    className="px-5 py-2 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold rounded-lg"
                   >
-                    View Project
-                  </a>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                    More Details →
+                  </NavLink>
 
-        {/* EXTRA DETAIL BOXES BELOW LIKE SERVICES GRID */}
-        <div className="max-w-5xl mx-auto mt-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Creative UI Design",
-              text: "Modern, clean & attractive interface designs.",
-            },
-            {
-              title: "Fast Performance",
-              text: "Optimized websites for speed & SEO ranking.",
-            },
-            {
-              title: "Responsive Layouts",
-              text: "Perfect display on all devices & screen sizes.",
-            },
-          ].map((box, i) => (
-            <div
-              key={i}
-              className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/20 shadow-xl text-center hover:scale-105 transition"
-            >
-              <h3 className="text-2xl font-bold text-yellow-300 mb-2">
-                {box.title}
-              </h3>
-              <p className="text-yellow-100">{box.text}</p>
-            </div>
-          ))}
+                  {p.liveLink ? (
+                    <a
+                      href={p.liveLink}
+                      className="text-blue-600 underline text-sm"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Live Demo
+                    </a>
+                  ) : (
+                    <span className="text-gray-400 text-sm">No demo</span>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
+
+        {/* TECHNOLOGY SECTION */}
+        <div className="mt-16 bg-white rounded-3xl p-12 shadow-xl border border-gray-200">
+          <h3 className="text-4xl font-extrabold text-center mb-10 text-gray-900">
+            Languages, Tools & Technologies We Use
+          </h3>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+            {techIcons.map((tech, i) => (
+              <div key={i} className="text-center">
+                <img
+                  src={tech.img}
+                  alt={tech.title}
+                  className="h-28 w-28 mx-auto object-contain mb-4"
+                />
+                <h4 className="text-2xl font-semibold mb-2">{tech.title}</h4>
+                <p className="text-gray-700 text-lg">{tech.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ import DigitalMarketing from "../components/DigitalMarketing";
 
 export default function DigitalMarketingPage() {
   return (
-    <div className="pt-0 m-0 p-0 bg-transparent">
+    <div>
       <DigitalMarketing />
     </div>
   );

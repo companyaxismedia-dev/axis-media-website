@@ -1,7 +1,6 @@
 // src/App.js
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import TopBar from "./components/TopBar";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ServicesGrid from "./components/ServicesGrid";
@@ -24,22 +23,24 @@ import PortfolioPage from "./pages/PortfolioPage";
 import ServicesGridPage from "./pages/ServicesGridPage";
 import GrowBusinessPage from "./pages/GrowBusinessPage";
 
-// INDUSTRIES SYSTEM
+// DETAIL PAGES
+import ServiceDetailPage from "./pages/ServiceDetailPage";
+import DigitalMarketingDetailPage from "./pages/DigitalMarketingDetailPage";
+import PortfolioDetailPage from "./pages/PortfolioDetailPage";
+import GoogleAdsDetailsPage from "./pages/GoogleAdsDetailsPage";
+
+// INDUSTRIES
 import IndustriesPage from "./pages/IndustriesPage";
 import CategoryPage from "./pages/CategoryPage";
 import IndustryDetailPage from "./pages/IndustryDetailPage";
 
-// ⭐ CORRECT IMPORT (case-sensitive)
-import { IndustriesData } from "./data/IndustriesData";
-
 function App() {
   return (
     <BrowserRouter>
-      <TopBar />
       <Navbar />
 
       <Routes>
-        {/* HOME PAGE */}
+        {/* HOME */}
         <Route
           path="/"
           element={
@@ -59,7 +60,16 @@ function App() {
 
         {/* MAIN PAGES */}
         <Route path="/digital-marketing" element={<DigitalMarketingPage />} />
-        <Route path="/services" element={<ServicesGridPage />} />
+
+        {/* ⭐ FIXED — NOW WORKING */}
+        <Route path="/services-grid" element={<ServicesGridPage />} />
+
+        {/* DETAIL ROUTES */}
+        <Route path="/services/:slug" element={<ServiceDetailPage />} />
+        <Route path="/digital-marketing/:slug" element={<DigitalMarketingDetailPage />} />
+        <Route path="/portfolio/:slug" element={<PortfolioDetailPage />} />
+        <Route path="/google-ads/:slug" element={<GoogleAdsDetailsPage />} />
+
         <Route path="/google-ads" element={<GoogleAdsPage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/about" element={<AboutPage />} />
@@ -67,7 +77,7 @@ function App() {
         <Route path="/contact" element={<ContactCTAPage />} />
         <Route path="/grow-business" element={<GrowBusinessPage />} />
 
-        {/* INDUSTRIES ROUTES */}
+        {/* INDUSTRIES */}
         <Route path="/industries" element={<IndustriesPage />} />
         <Route path="/industries/:category" element={<CategoryPage />} />
         <Route path="/industry/:name" element={<IndustryDetailPage />} />

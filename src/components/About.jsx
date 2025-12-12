@@ -135,6 +135,7 @@ export default function About() {
                 <img
                   src={card.image}
                   className="w-full h-full object-cover hover:scale-125 transition duration-700"
+                  alt={card.title}
                 />
               </div>
 
