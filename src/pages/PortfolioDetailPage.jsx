@@ -26,67 +26,103 @@ export default function PortfolioDetailPage() {
   const allTechIcons = [
     {
       name: ".NET",
-      img: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_640.png",
+      img: "/DOTNET.webp",
       desc:
         ".NET framework used for enterprise-level backend systems and API development with high performance.",
     },
     {
       name: "WordPress",
       img:
-        "https://static.vecteezy.com/system/resources/previews/020/336/054/original/wordpress-logo-wordpress-icon-transparent-png-free-vector.jpg",
+        "/WordPress.webp",
       desc:
         "WordPress CMS used for dynamic websites, blogs, business portals and ecommerce solutions.",
     },
     {
       name: "MERN Stack",
-      img: "https://i.pinimg.com/originals/8f/23/98/8f2398dcd19c6a1776f6b55c83073c67.png",
+      img: "/mern.webp",
       desc:
         "Full-stack JavaScript framework (MongoDB, Express, React, Node) for modern fast web apps.",
     },
     {
       name: "Shopify",
       img:
-        "https://tse3.mm.bing.net/th/id/OIP.Hgha6qZrQTLuadiAaGTFWgHaHa?pid=Api&P=0&h=220",
+        "/Shopifywebp.png",
       desc:
-        "Shopify used to create customized ecommerce stores with payment gateway and automation.",
+        "Shopify is a leading e-commerce platform that allows individuals and businesses to create, manage, and grow online stores without needing advanced technical skills.",
     },
     {
       name: "Java",
-      img: "https://logos-world.net/wp-content/uploads/2022/07/Java-Logo.jpg",
+      img: "/Java.webp",
       desc:
         "Java used for secure, reliable, enterprise-level backend and server-side processing.",
     },
     {
       name: "Python",
-      img: "https://www.clipartmax.com/png/middle/434-4343754_python-logo.png",
+      img: "/Python.webp",
       desc:
         "Python used for AI, automation, ML systems, backend APIs and data-driven apps.",
     },
     {
       name: "C++",
-      img: "https://www.freeiconspng.com/uploads/c--logo-icon-0.png",
+      img: "/C++.webp",
       desc:
         "C++ used for high-performance modules, custom engines, and optimized algorithms.",
     },
     {
       name: "MySQL",
-      img: "https://www.vhv.rs/dpng/d/543-5438423_mysql-logo-hd-png-download.png",
+      img: "/MySQL.webp",
       desc:
         "MySQL used for secure databases, login systems, orders, checkout & admin dashboards.",
     },
     {
       name: "MongoDB",
-      img: "https://vectorseek.com/wp-content/uploads/2023/10/Mongodb-Icon-Logo-Vector.svg-.png",
+      img: "/MongoDB.webp",
       desc:
         "MongoDB NoSQL DB used for real-time dynamic apps, dashboards and fast data operations.",
     },
     {
       name: "Node.js",
       img:
-        "https://tse3.mm.bing.net/th/id/OIP.5YviCR9XzfSL-CUoZC1vogHaHa?pid=Api&P=0&h=220",
+        "/Node.webp",
       desc:
-        "Node.js backend for login systems, API creation, real-time chat, and advanced logic.",
+        "Node.js is an open-source, server-side JavaScript runtime environment that allows developers to run JavaScript outside the browser. It is built on Google Chrome’s V8 engine and is widely used to build fast, scalable, and high-performance web applications.",
     },
+    {
+      name: "Bootstrap5",
+      img:
+        "/Bootstrap.webp",
+      desc:
+        "Bootstrap is a popular front-end framework used to build responsive, mobile-first, and modern websites. It is based on HTML, CSS, and JavaScript and provides ready-made design components and utilities that help developers create professional user interfaces quickly.",
+    },
+    {
+      name: "JavaScript",
+      img:
+        "/JavaScript.webp",
+      desc:
+        "JavaScript is a powerful programming language used to create dynamic, interactive, and responsive web applications. It runs in the browser as well as on servers (using Node.js) and works alongside HTML and CSS to build modern websites.",
+    },
+    {
+      name: "CSS3",
+      img:
+        "/CSS3.webp",
+      desc:
+        "CSS3 (Cascading Style Sheets Level 3) is used to style and design web pages. It controls how HTML elements look on the screen, including layout, colors, fonts, spacing, animations, and responsiveness. CSS3 helps make websites attractive, modern, and user-friendly.",
+    },
+    {
+      name: "HTML",
+      img:
+        "/HTML.webp",
+      desc:
+        "HTML (HyperText Markup Language) is the standard markup language used to create and structure content on the web. It defines the basic structure of a web page, such as headings, paragraphs, images, links, forms, and other elements..",
+    },
+    {
+      name: "Hostinger",
+      img:
+        "/hostinger-logowebp.png",
+      desc:
+        "Hostinger is a popular web hosting service provider that offers affordable and reliable hosting solutions for websites, blogs, and online businesses. It provides easy-to-use tools, fast performance, and strong security features for beginners as well as professionals.",
+    },
+    
   ];
 
   return (

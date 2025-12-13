@@ -144,7 +144,7 @@ export default function Packages() {
           {/* RIGHT SIDE LARGE IMAGE */}
           <div className="flex justify-center">
             <img
-              src="https://images.pexels.com/photos/6476808/pexels-photo-6476808.jpeg"
+              src="/Website Pricing Plans.webp"
               alt="Website Pricing Plans"
               className="rounded-3xl shadow-2xl w-full max-w-lg object-cover"
             />

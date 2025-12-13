@@ -64,7 +64,7 @@ export default function WhyChooseUs() {
           {/* RIGHT IMAGE */}
           <div className="flex justify-center">
             <img
-              src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg"
+              src="/Digital Marketing Team.webp"
               alt="Digital Marketing Team"
               className="rounded-3xl shadow-2xl w-full max-w-xl object-cover"
               loading="lazy"

@@ -129,17 +129,18 @@ export default function CMSDevelopmentSection() {
   /* ----------------------- CASE STUDIES --------------------------- */
   const caseStudies = [
     {
-      img: "https://images.pexels.com/photos/3184632/pexels-photo-3184632.jpeg",
+      img: "/EV-Brand.webp",
       title: "EV Brand: Boosting Traffic & Engagement",
       desc: "Multilingual CMS with SEO for an EV brand to grow traffic & engagement.",
     },
     {
-      img: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
+       img: "/GSEZ.webp",
       title: "GSEZ: Strengthening Brand Image",
       desc: "A feature-rich WordPress CMS improving digital presence & trust.",
     },
     {
-      img: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
+      img: "/Eurofish.webp",
+
       title: "Eurofish: Modern CMS Migration",
       desc: "CMS redesign + high performance + modern features for global brand.",
     },
@@ -252,8 +253,8 @@ export default function CMSDevelopmentSection() {
           ))}
         </div>
 
-        <img
-          src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg"
+         <img
+          src="/CMS-Development.webp"
           className="rounded-2xl shadow-xl w-full object-cover"
         />
       </div>
@@ -261,7 +262,8 @@ export default function CMSDevelopmentSection() {
       {/* ---------------------- INDUSTRIES SECTION ---------------------- */}
       <div className="relative my-28">
         <img
-          src="https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg"
+          src="/INDUSTRIES.webp"
+
           className="w-full h-[450px] object-cover rounded-xl opacity-90"
         />
 

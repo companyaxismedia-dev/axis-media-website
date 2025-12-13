@@ -4,49 +4,49 @@ const reviews = [
   {
     name: "Amit Verma",
     text: "Their SEO work ranked our website in top Google results. Very happy!",
-    img: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+    img: "/Amit Verma.webp",
     color: "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white"
   },
   {
     name: "Pooja Singh",
     text: "They handled everything—website, ads, social media. Amazing support!",
-    img: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+    img: "/Pooja Singh.webp",
     color: "bg-gradient-to-br from-pink-500 to-rose-600 text-white"
   },
   {
     name: "Mahesh Kumar",
     text: "Affordable and fast service. Perfect for startups looking to grow online.",
-    img: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg",
+    img: "/Mahesh Kumar.webp",
     color: "bg-gradient-to-br from-teal-500 to-cyan-600 text-white"
   },
   {
     name: "Divya Kapoor",
     text: "Marketing campaigns doubled our conversions. Brilliant work!",
-    img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg",
+    img: "/Divya Kapoor.webp",
     color: "bg-gradient-to-br from-yellow-500 to-orange-600 text-white"
   },
   {
     name: "Arjun Rao",
     text: "Premium-quality website delivered on time. Great communication from the team.",
-    img: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg",
+    img: "/Arjun Rao.webp",
     color: "bg-gradient-to-br from-red-500 to-red-700 text-white"
   },
   {
     name: "Karan Sharma",
     text: "Axis Media helped us scale our e-commerce store profitably. 5/5 stars!",
-    img: "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg",
+    img: "/Karan Sharma.webp",
     color: "bg-gradient-to-br from-sky-500 to-blue-600 text-white"
   },
   {
     name: "Neha Agarwal",
     text: "Amazing digital marketing team! Our brand visibility increased massively.",
-    img: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
+    img: "/Neha Agarwal.webp",
     color: "bg-gradient-to-br from-purple-500 to-purple-700 text-white"
   },
   {
     name: "Rohit Khanna",
     text: "Professional service & great ROI. Highly recommended for small businesses.",
-    img: "https://images.pexels.com/photos/2613260/pexels-photo-2613260.jpeg",
+    img: "/Rohit Khanna.webp",
     color: "bg-gradient-to-br from-green-500 to-emerald-700 text-white"
   }
 ];
@@ -88,7 +88,7 @@ export default function Testimonials() {
         <div className="inline-flex items-center gap-4 bg-white px-8 py-5 rounded-2xl shadow-lg border">
 
           <img
-            src="https://2.bp.blogspot.com/-UodZXH2STWE/VSVQOrBfroI/AAAAAAAAAPw/9RQ-dm-u56M/s1600/google_logo.png"
+            src="/Google.webp"
             className="h-7 w-auto object-contain"
             alt="Google"
           />
@@ -115,25 +115,25 @@ export default function Testimonials() {
         <div className="flex items-center justify-center gap-14 transition">
 
           <img
-            src="https://wallpaperaccess.com/full/6578145.jpg"
+            src="/Tata.webp"
             className="h-14 w-auto"
             alt="Tata"
           />
 
           <img
-            src="https://i.pinimg.com/originals/89/5c/f4/895cf4457b3c075b2d153f44f2700f1b.png"
+            src="/Amul.webp"
             className="h-14 w-auto"
             alt="Amul"
           />
 
           <img
-            src="https://cdn.branch.io/branch-assets/1620644253684-og_image.jpg"
+            src="/Airtel.webp"
             className="h-14 w-auto"
             alt="Airtel"
           />
 
           <img
-            src="https://cdn.worldvectorlogo.com/logos/swiggy-1.svg"
+            src="/Swiggy.webp"
             className="h-14 w-auto"
             alt="Swiggy"
           />

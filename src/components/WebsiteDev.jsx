@@ -50,9 +50,9 @@ export default function DeveloperIntro() {
         {/* RIGHT SIDE IMAGE */}
         <div className="flex justify-center">
           <img
-            src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg"
+            src="/CMS-Development.webp"
             alt="Expert Developer"
-            className="rounded-2xl shadow-xl w-full max-w-md object-cover"
+            className="rounded-3xl shadow-2xl w-full max-w-xl lg:max-w-2xl xl:max-w-3xl object-cover"
           />
         </div>
 

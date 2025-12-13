@@ -79,7 +79,7 @@ export default function AboutPage() {
 
           <div className="mt-6 flex items-center justify-center gap-6">
             <a
-              href="https://www.facebook.com" /* replace with real link */
+              href="/facebook.webp" /* replace with real link */
               target="_blank"
               rel="noreferrer"
               className="text-white/90 hover:text-white text-xl"
@@ -89,7 +89,7 @@ export default function AboutPage() {
             </a>
 
             <a
-              href="https://www.instagram.com" /* replace with real link */
+              href="/Instagram.webp" /* replace with real link */
               target="_blank"
               rel="noreferrer"
               className="text-white/90 hover:text-white text-xl"
@@ -99,7 +99,7 @@ export default function AboutPage() {
             </a>
 
             <a
-              href="https://www.linkedin.com" /* replace with real link */
+              href="/linkedIn.webp" /* replace with real link */
               target="_blank"
               rel="noreferrer"
               className="text-white/90 hover:text-white text-xl"

@@ -1,71 +1,89 @@
 // src/App.js
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-import HomePage from "./pages/HomePage";
+/* 🔥 LAZY LOAD PAGES */
 
-import DigitalMarketingPage from "./pages/DigitalMarketingPage";
-import AboutPage from "./pages/AboutPage";
-import ContactCTAPage from "./pages/ContactCTAPage";
-import GoogleAdsPage from "./pages/GoogleAdsPage";
-import PackagesPage from "./pages/PackagesPage";
-import PortfolioPage from "./pages/PortfolioPage";
-import ServicesGridPage from "./pages/ServicesGridPage";
-import GrowBusinessPage from "./pages/GrowBusinessPage";
+// Core pages
+const HomePage = lazy(() => import("./pages/HomePage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const ContactCTAPage = lazy(() => import("./pages/ContactCTAPage"));
+const PackagesPage = lazy(() => import("./pages/PackagesPage"));
+const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
+const ServicesGridPage = lazy(() => import("./pages/ServicesGridPage"));
+const GrowBusinessPage = lazy(() => import("./pages/GrowBusinessPage"));
 
-import ServiceDetailPage from "./pages/ServiceDetailPage";
-import DigitalMarketingDetailPage from "./pages/DigitalMarketingDetailPage";
-import PortfolioDetailPage from "./pages/PortfolioDetailPage";
-import GoogleAdsDetailsPage from "./pages/GoogleAdsDetailsPage";
+// Marketing pages
+const DigitalMarketingPage = lazy(() => import("./pages/DigitalMarketingPage"));
+const GoogleAdsPage = lazy(() => import("./pages/GoogleAdsPage"));
 
-import IndustriesPage from "./pages/IndustriesPage";
-import CategoryPage from "./pages/CategoryPage";
-import IndustryDetailPage from "./pages/IndustryDetailPage";
+// Detail pages
+const ServiceDetailPage = lazy(() => import("./pages/ServiceDetailPage"));
+const DigitalMarketingDetailPage = lazy(() => import("./pages/DigitalMarketingDetailPage"));
+const PortfolioDetailPage = lazy(() => import("./pages/PortfolioDetailPage"));
+const GoogleAdsDetailsPage = lazy(() => import("./pages/GoogleAdsDetailsPage"));
 
-import LoginPage from "./pages/LoginPage";
-import SignupPage from "./pages/SignupPage";
-import ForgotPasswordPage from "./pages/ForgotPasswordPage";
-import ResetPasswordPage from "./pages/ResetPasswordPage";
+// Industries
+const IndustriesPage = lazy(() => import("./pages/IndustriesPage"));
+const CategoryPage = lazy(() => import("./pages/CategoryPage"));
+const IndustryDetailPage = lazy(() => import("./pages/IndustryDetailPage"));
+
+// Auth pages
+const LoginPage = lazy(() => import("./pages/LoginPage"));
+const SignupPage = lazy(() => import("./pages/SignupPage"));
+const ForgotPasswordPage = lazy(() => import("./pages/ForgotPasswordPage"));
+const ResetPasswordPage = lazy(() => import("./pages/ResetPasswordPage"));
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
 
-      <Routes>
+      {/* 🔥 Suspense Wrapper */}
+      <Suspense
+        fallback={
+          <div className="min-h-[60vh] flex items-center justify-center text-lg">
+            Loading...
+          </div>
+        }
+      >
+        <Routes>
 
-        {/* ✅ HOMEPAGE ROUTE */}
-        <Route path="/" element={<HomePage />} />
+          {/* Homepage */}
+          <Route path="/" element={<HomePage />} />
 
-        {/* Static Pages */}
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-        <Route path="/reset-password" element={<ResetPasswordPage />} />
+          {/* Auth */}
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="/reset-password" element={<ResetPasswordPage />} />
 
-        <Route path="/digital-marketing" element={<DigitalMarketingPage />} />
-        <Route path="/services-grid" element={<ServicesGridPage />} />
-        <Route path="/google-ads" element={<GoogleAdsPage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/packages" element={<PackagesPage />} />
-        <Route path="/contact" element={<ContactCTAPage />} />
-        <Route path="/grow-business" element={<GrowBusinessPage />} />
+          {/* Main Pages */}
+          <Route path="/digital-marketing" element={<DigitalMarketingPage />} />
+          <Route path="/services-grid" element={<ServicesGridPage />} />
+          <Route path="/google-ads" element={<GoogleAdsPage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/packages" element={<PackagesPage />} />
+          <Route path="/contact" element={<ContactCTAPage />} />
+          <Route path="/grow-business" element={<GrowBusinessPage />} />
 
-        {/* Detail Pages */}
-        <Route path="/services/:slug" element={<ServiceDetailPage />} />
-        <Route path="/digital-marketing/:slug" element={<DigitalMarketingDetailPage />} />
-        <Route path="/portfolio/:slug" element={<PortfolioDetailPage />} />
-        <Route path="/google-ads/:slug" element={<GoogleAdsDetailsPage />} />
+          {/* Detail Pages */}
+          <Route path="/services/:slug" element={<ServiceDetailPage />} />
+          <Route path="/digital-marketing/:slug" element={<DigitalMarketingDetailPage />} />
+          <Route path="/portfolio/:slug" element={<PortfolioDetailPage />} />
+          <Route path="/google-ads/:slug" element={<GoogleAdsDetailsPage />} />
 
-        {/* Industries */}
-        <Route path="/industries" element={<IndustriesPage />} />
-        <Route path="/industries/:category" element={<CategoryPage />} />
-        <Route path="/industry/:name" element={<IndustryDetailPage />} />
+          {/* Industries */}
+          <Route path="/industries" element={<IndustriesPage />} />
+          <Route path="/industries/:category" element={<CategoryPage />} />
+          <Route path="/industry/:name" element={<IndustryDetailPage />} />
 
-      </Routes>
+        </Routes>
+      </Suspense>
 
       <Footer />
     </BrowserRouter>

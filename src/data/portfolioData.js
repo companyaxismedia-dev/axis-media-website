@@ -4,7 +4,7 @@ const portfolioItems = [
     slug: "puja-portfolio",
     title: "Puja Portfolio Website",
     image:
-      "https://s3-alpha.figma.com/hub/file/2756242010/25c6912f-5dd2-4801-8f94-b752e9930134-cover.png",
+      "/Portfolio.webp",
     shortDesc:
       "A clean personal portfolio built to showcase skills, projects, and professional experience.",
     liveLink: "https://puja-portfolio-ten.vercel.app/",
@@ -35,7 +35,7 @@ const portfolioItems = [
     slug: "foodify-ecommerce",
     title: "Foodify E-Commerce Website",
     image:
-      "https://downloadpsd.cc/wp-content/uploads/Online-Food-Delivery-Website-Template-Free-PSD.jpg",
+      "/Food-Delivery-Website.webp",
     shortDesc:
       "Full e-commerce store focused on food ordering, product variants and smooth checkout flows.",
     liveLink: "https://e-commerce-foodify-website.vercel.app/",
@@ -63,7 +63,7 @@ const portfolioItems = [
     slug: "online-food-ordering",
     title: "Online Food Ordering Platform",
     image:
-      "https://i.ytimg.com/vi/x1RtPQ6XApo/maxresdefault.jpg",
+      "/Food.webp",
     shortDesc:
       "A smooth ordering platform with city-wise search, cuisine filters, and optimized UX for mobile ordering.",
     liveLink: "",
@@ -92,7 +92,7 @@ const portfolioItems = [
     slug: "corporate-website",
     title: "Corporate Website",
     image:
-      "https://colorlib.com/wp/wp-content/uploads/sites/2/squarespace-portfolio-website-builder.jpg",
+      "/portfolio-website.webp",
     shortDesc:
       "Professional corporate website built for brand presence, lead forms, and case studies.",
     liveLink: "",
@@ -118,7 +118,7 @@ const portfolioItems = [
     slug: "saas-dashboard",
     title: "SaaS Dashboard (Admin)",
     image:
-      "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg",
+      "/saas-dashboard.webp",
     shortDesc:
       "Admin dashboard for SaaS product with analytics, user management, and integrations.",
     liveLink: "",
@@ -144,7 +144,7 @@ const portfolioItems = [
     slug: "blog-magazine",
     title: "Blog & Magazine Platform",
     image:
-      "https://images.pexels.com/photos/374074/pexels-photo-374074.jpeg",
+      "/blog-magazine.webp",
     shortDesc:
       "Content platform with articles, tags, authors and subscription paywall.",
     liveLink: "",
@@ -171,7 +171,7 @@ const portfolioItems = [
     slug: "retail-pos",
     title: "Retail POS & Inventory",
     image:
-      "https://images.pexels.com/photos/3184290/pexels-photo-3184290.jpeg",
+      "/retail-pos.webp",
     shortDesc:
       "Point-of-sale + inventory manager for retail businesses with barcode support.",
     liveLink: "",
@@ -197,7 +197,7 @@ const portfolioItems = [
     slug: "education-platform",
     title: "Education / LMS Platform",
     image:
-      "https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg",
+      "/education-platform.webp",
     shortDesc:
       "Learning management system with courses, quizzes, certificates and dashboard.",
     liveLink: "",
@@ -223,7 +223,7 @@ const portfolioItems = [
     slug: "landing-conversion",
     title: "Conversion Landing Pages",
     image:
-      "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg",
+      "/landing-conversion.webp",
     shortDesc:
       "High-conversion landing pages for campaigns, lead magnets and A/B testing.",
     liveLink: "",

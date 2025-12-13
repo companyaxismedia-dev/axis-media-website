@@ -3,7 +3,7 @@ const dmServicesData = [
     slug: "social-media-marketing",
     title: "Social Media Marketing",
     description: "Ads, content creation & powerful engagement strategy.",
-    heroImage: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
+    heroImage: "/media-marketing.webp",
 
     longContent: {
       intro:
@@ -43,7 +43,7 @@ const dmServicesData = [
     slug: "seo-optimization",
     title: "SEO Optimization",
     description: "Rank higher and grow organic website traffic.",
-    heroImage: "https://images.pexels.com/photos/618613/pexels-photo-618613.jpeg",
+    heroImage: "/seo-optimization.webp",
 
     longContent: {
       intro:
@@ -74,7 +74,7 @@ const dmServicesData = [
     slug: "email-marketing",
     title: "Email Marketing",
     description: "Automation, newsletters & high-conversion campaigns.",
-    heroImage: "https://images.pexels.com/photos/6476253/pexels-photo-6476253.jpeg",
+    heroImage: "/email-marketing.webp",
 
     longContent: {
       intro:
@@ -102,7 +102,7 @@ const dmServicesData = [
     slug: "google-ads",
     title: "Google Ads",
     description: "Paid ads for leads, sales, and brand visibility.",
-    heroImage: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
+    heroImage: "/-ads.webp",
 
     longContent: {
       intro:
@@ -131,7 +131,7 @@ const dmServicesData = [
     slug: "instagram-ads",
     title: "Instagram Ads",
     description: "Boost reach, engagement & conversions.",
-    heroImage: "https://images.pexels.com/photos/7567433/pexels-photo-7567433.jpeg",
+    heroImage: "/-ads.webp",
 
     longContent: {
       intro:
@@ -146,7 +146,7 @@ const dmServicesData = [
     slug: "facebook-ads",
     title: "Facebook Ads",
     description: "Targeted ad campaigns for local & global reach.",
-    heroImage: "https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg",
+    heroImage: "/facebook-ads.webp",
 
     longContent: {
       intro:

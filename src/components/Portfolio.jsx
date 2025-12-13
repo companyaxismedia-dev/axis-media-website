@@ -7,52 +7,52 @@ export default function Portfolio() {
   const techIcons = [
     {
       title: "HTML5",
-      img: "https://cdn-icons-png.flaticon.com/512/919/919827.png",
+      img: "/HTML.webp",
       desc: "SEO-friendly HTML structure for fast professional websites."
     },
     {
       title: "CSS3",
-      img: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_640.png",
+      img: "/CSS3.webp",
       desc: "Modern UI, animations, transitions & responsive layouts."
     },
     {
       title: "JavaScript",
-      img: "http://pluspng.com/img-png/logo-javascript-png--784.png",
+      img: "/JavaScript.webp",
       desc: "Interactive UI, dynamic features, API integration & automation."
     },
     {
       title: "Java",
-      img: "https://logos-world.net/wp-content/uploads/2022/07/Java-Logo.jpg",
+      img: "/Java.webp",
       desc: "Secure enterprise-level backend systems."
     },
     {
       title: "Python",
-      img: "https://www.clipartmax.com/png/middle/434-4343754_python-logo.png",
+      img: "/Python.webp",
       desc: "AI, ML, automation, backend APIs & dashboards."
     },
     {
       title: "C++",
-      img: "https://www.freeiconspng.com/uploads/c--logo-icon-0.png",
+      img: "/C++.webp",
       desc: "High performance computing & optimized algorithms."
     },
     {
       title: "MySQL",
-      img: "https://www.vhv.rs/dpng/d/543-5438423_mysql-logo-hd-png-download.png",
+      img: "/MySQL.webp",
       desc: "Secure relational database for professional apps."
     },
     {
       title: "MongoDB",
-      img: "https://vectorseek.com/wp-content/uploads/2023/10/Mongodb-Icon-Logo-Vector.svg-.png",
+      img: "/MongoDB.webp",
       desc: "Fast NoSQL DB used for modern dynamic web applications."
     },
     {
       title: ".NET",
-      img: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_640.png",
+      img: "/DOTNET.webp",
       desc: ".NET framework used for enterprise backends & APIs."
     },
     {
       title: "WordPress",
-      img: "https://static.vecteezy.com/system/resources/previews/020/336/054/original/wordpress-logo-wordpress-icon-transparent-png-free-vector.jpg",
+      img: "/WordPress.webp",
       desc: "CMS for dynamic websites, ecommerce & business portals."
     },
   ];

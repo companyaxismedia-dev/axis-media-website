@@ -69,7 +69,7 @@ export default function HomeBenefitsSection() {
           {/* CENTER IMAGE MOVED DOWN */}
           <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2">
             <img
-              src="https://www.jitterbit.com/wp-content/uploads/blog-feature-CRM-Integration-Explained.jpg"
+              src="/Benefits.webp"
               alt="Benefits"
               className="w-[420px] h-[420px] rounded-full object-cover object-[center_top] shadow-xl border-8 border-white"
             />

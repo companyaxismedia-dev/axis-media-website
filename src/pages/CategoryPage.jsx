@@ -3,6 +3,7 @@ import React from "react";
 import { useParams, NavLink } from "react-router-dom";
 import { IndustriesData } from "../data/IndustriesData";
 
+
 export default function CategoryPage() {
   const { category } = useParams();
   const cat = IndustriesData.find((c) => c.id === category);

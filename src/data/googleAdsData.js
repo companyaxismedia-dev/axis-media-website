@@ -3,7 +3,7 @@ const adsServices = [
   {
     slug: "google-search-ads",
     title: "Google Search Ads",
-    image: "https://images.pexels.com/photos/886743/pexels-photo-886743.jpeg",
+    image: "/google-search-ads.webp",
     longDescription:
       "Google Search Ads help you reach high-intent customers who are searching for your services right now.",
     features: [
@@ -16,7 +16,7 @@ const adsServices = [
   {
     slug: "google-display-ads",
     title: "Google Display Ads",
-    image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
+    image: "/GoogleDisplay.webp",
     longDescription:
       "Display Ads allow your business to show beautiful banners across millions of websites.",
     features: [
@@ -29,7 +29,7 @@ const adsServices = [
   {
     slug: "shopping-ads",
     title: "Shopping Ads",
-    image: "https://images.pexels.com/photos/3850834/pexels-photo-3850834.jpeg",
+    image: "/shopping-ads.webp",
     longDescription:
       "Show your products directly on Google with images, price & reviews.",
     features: [
@@ -42,7 +42,7 @@ const adsServices = [
   {
     slug: "youtube-ads",
     title: "YouTube Video Ads",
-    image: "https://images.pexels.com/photos/2608519/pexels-photo-2608519.jpeg",
+    image: "/youtube-ads.webp",
     longDescription:
       "YouTube Ads help you create powerful emotional brand impact through video.",
     features: [
@@ -55,7 +55,7 @@ const adsServices = [
   {
     slug: "remarketing-ads",
     title: "Remarketing Ads",
-    image: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg",
+    image: "/remarketing-ads.webp",
     longDescription:
       "Remarketing Ads bring back users who already visited your website.",
     features: [
@@ -68,7 +68,7 @@ const adsServices = [
   {
     slug: "performance-max",
     title: "Performance Max Campaigns",
-    image: "https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg",
+    image: "/Max Campaigns.webp",
     longDescription:
       "Performance Max uses AI to show ads across all Google platforms automatically.",
     features: [

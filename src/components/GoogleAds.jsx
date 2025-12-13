@@ -8,70 +8,73 @@ const adsServices = [
     slug: "google-search-ads",
     title: "Google Search Ads",
     description: "High-intent customers reach your website instantly.",
-    image: "https://thebusinessfame.com/wp-content/uploads/2023/09/5.24.22-google-ad-updates.png",
+    image: "/Google Search.webp",
   },
   {
     slug: "google-display-ads",
     title: "Google Display Ads",
     description: "Show visually rich banners across millions of websites.",
-    image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
+     image: "/google-display-ads.webp",
   },
   {
     slug: "shopping-ads",
     title: "Shopping Ads",
     description:
       "Boost sales by showing your product directly on Google Shopping.",
-    image: "https://images.pexels.com/photos/3850834/pexels-photo-3850834.jpeg",
+    image: "/Shopping Ads.webp",
+
+
   },
   {
     slug: "youtube-ads",
     title: "YouTube Video Ads",
     description: "High-engagement powerful storytelling video campaigns.",
-    image: "https://images.pexels.com/photos/2608519/pexels-photo-2608519.jpeg",
+    image: "/YouTube Ads.webp",
   },
   {
     slug: "remarketing-ads",
     title: "Remarketing Ads",
     description: "Reconnect with people already interested in your product.",
-    image: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg",
+    image: "/Remarketing Ads.webp",
   },
   {
     slug: "performance-max",
     title: "Performance Max",
     description: "AI-powered ads across all Google platforms.",
-    image: "https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg",
+    image: "/Performance Max.webp",
+   
   },
 ];
 
 const techIcons = [
   {
     title: "Google Search",
-    img: "https://cdn-icons-png.flaticon.com/512/281/281764.png",
+     img: "/Google Search icon.webp",
     desc: "Top-performing text-based ads appearing on Google search results.",
   },
   {
     title: "YouTube Ads",
-    img: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
+        img: "/YouTube Ads logo.webp",
     desc: "Video ads with high engagement and brand recall.",
   },
   {
     title: "Shopping Feed",
-    img: "https://cdn-icons-png.flaticon.com/512/2331/2331970.png",
+     img: "/Shopping Feed.webp",
     desc: "Product catalog optimized for maximum conversions.",
   },
   {
     title: "Google Display",
-    img: "https://cdn-icons-png.flaticon.com/512/1047/1047711.png",
+   img: "/Google Display.webp",
     desc: "Visual banner ads shown across millions of websites.",
   },
   {
     title: "Smart Campaigns",
-    img: "https://cdn-icons-png.flaticon.com/512/747/747376.png",
+   img: "/Smart Campaigns.webp",
     desc: "AI-powered automated campaign optimization.",
   },
   {
     title: "Analytics Tracking",
-    img: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png",
+  img: "/Analytics Tracking.webp",
     desc: "Track leads, conversions & ROI in real time.",
   },
 ];

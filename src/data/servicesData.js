@@ -1,13 +1,11 @@
-// src/data/servicesData.js
 export const servicesData = [
   {
     slug: "website-development",
     title: "Website Development",
     summary:
       "Modern, high-speed and mobile-friendly websites that elevate your brand’s credibility and convert visitors into customers.",
-    heroImage:
-      "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg",
-    colorClass: "bg-slate-800", // card background
+    heroImage: "/WebsiteDevelopment.webp",
+    colorClass: "bg-slate-800",
     accent: "text-sky-400",
     details:
       "We build fully responsive, SEO-friendly, fast websites tailored to your brand. Our development covers accessibility, performance optimization, progressive enhancement, and easy content updates. We provide full-stack solutions — from discovery and wireframes to UI design, development, testing and launch. Typical deliverables: responsive UI, CMS integration (if needed), analytics setup, on-page SEO, and 30 days of post-launch support.",
@@ -19,13 +17,13 @@ export const servicesData = [
       "CMS or headless integrations",
     ],
   },
+
   {
     slug: "ecommerce-website",
     title: "E-commerce Website",
     summary:
       "Secure, conversion-focused online stores with smooth checkout, payment gateways and product management.",
-    heroImage:
-      "https://images.pexels.com/photos/374074/pexels-photo-374074.jpeg",
+    heroImage: "/E-CommerceWebsite.webp",
     colorClass: "bg-slate-800",
     accent: "text-violet-400",
     details:
@@ -37,13 +35,13 @@ export const servicesData = [
       "Conversion-rate optimisation",
     ],
   },
+
   {
     slug: "social-media-marketing",
     title: "Social Media Marketing",
     summary:
       "High-impact social media strategies, content creation and paid campaigns to grow your audience and engagement.",
-    heroImage:
-      "https://images.pexels.com/photos/3184315/pexels-photo-3184315.jpeg",
+    heroImage: "/SocialMediaMarketing.webp",
     colorClass: "bg-slate-800",
     accent: "text-emerald-400",
     details:
@@ -55,13 +53,13 @@ export const servicesData = [
       "Community management",
     ],
   },
+
   {
     slug: "google-ads-management",
     title: "Google Ads Management",
     summary:
       "Targeted, ROI-driven Google Search & Display campaigns to drive leads and sales quickly.",
-    heroImage:
-      "https://images.pexels.com/photos/3184290/pexels-photo-3184290.jpeg",
+    heroImage: "/GoogleAdsManagement.webp",
     colorClass: "bg-slate-800",
     accent: "text-indigo-400",
     details:
@@ -73,12 +71,13 @@ export const servicesData = [
       "Remarketing & audience segmentation",
     ],
   },
+
   {
     slug: "seo-services",
     title: "SEO Services",
     summary:
       "Result-driven SEO to increase organic visibility, traffic and qualified leads for your business.",
-    heroImage: "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg",
+    heroImage: "/SeoServices.webp",
     colorClass: "bg-slate-800",
     accent: "text-indigo-300",
     details:
@@ -90,13 +89,13 @@ export const servicesData = [
       "Monthly reporting & growth plan",
     ],
   },
+
   {
     slug: "graphic-designing",
     title: "Graphic Designing",
     summary:
       "Branding, logo design, social creative and marketing assets with consistent visual identity.",
-    heroImage:
-      "https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg",
+    heroImage: "/GraphicsDesign.webp",
     colorClass: "bg-slate-800",
     accent: "text-pink-400",
     details:

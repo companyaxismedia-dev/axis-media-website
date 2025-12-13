@@ -15,7 +15,7 @@ export const IndustriesData = [
     colorClass: "text-emerald-600",
     icon: FaStore,
     heroImage:
-      "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
+      "/Retail.webp",
     longDesc:
       "Retail businesses need a strong local web presence, conversion-focused product pages and seamless checkout flows.",
     features: [
@@ -56,7 +56,7 @@ export const IndustriesData = [
     colorClass: "text-sky-600",
     icon: FaUtensils,
     heroImage:
-      "https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg",
+      "/Food-hospitality.webp",
     longDesc:
       "Restaurants, hotels and guest houses need booking-capable websites and powerful menu systems.",
     features: [
@@ -95,7 +95,7 @@ export const IndustriesData = [
     colorClass: "text-rose-600",
     icon: FaBuilding,
     heroImage:
-      "https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg",
+      "/real-estate.webp",
     longDesc:
       "Real estate websites need professional listings, lead capture and area-specific SEO.",
     features: [
@@ -134,7 +134,7 @@ export const IndustriesData = [
     colorClass: "text-purple-600",
     icon: FaIndustry,
     heroImage:
-      "https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg",
+      "/manufacturing.webp",
     longDesc:
       "Manufacturing needs B2B websites, catalogues & lead funnels.",
     features: [
@@ -171,7 +171,7 @@ export const IndustriesData = [
     colorClass: "text-orange-600",
     icon: FaHeartbeat,
     heroImage:
-      "https://images.pexels.com/photos/848618/pexels-photo-848618.jpeg",
+      "/health-fitness.webp",
     longDesc:
       "Gyms, clinics & wellness centres need booking, schedules & trust-building content.",
     features: [
@@ -206,7 +206,7 @@ export const IndustriesData = [
     colorClass: "text-pink-600",
     icon: FaEllipsisH,
     heroImage:
-      "https://images.pexels.com/photos/3184633/pexels-photo-3184633.jpeg",
+      "/NGO.webp",
     longDesc:
       "NGOs, photographers, creatives & niche services need strong storytelling websites.",
     features: [

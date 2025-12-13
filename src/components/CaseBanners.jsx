@@ -5,19 +5,19 @@ export default function CaseBanners() {
     {
       id: 1,
       title: "E-Commerce Growth Campaign",
-      img: "https://images.pexels.com/photos/5632403/pexels-photo-5632403.jpeg",
+      img: "/E-Commerce Growth Campaign.webp",
       desc: "We redesigned their eCommerce website, improved speed by 60% and increased conversions with targeted ad campaigns.",
     },
     {
       id: 2,
       title: "Brand Awareness & Social Media Boost",
-      img: "https://images.pexels.com/photos/3184493/pexels-photo-3184493.jpeg",
+      img: "/Brand Awareness & Social Media Boost.webp",
       desc: "A complete digital branding solution including content strategy, high-quality creatives and paid reach campaigns.",
     },
     {
       id: 3,
       title: "SEO Ranking & Lead Generation",
-      img: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
+      img: "/SEO Ranking & Lead Generation.webp",
       desc: "Achieved top Google search rankings for high-value keywords and generated steady monthly business leads.",
     }
   ];

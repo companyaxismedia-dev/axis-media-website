@@ -48,7 +48,7 @@ export default function GrowBusinessPage() {
         className="relative py-56 text-center bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1600')",
+            "url('/Section.webp')",
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>

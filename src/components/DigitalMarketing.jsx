@@ -67,9 +67,10 @@ export default function DigitalMarketing() {
           {/* RIGHT SIDE LARGE IMAGE */}
           <div className="flex justify-center">
             <img
-              src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+              src="/Digital Marketing Team.webp"
               alt="Digital Marketing Team"
-              className="rounded-3xl shadow-2xl w-full max-w-lg object-cover"
+              className="rounded-3xl shadow-2xl w-full h-[420px] lg:h-[520px] object-cover"
+
             />
           </div>
 
