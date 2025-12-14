@@ -136,14 +136,14 @@ export default function ServicesGrid() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-max lg:w-full pb-4">
 
             {[
-              { img: "/IBMImage.webp", logo: "/ibm.webp", text: "IBM rolled out a digital program for 4,000+ sales teams across 23 countries." },
-              { img: "/SAPImage.webp", logo: "/sap.webp", text: "SAP improved workflow efficiency by 52% through digital transformation." },
-              { img: "/VODAFONEImage.webp", logo: "/vodafone.webp", text: "Vodafone trained 4,000+ global marketers." },
-              { img: "/COCACOLAImage.webp", logo: "/cocacola.webp", text: "Coca-Cola achieved a 29% boost in marketing efficiency." },
-              { img: "/DIAGNOSISImage.webp", logo: "/diagnosis.webp", text: "Diagnosis improved productivity by 41%." },
-              { img: "/SONYImage.webp", logo: "/sony.webp", text: "Sony upgraded collaboration globally." },
-              { img: "/MERCKImage.webp", logo: "/merck.webp", text: "Merck improved global compliance by 47%." },
-              { img: "/StraumannImage.webp", logo: "/straumann.webp", text: "Straumann upskilled 8,000+ professionals." },
+              { img: "/IBMimage.webp", logo: "/ibm.webp", text: "IBM rolled out a digital program for 4,000+ sales teams across 23 countries." },
+              { img: "/SAPimage.webp", logo: "/sap.webp", text: "SAP improved workflow efficiency by 52% through digital transformation." },
+              { img: "/VODAFONEimage.webp", logo: "/vodafone.webp", text: "Vodafone trained 4,000+ global marketers." },
+              { img: "/COCACOLAimage.webp", logo: "/cocacola.webp", text: "Coca-Cola achieved a 29% boost in marketing efficiency." },
+              { img: "/DIAGNOSISimage.webp", logo: "/diagnosis.webp", text: "Diagnosis improved productivity by 41%." },
+              { img: "/SONYIMAGE.webp", logo: "/sony.webp", text: "Sony upgraded collaboration globally." },
+              { img: "/MERCKimage.webp", logo: "/merck.webp", text: "Merck improved global compliance by 47%." },
+              { img: "/Straumannimage.webp", logo: "/straumann.webp", text: "Straumann upskilled 8,000+ professionals." },
             ].map((c, i) => (
               <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden border min-w-[310px]">
                 <img src={c.img} className="w-full h-40 object-cover" />
