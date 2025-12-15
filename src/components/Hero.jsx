@@ -109,7 +109,7 @@ export default function Hero() {
           </NavLink>
 
           <NavLink
-            to="/services"
+            to="/packages"
             className="px-8 py-4 rounded-xl text-lg font-semibold
             border border-white/30 bg-white/10 backdrop-blur
             hover:bg-white hover:text-black transition"

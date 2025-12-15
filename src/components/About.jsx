@@ -6,42 +6,42 @@ const allAbout = [
   {
     title: "Google Ads",
     desc: "High-converting ad campaigns to reach your target audience.",
-    image: "https://images.pexels.com/photos/3184290/pexels-photo-3184290.jpeg",
+    image: "/GoogleAdsManagement.webp",
   },
   {
     title: "Digital Marketing",
     desc: "Complete online marketing solutions for business growth.",
-    image: "https://images.pexels.com/photos/3184315/pexels-photo-3184315.jpeg",
+    image: "/SociaMediaMarketing.webp",
   },
   {
     title: "Grow Your Business",
     desc: "Strategies to scale and expand your business online.",
-    image: "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg",
+    image: "/INDUSTRIES.jpeg",
   },
   {
     title: "Brand Advertising",
     desc: "Boost your brand reach through targeted campaigns.",
-    image: "https://images.pexels.com/photos/3184358/pexels-photo-3184358.jpeg",
+    image: "/Straumannimage.webp",
   },
   {
     title: "Web Development",
     desc: "Responsive websites that convert visitors into customers.",
-    image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg",
+    image: "/WebsiteDevelopment.webp",
   },
   {
     title: "Website Design",
     desc: "Modern UI/UX designs that keep users engaged.",
-    image: "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg",
+    image: "/IBMimage.webp",
   },
   {
     title: "Business Partnership",
     desc: "Partner with a team focused on your growth.",
-    image: "https://images.pexels.com/photos/3184434/pexels-photo-3184434.jpeg",
+    image: "/SONYIMAGE.webp",
   },
   {
     title: "Promote Your Business",
     desc: "Get more visibility, traffic, and leads online.",
-    image: "https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg",
+    image: "/IBMimage.webp",
   },
 ];
 

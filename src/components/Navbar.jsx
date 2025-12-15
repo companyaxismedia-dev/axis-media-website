@@ -90,7 +90,7 @@ export default function Navbar() {
                 <h3 className="font-bold text-blue-400 mb-3">Our Services</h3>
 
                 <ul className="space-y-2">
-                  <li><NavLink to="/website-development">Website Development</NavLink></li>
+                  <li><NavLink to="/portfolio">Website Development</NavLink></li>
                   <li><NavLink to="/services-grid">Services Grid</NavLink></li>
                   <li><NavLink to="/ecommerce">E-commerce Website</NavLink></li>
                   <li><NavLink to="/digital-marketing">Digital Marketing</NavLink></li>

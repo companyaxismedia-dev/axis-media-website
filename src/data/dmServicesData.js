@@ -3,7 +3,7 @@ const dmServicesData = [
     slug: "social-media-marketing",
     title: "Social Media Marketing",
     description: "Ads, content creation & powerful engagement strategy.",
-    heroImage: "/media-marketing.webp",
+    heroImage: "/social-media-marketing.webp",
 
     longContent: {
       intro:
@@ -102,7 +102,7 @@ const dmServicesData = [
     slug: "google-ads",
     title: "Google Ads",
     description: "Paid ads for leads, sales, and brand visibility.",
-    heroImage: "/-ads.webp",
+    heroImage: "/google-ads.webp",
 
     longContent: {
       intro:
@@ -131,7 +131,7 @@ const dmServicesData = [
     slug: "instagram-ads",
     title: "Instagram Ads",
     description: "Boost reach, engagement & conversions.",
-    heroImage: "/-ads.webp",
+    heroImage: "/instagram-ads.webp",
 
     longContent: {
       intro:

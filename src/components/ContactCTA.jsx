@@ -153,8 +153,9 @@ export default function ContactCTA() {
 
       {/* SOCIAL ICONS */}
       <div className="flex justify-center gap-6 text-3xl my-6">
-        <a href="#" className="hover:text-blue-300"><FaFacebook /></a>
-        <a href="#" className="hover:text-pink-300"><FaInstagram /></a>
+        <a href="https://www.facebook.com/profile.php?id=61584611262239" className="hover:text-blue-300"><FaFacebook /></a>
+        <a href="@axismedia123
+          " className="hover:text-pink-300"><FaInstagram /></a>
         <a href="#" className="hover:text-blue-500"><FaLinkedin /></a>
         <a href="#" className="hover:text-blue-300"><FaTwitter /></a>
       </div>
