@@ -5,21 +5,27 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 
 export default function ServicesGrid() {
   return (
-    <div className="py-16 bg-gradient-to-b from-[#EEF3FF] to-[#E8ECF5]">
+    <section
+      className="py-16 bg-gradient-to-b from-[#EEF3FF] to-[#E8ECF5]"
+      aria-labelledby="services-heading"
+    >
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* ⭐ HERO SECTION */}
+        {/* HERO */}
         <div className="grid md:grid-cols-2 gap-14 items-center mb-20">
+
           <div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-snug mb-4">
-              Professional Digital Services  
-              <span className="text-blue-600"> That Grow Your Business</span>
+            <h2
+              id="services-heading"
+              className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-snug mb-4"
+            >
+              Professional Digital Services That Grow Your Business
             </h2>
 
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              From websites and branding to SEO, social media and advertising —
-              we provide complete digital solutions that help businesses grow
-              faster with modern strategy and creativity.
+              Axis Media provides complete digital solutions including website
+              development, SEO, social media marketing, branding and online
+              advertising to help businesses grow faster.
             </p>
 
             <ul className="space-y-3 text-gray-900 text-lg">
@@ -39,51 +45,60 @@ export default function ServicesGrid() {
 
             <NavLink
               to="/contact"
-              className="inline-block mt-8 bg-blue-600 text-white py-3 px-8 rounded-xl font-semibold hover:bg-blue-700 transition"
+              className="inline-block mt-8 bg-blue-600 text-white py-3 px-8
+              rounded-xl font-semibold hover:bg-blue-700 transition"
             >
               Get Free Consultation
             </NavLink>
           </div>
 
+          {/* HERO IMAGE */}
           <div className="flex justify-center">
             <img
               src="/DigitalMarketingServices.webp"
-              
-               className="rounded-3xl shadow-2xl w-full max-w-xl md:max-w-2xl lg:max-w-4xl object-cover"
-               alt="Digital Marketing Services"
+              alt="Digital Marketing Services by Axis Media"
+              width="800"
+              height="520"
+              loading="eager"
+              className="rounded-3xl shadow-2xl w-full max-w-4xl object-cover"
             />
           </div>
         </div>
 
-        {/* ⭐ SECTION HEADING */}
+        {/* SECTION HEADING */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
+          <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900">
             Our Professional Digital Services
-          </h2>
+          </h3>
           <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
-            Professional digital solutions — websites, SEO, advertising and creative design.
+            Website development, SEO, advertising and creative design services
+            tailored for business growth.
           </p>
         </div>
 
-        {/* ⭐ SERVICES GRID */}
+        {/* SERVICES GRID */}
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {servicesData.map((s) => (
             <article
               key={s.slug}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden border hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden
+              border hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1"
             >
               <div className="h-44 overflow-hidden">
                 <img
                   src={s.heroImage}
-                  alt={s.title}
+                  alt={`${s.title} service by Axis Media`}
+                  width="420"
+                  height="260"
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">
                   {s.title}
-                </h3>
+                </h4>
                 <p className="text-gray-600 mb-4">{s.summary}</p>
 
                 <div className="flex items-center justify-between">
@@ -105,61 +120,82 @@ export default function ServicesGrid() {
           ))}
         </div>
 
-        {/* ⭐ TRUSTED BRANDS */}
+        {/* TRUSTED BRANDS */}
         <div className="mt-24 text-center">
           <h3 className="text-2xl font-bold mb-6 text-gray-800">
-            Our services are trusted by:
+            Trusted by Global Brands
           </h3>
 
           <div className="flex items-center justify-center gap-12 flex-wrap">
-            <img src="/ibm.webp" className="h-10" />
-            <img src="/sap.webp" className="h-10" />
-            <img src="/vodafone.webp" className="h-10" />
-            <img src="/cocacola.webp" className="h-10" />
-            <img src="/diagnosis.webp" className="h-10" />
-            <img src="/sony.webp" className="h-10" />
-            <img src="/merck.webp" className="h-10" />
-            <img src="/straumann.webp" className="h-10" />
+            {[
+              ["ibm", "IBM"],
+              ["sap", "SAP"],
+              ["vodafone", "Vodafone"],
+              ["cocacola", "Coca-Cola"],
+              ["diagnosis", "Diagnosis"],
+              ["sony", "Sony"],
+              ["merck", "Merck"],
+              ["straumann", "Straumann"],
+            ].map(([img, name]) => (
+              <img
+                key={name}
+                src={`/${img}.webp`}
+                alt={`${name} brand logo`}
+                loading="lazy"
+                width="120"
+                height="40"
+                className="h-10 object-contain"
+              />
+            ))}
           </div>
         </div>
 
-        {/* ⭐ CASE STUDY HEADING */}
+        {/* CASE STUDIES */}
         <div className="mt-24">
-          <h2 className="text-4xl font-extrabold text-center text-[#0A144A] leading-snug">
-            Helping 100's of organizations <br />
-            find solutions to their unique challenges
-          </h2>
+          <h3 className="text-4xl font-extrabold text-center text-[#0A144A] leading-snug">
+            Helping Organizations Solve Unique Digital Challenges
+          </h3>
         </div>
 
-        {/* ⭐ CASE STUDY GRID */}
         <div className="mt-14 overflow-x-auto lg:overflow-x-visible">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-max lg:w-full pb-4">
 
             {[
-              { img: "/IBMimage.webp", logo: "/ibm.webp", text: "IBM rolled out a digital program for 4,000+ sales teams across 23 countries." },
-              { img: "/SAPimage.webp", logo: "/sap.webp", text: "SAP improved workflow efficiency by 52% through digital transformation." },
+              { img: "/IBMimage.webp", logo: "/ibm.webp", text: "IBM rolled out digital programs across 23 countries." },
+              { img: "/SAPimage.webp", logo: "/sap.webp", text: "SAP improved workflow efficiency by 52%." },
               { img: "/VODAFONEimage.webp", logo: "/vodafone.webp", text: "Vodafone trained 4,000+ global marketers." },
-              { img: "/COCACOLAimage.webp", logo: "/cocacola.webp", text: "Coca-Cola achieved a 29% boost in marketing efficiency." },
-              { img: "/DIAGNOSISimage.webp", logo: "/diagnosis.webp", text: "Diagnosis improved productivity by 41%." },
-              { img: "/SONYIMAGE.webp", logo: "/sony.webp", text: "Sony upgraded collaboration globally." },
-              { img: "/MERCKimage.webp", logo: "/merck.webp", text: "Merck improved global compliance by 47%." },
-              { img: "/Straumannimage.webp", logo: "/straumann.webp", text: "Straumann upskilled 8,000+ professionals." },
+              { img: "/COCACOLAimage.webp", logo: "/cocacola.webp", text: "Coca-Cola boosted marketing efficiency by 29%." },
             ].map((c, i) => (
-              <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden border min-w-[310px]">
-                <img src={c.img} className="w-full h-40 object-cover" />
+              <article
+                key={i}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden border min-w-[310px]"
+              >
+                <img
+                  src={c.img}
+                  alt="Enterprise digital transformation case study"
+                  loading="lazy"
+                  width="320"
+                  height="200"
+                  className="w-full h-40 object-cover"
+                />
                 <div className="p-5">
-                  <img src={c.logo} className="h-7 mb-3" />
+                  <img
+                    src={c.logo}
+                    alt="Brand logo"
+                    loading="lazy"
+                    className="h-7 mb-3 object-contain"
+                  />
                   <p className="text-gray-700 text-[15px] leading-relaxed">
                     {c.text}
                   </p>
                 </div>
-              </div>
+              </article>
             ))}
 
           </div>
         </div>
 
       </div>
-    </div>
+    </section>
   );
 }

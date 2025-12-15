@@ -1,121 +1,165 @@
-// src/pages/HomePage.jsx
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
-
+/* COMPONENTS */
 import Hero from "../components/Hero";
 import ServicesGrid from "../components/ServicesGrid";
-import GoogleAds from "../components/GoogleAds";
-import DigitalMarketing from "../components/DigitalMarketing";
-import WebsiteDev from "../components/WebsiteDev";
-import Portfolio from "../components/Portfolio";
-import WhyChooseUs from "../components/WhyChooseUs";
-import Contact from "../components/ContactCTA";
-import Testimonials from "../components/Testimonials";
-import CaseBanners from "../components/CaseBanners";
-import FeaturesList from "../components/FeaturesList";
-import Packages from "../components/Packages";
-
-// ⭐ Your new sections
 import HomeBenefitsSection from "../components/HomeBenefitsSection";
 import CMSDevelopmentSection from "../components/CMSDevelopmentSection";
+import GoogleAds from "../components/GoogleAds";
+import Packages from "../components/Packages";
+import DigitalMarketing from "../components/DigitalMarketing";
+import FeaturesList from "../components/FeaturesList";
+import WebsiteDev from "../components/WebsiteDev";
+import CaseBanners from "../components/CaseBanners";
+import WhyChooseUs from "../components/WhyChooseUs";
+import Portfolio from "../components/Portfolio";
+import Contact from "../components/ContactCTA";
+import Testimonials from "../components/Testimonials";
 
 export default function HomePage() {
   return (
-    <section id="home" className="py-0">
-     
-      <Hero />
+    <>
+      {/* ================= SEO META ================= */}
+      <Helmet>
+        <title>
+          Axis Media | Digital Marketing, SEO, Google Ads & Website Development
+        </title>
 
-      {/* SERVICES */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <ServicesGrid />
-        </div>
-      </section>
+        <meta
+          name="description"
+          content="Axis Media is a leading digital marketing agency providing SEO, Google Ads, website development and complete business growth solutions."
+        />
 
-      {/* ⭐ HOME BENEFITS SECTION */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <HomeBenefitsSection />
-        </div>
-      </section>
+        <link rel="canonical" href="https://axismediadigital.com/" />
 
-      {/* ⭐ CMS DEVELOPMENT SECTION */}
-      <section className="py-16 bg-[#F3F7FF]">
-        <div className="container mx-auto px-6">
-          <CMSDevelopmentSection />
-        </div>
-      </section>
+        {/* FAQ SCHEMA */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Do you provide complete digital marketing services?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text":
+                    "Yes, Axis Media provides SEO, Google Ads, social media marketing and website development."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How fast can I get leads?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text":
+                    "Google Ads can generate leads within days, while SEO shows results in 30–60 days."
+                }
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
 
-      {/* GOOGLE ADS */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <GoogleAds />
-        </div>
-      </section>
+      {/* ================= PAGE CONTENT ================= */}
+      <main id="home">
 
-      {/* PACKAGES */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <Packages />
-        </div>
-      </section>
+        {/* HERO */}
+        <Hero />
 
-      {/* DIGITAL MARKETING */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <DigitalMarketing />
-        </div>
-      </section>
+        {/* SERVICES */}
+        <section className="py-16">
+          <div className="container mx-auto px-6">
+            <ServicesGrid />
+          </div>
+        </section>
 
-      {/* FEATURES */}
-      <section className="py-16">
-        <div className="container">
-          <FeaturesList />
-        </div>
-      </section>
+        {/* BENEFITS */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-6">
+            <HomeBenefitsSection />
+          </div>
+        </section>
 
-      {/* WEBSITE DEV */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <WebsiteDev />
-        </div>
-      </section>
+        {/* CMS DEVELOPMENT */}
+        <section className="py-16 bg-[#F3F7FF]">
+          <div className="container mx-auto px-6">
+            <CMSDevelopmentSection />
+          </div>
+        </section>
 
-      {/* CASE BANNERS */}
-      <section className="py-16 bg-white">
-        <div className="container">
-          <CaseBanners />
-        </div>
-      </section>
+        {/* GOOGLE ADS */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-6">
+            <GoogleAds />
+          </div>
+        </section>
 
-      {/* WHY CHOOSE US */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <WhyChooseUs />
-        </div>
-      </section>
+        {/* PACKAGES */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-6">
+            <Packages />
+          </div>
+        </section>
 
-      {/* PORTFOLIO */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <Portfolio />
-        </div>
-      </section>
+        {/* DIGITAL MARKETING */}
+        <section className="py-16">
+          <div className="container mx-auto px-6">
+            <DigitalMarketing />
+          </div>
+        </section>
 
-      {/* CONTACT */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <Contact />
-        </div>
-      </section>
+        {/* FEATURES */}
+        <section className="py-16">
+          <div className="container mx-auto px-6">
+            <FeaturesList />
+          </div>
+        </section>
 
-      {/* TESTIMONIALS */}
-      <section className="py-16 bg-white">
-        <div className="container">
-          <Testimonials />
-        </div>
-      </section>
+        {/* WEBSITE DEVELOPMENT */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-6">
+            <WebsiteDev />
+          </div>
+        </section>
 
-    </section>
+        {/* CASE STUDIES */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-6">
+            <CaseBanners />
+          </div>
+        </section>
+
+        {/* WHY CHOOSE US */}
+        <section className="py-16">
+          <div className="container mx-auto px-6">
+            <WhyChooseUs />
+          </div>
+        </section>
+
+        {/* PORTFOLIO */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-6">
+            <Portfolio />
+          </div>
+        </section>
+
+        {/* CONTACT */}
+        <section className="py-16">
+          <div className="container mx-auto px-6">
+            <Contact />
+          </div>
+        </section>
+
+        {/* TESTIMONIALS */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-6">
+            <Testimonials />
+          </div>
+        </section>
+
+      </main>
+    </>
   );
 }

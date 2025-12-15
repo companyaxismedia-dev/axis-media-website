@@ -8,7 +8,7 @@ const bgImages = [
   "/hero3.webp",
 ];
 
-/* 🔥 Typewriter Words (SEO Support Keywords) */
+/* 🔥 Typewriter Keywords (SEO Support) */
 const typingWords = [
   "SEO Services",
   "Google Ads",
@@ -17,7 +17,7 @@ const typingWords = [
 ];
 
 export default function Hero() {
-  /* Background slider state */
+  /* Background slider */
   const [currentBg, setCurrentBg] = useState(0);
 
   /* Typewriter states */
@@ -25,28 +25,27 @@ export default function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
 
-  /* 🔁 Background Image Slider */
+  /* 🔁 Background Image Slider (CLS SAFE) */
   useEffect(() => {
     const slider = setInterval(() => {
       setCurrentBg((prev) => (prev + 1) % bgImages.length);
-    }, 5000); // 5 sec
-
+    }, 5000);
     return () => clearInterval(slider);
   }, []);
 
-  /* ⌨️ Typewriting Effect (SEO SAFE) */
+  /* ⌨️ Typewriter Effect */
   useEffect(() => {
-    const currentWord = typingWords[wordIndex];
+    const word = typingWords[wordIndex];
 
     const typing = setTimeout(() => {
-      if (charIndex < currentWord.length) {
-        setText(currentWord.slice(0, charIndex + 1));
+      if (charIndex < word.length) {
+        setText(word.slice(0, charIndex + 1));
         setCharIndex(charIndex + 1);
       } else {
         setTimeout(() => {
           setCharIndex(0);
           setWordIndex((prev) => (prev + 1) % typingWords.length);
-        }, 1500);
+        }, 1200);
       }
     }, 80);
 
@@ -54,20 +53,17 @@ export default function Hero() {
   }, [charIndex, wordIndex]);
 
   return (
-    <header className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[85px]">
-
-      {/* 🔥 BACKGROUND IMAGE SLIDER */}
-      {bgImages.map((img, index) => (
-        <img
-          key={img}
-          src={img}
-          alt="Axis Media Digital Marketing Background"
-          loading={index === 0 ? "eager" : "lazy"}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            index === currentBg ? "opacity-100" : "opacity-0"
-          }`}
-        />
-      ))}
+    <header className="relative h-[100vh] min-h-[700px] flex items-center justify-center overflow-hidden pt-[85px]">
+      
+      {/* ✅ SINGLE BACKGROUND IMAGE (NO CLS) */}
+      <img
+        src={bgImages[currentBg]}
+        alt="Axis Media Digital Marketing Agency"
+        width="1920"
+        height="1080"
+        fetchpriority="high"
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+      />
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/65"></div>
@@ -75,7 +71,7 @@ export default function Hero() {
       {/* CONTENT */}
       <div className="relative z-10 max-w-5xl mx-auto text-center text-white px-6">
 
-        {/* ✅ SEO MAIN H1 (STATIC) */}
+        {/* ✅ ONE H1 (SEO PERFECT) */}
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
           Grow Your Business With{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400">
@@ -83,17 +79,21 @@ export default function Hero() {
           </span>
         </h1>
 
-        {/* ✅ TYPEWRITER (NOT H1 → SEO SAFE) */}
-        <p className="mt-4 text-2xl md:text-3xl font-semibold min-h-[40px]
-          text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400">
+        {/* TYPEWRITER (NOT H1 → SEO SAFE) */}
+        <p
+          className="mt-4 text-2xl md:text-3xl font-semibold min-h-[44px]
+          text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400"
+        >
           {text}
           <span className="animate-pulse">|</span>
         </p>
 
-        {/* ✅ LARGE DESCRIPTION (RANKING + TRUST) */}
+        {/* DESCRIPTION */}
         <p className="mt-6 text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
           Axis Media is a result-driven digital marketing agency helping businesses grow with
-          <span className="text-white font-semibold"> SEO, Google Ads, Website Development </span>
+          <span className="text-white font-semibold">
+            {" "}SEO, Google Ads, Website Development{" "}
+          </span>
           and performance-focused online marketing strategies that generate real leads and revenue.
         </p>
 

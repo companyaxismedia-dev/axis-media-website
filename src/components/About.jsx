@@ -1,104 +1,109 @@
-// src/components/About.jsx
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 
 const allAbout = [
   {
-    title: "Google Ads",
-    desc: "High-converting ad campaigns to reach your target audience.",
+    title: "Google Ads Management",
+    desc: "High-converting Google Ads campaigns that drive qualified traffic and increase ROI.",
     image: "/GoogleAdsManagement.webp",
   },
   {
-    title: "Digital Marketing",
-    desc: "Complete online marketing solutions for business growth.",
+    title: "Digital Marketing Services",
+    desc: "Complete digital marketing solutions including SEO, SMM, and performance marketing.",
     image: "/SociaMediaMarketing.webp",
   },
   {
-    title: "Grow Your Business",
-    desc: "Strategies to scale and expand your business online.",
+    title: "Business Growth Strategy",
+    desc: "Data-driven strategies to scale your business and maximize online visibility.",
     image: "/INDUSTRIES.jpeg",
   },
   {
     title: "Brand Advertising",
-    desc: "Boost your brand reach through targeted campaigns.",
+    desc: "Creative branding and advertising solutions to build strong brand authority.",
     image: "/Straumannimage.webp",
   },
   {
-    title: "Web Development",
-    desc: "Responsive websites that convert visitors into customers.",
+    title: "Website Development",
+    desc: "Fast, responsive, and SEO-optimized websites that convert visitors into customers.",
     image: "/WebsiteDevelopment.webp",
   },
   {
-    title: "Website Design",
-    desc: "Modern UI/UX designs that keep users engaged.",
+    title: "UI/UX Website Design",
+    desc: "Modern UI/UX designs focused on user experience and engagement.",
     image: "/IBMimage.webp",
   },
   {
     title: "Business Partnership",
-    desc: "Partner with a team focused on your growth.",
+    desc: "Long-term partnerships focused on sustainable business growth.",
     image: "/SONYIMAGE.webp",
   },
   {
-    title: "Promote Your Business",
-    desc: "Get more visibility, traffic, and leads online.",
+    title: "Online Business Promotion",
+    desc: "Increase traffic, leads, and conversions with result-driven promotion strategies.",
     image: "/IBMimage.webp",
   },
 ];
 
 export default function About() {
   return (
-    <section className="
-      relative py-24 text-white overflow-hidden
-      bg-[#0A1D56]
-    ">
-
+    <section
+      className="relative py-24 text-white overflow-hidden bg-[#0A1D56]"
+      aria-labelledby="about-heading"
+    >
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
-        {/* STATIC HEADING (NO TYPEWRITER) */}
-        <h1 className="text-center text-4xl md:text-5xl font-extrabold mb-12 
-          bg-gradient-to-r from-blue-200 via-white to-blue-100 text-transparent bg-clip-text">
+        {/* ✅ H2 (NOT H1) */}
+        <h2
+          id="about-heading"
+          className="text-center text-4xl md:text-5xl font-extrabold mb-12
+          bg-gradient-to-r from-blue-200 via-white to-blue-100 text-transparent bg-clip-text"
+        >
           We Help Businesses Grow Smarter 🚀
-        </h1>
+        </h2>
 
-        {/* STATIC CARDS (NO REPEATING LOOP) */}
+        {/* SERVICES GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {allAbout.map((card, i) => (
-            <div
+            <article
               key={i}
-              className="
-                bg-white/10 backdrop-blur-lg border border-white/20
-                rounded-2xl p-6 shadow-xl text-center transition-all duration-700
-                hover:scale-[1.05]
-              "
+              className="bg-white/10 backdrop-blur-lg border border-white/20
+              rounded-2xl p-6 shadow-xl text-center transition-all duration-500
+              hover:scale-[1.05]"
             >
               <div className="h-36 rounded-xl overflow-hidden mb-4">
                 <img
                   src={card.image}
-                  className="w-full h-full object-cover hover:scale-125 transition duration-700"
-                  alt={card.title}
+                  alt={`${card.title} - Axis Media Digital Marketing`}
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition duration-700 hover:scale-125"
                 />
               </div>
 
               <h3 className="text-xl font-bold mb-2">{card.title}</h3>
-              <p className="text-white/90 text-sm">{card.desc}</p>
-            </div>
+              <p className="text-white/90 text-sm leading-relaxed">
+                {card.desc}
+              </p>
+            </article>
           ))}
         </div>
 
-        {/* EXTRA SECTIONS */}
+        {/* WHY CHOOSE US */}
         <div className="mt-24 max-w-5xl mx-auto">
 
-          <SectionTitle title="Why Businesses Choose Us" />
+          <SectionTitle title="Why Businesses Choose Axis Media" />
 
           <ul className="grid sm:grid-cols-2 gap-6 text-white/90 text-lg">
             {[
-              "5+ Years Experience in Digital Services",
-              "High Quality & Professional Work",
-              "Affordable Packages & Premium Support",
-              "Proven Results & Growth Strategies",
+              "5+ Years Experience in Digital Marketing Services",
+              "SEO & Performance Driven Growth Strategies",
+              "Affordable Pricing with Premium Support",
+              "Proven Results with Long-Term Business Growth",
             ].map((t, i) => (
               <li key={i} className="flex items-center gap-3">
-                <FaCheckCircle className="text-green-300" /> {t}
+                <FaCheckCircle className="text-green-300" />
+                <span>{t}</span>
               </li>
             ))}
           </ul>
@@ -106,12 +111,12 @@ export default function About() {
           <SectionTitle title="Our Mission & Vision" />
 
           <p className="text-center text-white/90 text-lg leading-relaxed max-w-3xl mx-auto">
-            Our mission is to empower businesses with digital solutions that generate real results.
-            We aim to be your growth partner, helping you build a strong online presence and achieve long-term success.
+            Our mission is to help businesses grow online through SEO, paid advertising,
+            and conversion-focused digital marketing strategies. We aim to become a trusted
+            growth partner for brands across India and beyond.
           </p>
 
         </div>
-
       </div>
     </section>
   );
@@ -119,8 +124,8 @@ export default function About() {
 
 function SectionTitle({ title }) {
   return (
-    <h2 className="text-3xl font-bold text-center text-blue-100 mt-20 mb-6">
+    <h3 className="text-3xl font-bold text-center text-blue-100 mt-20 mb-6">
       {title}
-    </h2>
+    </h3>
   );
 }

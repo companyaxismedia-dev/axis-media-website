@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import {
   FaRocket,
   FaBullhorn,
@@ -43,25 +44,86 @@ export default function GrowBusinessPage() {
   return (
     <div className="text-white bg-gradient-to-b from-[#052b23] via-[#063a30] to-[#084d3f]">
 
-      {/* HERO SECTION */}
+      {/* ================= SEO ================= */}
+      <Helmet>
+        <title>Grow Your Business | Digital Marketing, SEO & Ads – Axis Media</title>
+        <meta
+          name="description"
+          content="Grow your business with SEO, Google Ads, social media marketing and high-converting websites. Axis Media helps brands scale faster."
+        />
+        <link rel="canonical" href="https://axismediadigital.com/grow-business" />
+
+        {/* FAQ Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How can digital marketing grow my business?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Digital marketing increases online visibility, generates quality leads and improves sales using SEO, Google Ads and social media."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does SEO take to show results?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SEO typically shows noticeable ranking improvements within 2–3 months depending on competition."
+                }
+              }
+            ]
+          })}
+        </script>
+
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://axismediadigital.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Grow Business",
+                "item": "https://axismediadigital.com/grow-business"
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
+
+      {/* ================= HERO ================= */}
       <section
         className="relative py-56 text-center bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('/Section.webp')",
-        }}
+        style={{ backgroundImage: "url('/Section.webp')" }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
 
-        <div className="relative z-10">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-xl">
-            {displayText}
-            <span className="animate-pulse border-r-2 ml-1"></span>
+        <div className="relative z-10 px-6">
+          {/* SEO SAFE H1 */}
+          <h1 className="sr-only">
+            Grow Your Business With Digital Marketing, SEO & Google Ads
           </h1>
 
-          <p className="max-w-3xl mx-auto text-gray-200 text-lg mt-6 font-light drop-shadow-md">
-            We help businesses grow through websites, SEO, Google Ads, branding,
-            automation & complete digital marketing solutions.
+          {/* Visible Animated Text */}
+          <h2 className="text-4xl md:text-5xl font-extrabold drop-shadow-xl">
+            {displayText}
+            <span className="animate-pulse border-r-2 ml-1"></span>
+          </h2>
+
+          <p className="max-w-3xl mx-auto text-gray-200 text-lg mt-6 font-light">
+            We help businesses grow using websites, SEO, Google Ads, branding &
+            complete digital marketing solutions.
           </p>
 
           <a
@@ -73,20 +135,19 @@ export default function GrowBusinessPage() {
         </div>
       </section>
 
-      {/* FEATURE CARDS */}
+      {/* ================= FEATURE CARDS ================= */}
       <section className="py-24">
         <FeatureCards />
       </section>
 
-      {/* WHY GROW BUSINESS */}
+      {/* ================= WHY GROW ================= */}
       <section className="py-24 px-6 max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-6 text-white">
+        <h2 className="text-4xl font-bold mb-6">
           Why Growing Your Business Matters
         </h2>
 
-        <p className="text-gray-200 max-w-3xl mx-auto text-lg mb-14 font-light">
-          Visibility, trust, engagement — these are the pillars of business success.
-          Our strategies help you attract the right audience & convert them into paying customers.
+        <p className="text-gray-200 max-w-3xl mx-auto text-lg mb-14">
+          Visibility, trust and engagement are the pillars of long-term success.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -102,18 +163,18 @@ export default function GrowBusinessPage() {
               key={i}
               className="bg-white/10 p-8 rounded-xl border border-white/10 shadow-xl backdrop-blur-md"
             >
-              <div className="text-5xl text-green-300 mb-4 mx-auto drop-shadow-lg">
+              <div className="text-5xl text-green-300 mb-4">
                 {item.icon}
               </div>
-              <h3 className="font-bold text-xl text-white">{item.title}</h3>
+              <h3 className="font-bold text-xl">{item.title}</h3>
             </div>
           ))}
         </div>
       </section>
 
-      {/* SERVICES GRID */}
-      <section className="py-24 bg-[#07352c] bg-opacity-90 shadow-inner">
-        <h2 className="text-4xl font-bold text-center mb-12 text-white">
+      {/* ================= SERVICES ================= */}
+      <section className="py-24 bg-[#07352c]">
+        <h2 className="text-4xl font-bold text-center mb-12">
           Services That Help Your Business Grow Faster
         </h2>
 
@@ -131,61 +192,53 @@ export default function GrowBusinessPage() {
           ].map((service, i) => (
             <div
               key={i}
-              className="p-6 bg-white/10 rounded-xl border border-white/10 shadow-lg backdrop-blur-md"
+              className="p-6 bg-white/10 rounded-xl border border-white/10 shadow-lg"
             >
-              <FaCheckCircle className="text-green-300 text-3xl mb-3 drop-shadow-lg" />
-              <h3 className="text-xl text-white font-semibold">{service}</h3>
+              <FaCheckCircle className="text-green-300 text-3xl mb-3" />
+              <h3 className="text-xl font-semibold">{service}</h3>
             </div>
           ))}
         </div>
       </section>
 
-      {/* OUR PROCESS */}
+      {/* ================= PROCESS ================= */}
       <section className="py-24 px-6 max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-14 text-white">
+        <h2 className="text-4xl font-bold text-center mb-14">
           How We Grow Your Business
         </h2>
 
         <div className="space-y-10">
           {[
-            {
-              step: "1. Strategy & Market Research",
-              text: "We analyze your industry & audience to build a winning plan.",
-            },
-            {
-              step: "2. Branding & Positioning",
-              text: "We create a professional brand identity that stands out.",
-            },
-            {
-              step: "3. Advertising & SEO",
-              text: "We run PPC Ads + SEO for maximum visibility & customers.",
-            },
-            {
-              step: "4. Optimization & Scaling",
-              text: "We track data & scale revenue using performance analytics.",
-            },
-          ].map((item, i) => (
+            ["Strategy & Market Research", "Industry & audience analysis"],
+            ["Branding & Positioning", "Professional brand identity"],
+            ["Advertising & SEO", "PPC + organic growth"],
+            ["Optimization & Scaling", "Data-driven scaling"],
+          ].map((step, i) => (
             <div
               key={i}
-              className="bg-white/10 p-8 rounded-lg border border-white/10 shadow-xl backdrop-blur-md"
+              className="bg-white/10 p-8 rounded-lg border border-white/10 shadow-xl"
             >
-              <h3 className="text-2xl font-bold text-white mb-2">{item.step}</h3>
-              <p className="text-gray-200 text-lg">{item.text}</p>
+              <h3 className="text-2xl font-bold mb-2">
+                {i + 1}. {step[0]}
+              </h3>
+              <p className="text-gray-200 text-lg">{step[1]}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 text-center bg-green-700 shadow-lg">
-        <h2 className="text-4xl font-bold mb-4">Ready to Grow Your Business?</h2>
+      {/* ================= CTA ================= */}
+      <section className="py-24 text-center bg-green-700">
+        <h2 className="text-4xl font-bold mb-4">
+          Ready to Grow Your Business?
+        </h2>
         <p className="text-lg text-gray-200 mb-6">
-          Get a free strategy session with our marketing experts.
+          Get a free strategy session with our experts.
         </p>
 
         <a
           href="/contact"
-          className="bg-white text-green-700 font-bold px-10 py-3 rounded-xl shadow-xl hover:bg-gray-200"
+          className="bg-white text-green-700 font-bold px-10 py-3 rounded-xl shadow-xl"
         >
           Get Free Consultation →
         </a>
@@ -194,40 +247,23 @@ export default function GrowBusinessPage() {
   );
 }
 
-/* FEATURE CARDS */
+/* ================= FEATURE CARDS ================= */
 function FeatureCards() {
   return (
     <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10 px-6">
-      <Card
-        icon={<FaRocket className="text-blue-300 text-4xl mx-auto drop-shadow-lg" />}
-        title="High-Converting Websites"
-        text="Custom-built websites designed to generate real customers."
-      />
-      <Card
-        icon={<FaChartLine className="text-green-300 text-4xl mx-auto drop-shadow-lg" />}
-        title="SEO Ranking"
-        text="Rank on Google with advanced SEO optimization."
-      />
-      <Card
-        icon={<FaBullhorn className="text-pink-300 text-4xl mx-auto drop-shadow-lg" />}
-        title="Digital Advertising"
-        text="Google & Meta Ads for instant, high-quality leads."
-      />
-      <Card
-        icon={<FaUsers className="text-yellow-300 text-4xl mx-auto drop-shadow-lg" />}
-        title="Brand Identity"
-        text="Professional branding that builds customer trust."
-      />
+      <Card icon={<FaRocket />} title="High-Converting Websites" />
+      <Card icon={<FaChartLine />} title="SEO Ranking" />
+      <Card icon={<FaBullhorn />} title="Digital Advertising" />
+      <Card icon={<FaUsers />} title="Brand Identity" />
     </div>
   );
 }
 
-function Card({ icon, title, text }) {
+function Card({ icon, title }) {
   return (
-    <div className="bg-white/10 p-8 rounded-xl shadow-xl backdrop-blur-md text-center border border-white/10">
-      {icon}
-      <h3 className="text-xl text-white font-bold mt-4">{title}</h3>
-      <p className="text-gray-200 mt-2">{text}</p>
+    <div className="bg-white/10 p-8 rounded-xl shadow-xl text-center border border-white/10">
+      <div className="text-4xl text-green-300 mb-4">{icon}</div>
+      <h3 className="text-xl font-bold">{title}</h3>
     </div>
   );
 }

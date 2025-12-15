@@ -1,248 +1,250 @@
 // src/data/portfolioData.js
+
 const portfolioItems = [
   {
     slug: "puja-portfolio",
     title: "Puja Portfolio Website",
-    image:
-      "/Portfolio.webp",
+    image: "/Portfolio.webp",
     shortDesc:
-      "A clean personal portfolio built to showcase skills, projects, and professional experience.",
+      "A clean and professional personal portfolio website to showcase skills, projects and experience.",
     liveLink: "https://puja-portfolio-ten.vercel.app/",
     repoLink: "",
 
-    // full details (A→Z)
     details:
-      "A modern portfolio site built for individuals and freelancers. Includes project gallery, contact form, resume download, and blog section. Focus on fast load, accessibility and SEO.",
+      "A modern, SEO-optimized personal portfolio built for freelancers and professionals. The website focuses on fast loading, clean UI, accessibility and mobile-first design.",
     features: [
-      "Responsive layout and mobile-first design",
-      "Project case studies with gallery & lightbox",
-      "Contact form with validation and email integration",
-      "SEO meta & structured data",
-      "Image optimization and lazy loading",
-      "Smooth animations and accessibility improvements",
+      "Responsive & mobile-first design",
+      "SEO optimized pages",
+      "Project showcase with clean layout",
+      "Contact form with validation",
+      "Image optimization & lazy loading",
+      "Fast performance & smooth animations",
     ],
     tech: {
-      frontend: ["React", "Tailwind CSS", "Swiper (carousel)", "Framer Motion"],
-      backend: ["Node.js (optional contact API)", "Express"],
-      database: ["None (static) or Firebase for forms"],
-      deployment: ["Vercel / Netlify"],
-      tools: ["Git, npm, Photoshop, Figma"],
+      frontend: ["React", "Tailwind CSS"],
+      backend: ["Optional Node.js for contact form"],
+      database: ["Not required"],
+      deployment: ["Vercel"],
+      tools: ["Git", "Figma"],
     },
-    auth: "No login required (public site). Optional admin login for CMS if using headless CMS.",
+    auth: "No authentication required (public portfolio website).",
   },
 
   {
     slug: "foodify-ecommerce",
     title: "Foodify E-Commerce Website",
-    image:
-      "/Food-Delivery-Website.webp",
+    image: "/Food-Delivery-Website.webp",
     shortDesc:
-      "Full e-commerce store focused on food ordering, product variants and smooth checkout flows.",
+      "An e-commerce food ordering platform with cart, checkout and payment integration.",
     liveLink: "https://e-commerce-foodify-website.vercel.app/",
     repoLink: "",
+
     details:
-      "Food ordering platform supporting categories, product variants, cart, checkout with payment integration, and admin panel for menu management.",
+      "A complete food ordering e-commerce platform designed for restaurants and food startups. Includes product listings, cart, checkout and admin features.",
     features: [
-      "Product catalog with categories and filtering",
-      "Cart + coupon system",
-      "Checkout with Stripe/PayPal integration",
-      "Order tracking & admin dashboard",
-      "Location-based delivery fees and area restriction",
+      "Product catalog with categories",
+      "Add to cart & checkout flow",
+      "Online payment integration",
+      "Admin dashboard (optional)",
+      "Mobile-optimized UI",
     ],
     tech: {
-      frontend: ["React", "Next.js (optional SSR)", "Tailwind CSS"],
-      backend: ["Node.js", "Express", "Stripe for payments"],
-      database: ["MongoDB (orders, users, products)"],
-      deployment: ["Vercel for frontend, Render/Heroku for API"],
-      tools: ["Postman, Sentry, Docker (optional)"],
+      frontend: ["React", "Tailwind CSS"],
+      backend: ["Node.js", "Express"],
+      database: ["MongoDB"],
+      deployment: ["Vercel"],
+      tools: ["Postman", "Git"],
     },
-    auth: "User accounts with registration, login, password reset; vendor/admin separate roles.",
+    auth: "User login & admin role supported.",
   },
 
   {
     slug: "online-food-ordering",
     title: "Online Food Ordering Platform",
-    image:
-      "/Food.webp",
+    image: "/Food.webp",
     shortDesc:
-      "A smooth ordering platform with city-wise search, cuisine filters, and optimized UX for mobile ordering.",
+      "City-based food ordering platform with restaurants, filters and smooth UX.",
     liveLink: "",
     repoLink: "",
+
     details:
-      "Scalable food-ordering site with merchant onboarding, dynamic menus and push notifications for orders.",
+      "A scalable food ordering platform supporting multiple vendors, city-wise search and optimized mobile experience.",
     features: [
-      "Merchant dashboard",
-      "Real-time order notifications",
-      "Search by city, cuisine, and popularity",
-      "Customer ratings and reviews",
+      "Restaurant listings",
+      "City & cuisine filters",
+      "Order tracking",
+      "Mobile-first UI",
     ],
     tech: {
-      frontend: ["React", "Redux", "Tailwind"],
-      backend: ["Node.js", "Socket.io for real-time updates"],
-      database: ["PostgreSQL or MongoDB"],
-      deployment: ["AWS / DigitalOcean"],
-      tools: ["Nginx, PM2, GitHub Actions"],
+      frontend: ["React"],
+      backend: ["Node.js"],
+      database: ["MongoDB"],
+      deployment: ["Cloud hosting"],
+      tools: ["Git", "Nginx"],
     },
-    auth:
-      "Customer sign-up / sign-in, merchant sign-up with verification, admin panel for approvals.",
+    auth: "Customer & vendor login system.",
   },
 
-  // add 6 more items (total 9)
   {
     slug: "corporate-website",
-    title: "Corporate Website",
-    image:
-      "/portfolio-website.webp",
+    title: "Corporate Business Website",
+    image: "/portfolio-website.webp",
     shortDesc:
-      "Professional corporate website built for brand presence, lead forms, and case studies.",
+      "Professional corporate website for brand presence and lead generation.",
     liveLink: "",
     repoLink: "",
+
     details:
-      "Multi-page corporate site with service pages, case studies, careers page, and an optimized contact funnel.",
+      "A clean and modern corporate website built to establish trust, showcase services and generate business leads.",
     features: [
-      "Service pages & case studies",
-      "Lead capture forms and CRM integration",
-      "Careers page with application form",
+      "Service pages",
+      "Lead generation forms",
+      "SEO-friendly structure",
+      "Fast page load",
     ],
     tech: {
       frontend: ["React", "Tailwind CSS"],
-      backend: ["Optional Node/Serverless functions for forms"],
-      database: ["Airtable or Google Sheets for leads"],
-      deployment: ["Vercel / Netlify"],
-      tools: ["Figma, Google Analytics"],
+      backend: ["Optional serverless functions"],
+      database: ["Google Sheets / CRM"],
+      deployment: ["Vercel"],
+      tools: ["Google Analytics"],
     },
-    auth: "Public site with admin CMS for content updates (optional).",
+    auth: "Public business website.",
   },
 
   {
     slug: "saas-dashboard",
-    title: "SaaS Dashboard (Admin)",
-    image:
-      "/saas-dashboard.webp",
+    title: "SaaS Admin Dashboard",
+    image: "/saas-dashboard.webp",
     shortDesc:
-      "Admin dashboard for SaaS product with analytics, user management, and integrations.",
+      "Admin dashboard with analytics, user management and role-based access.",
     liveLink: "",
     repoLink: "",
+
     details:
-      "Feature-rich admin dashboard including charts, role-based access, multi-tenant support and data exports.",
+      "A feature-rich SaaS dashboard designed for managing users, analytics and subscriptions.",
     features: [
-      "Interactive charts and reports",
-      "Role-based access control",
-      "User & subscription management",
+      "Charts & analytics",
+      "Role-based access",
+      "User management",
+      "Secure admin panel",
     ],
     tech: {
-      frontend: ["React", "Recharts / Chart.js"],
-      backend: ["Node.js", "Express", "Stripe Billing"],
+      frontend: ["React", "Chart.js"],
+      backend: ["Node.js", "Express"],
       database: ["PostgreSQL"],
-      deployment: ["AWS / Heroku"],
-      tools: ["Sentry, Prometheus, Docker"],
+      deployment: ["AWS"],
+      tools: ["Docker", "Git"],
     },
-    auth: "Full auth + 2FA for admins, OAuth for users.",
+    auth: "Admin & user authentication with roles.",
   },
 
   {
     slug: "blog-magazine",
     title: "Blog & Magazine Platform",
-    image:
-      "/blog-magazine.webp",
+    image: "/blog-magazine.webp",
     shortDesc:
-      "Content platform with articles, tags, authors and subscription paywall.",
+      "SEO-focused blog and magazine website with articles and categories.",
     liveLink: "",
     repoLink: "",
+
     details:
-      "SEO-focused blog platform supporting rich content, AMP pages, author bios, and subscriptions.",
+      "A content-driven platform built for publishing blogs, articles and magazines with strong SEO foundations.",
     features: [
-      "SEO optimizations, RSS feed",
-      "Subscription/paywall support",
-      "Rich text editor for authors",
+      "SEO optimized articles",
+      "Categories & tags",
+      "Fast loading pages",
+      "Responsive layout",
     ],
     tech: {
-      frontend: ["Next.js (for SSG/SSR)", "Tailwind CSS"],
-      backend: ["Headless CMS (Strapi/Contentful)"],
-      database: ["MongoDB or Postgres"],
-      deployment: ["Vercel / DigitalOcean"],
-      tools: ["Algolia for search"],
+      frontend: ["Next.js", "Tailwind CSS"],
+      backend: ["Headless CMS"],
+      database: ["MongoDB"],
+      deployment: ["Vercel"],
+      tools: ["Google Search Console"],
     },
-    auth:
-      "Author login, editor roles, paid subscriber accounts with Stripe integration.",
+    auth: "Author & editor login supported.",
   },
 
   {
     slug: "retail-pos",
-    title: "Retail POS & Inventory",
-    image:
-      "/retail-pos.webp",
+    title: "Retail POS & Inventory System",
+    image: "/retail-pos.webp",
     shortDesc:
-      "Point-of-sale + inventory manager for retail businesses with barcode support.",
+      "Point of Sale system with inventory management for retail stores.",
     liveLink: "",
     repoLink: "",
+
     details:
-      "POS system with offline-first support, invoice generation, and inventory sync.",
+      "A retail POS system for billing, inventory tracking and sales reporting.",
     features: [
-      "Barcode scan + quick checkout",
-      "Inventory alerts and reports",
+      "Barcode billing",
+      "Inventory management",
       "Sales analytics",
+      "Offline support",
     ],
     tech: {
-      frontend: ["React", "IndexedDB for offline"],
-      backend: ["Node.js", "Socket.io"],
+      frontend: ["React"],
+      backend: ["Node.js"],
       database: ["MongoDB"],
-      deployment: ["AWS / Azure"],
-      tools: ["Docker, Redis"],
+      deployment: ["Cloud server"],
+      tools: ["Docker"],
     },
-    auth: "Role-based login for staff and managers.",
+    auth: "Staff & admin login supported.",
   },
 
   {
     slug: "education-platform",
     title: "Education / LMS Platform",
-    image:
-      "/education-platform.webp",
+    image: "/education-platform.webp",
     shortDesc:
-      "Learning management system with courses, quizzes, certificates and dashboard.",
+      "Learning management system with courses, quizzes and certificates.",
     liveLink: "",
     repoLink: "",
+
     details:
-      "Course builder, student dashboard, progress tracking, and payments for courses.",
+      "A complete LMS platform for online courses, student dashboards and progress tracking.",
     features: [
-      "Course video hosting & streaming",
+      "Course management",
+      "Student dashboard",
       "Quizzes & certificates",
-      "Instructor dashboard",
+      "Payment integration",
     ],
     tech: {
-      frontend: ["React", "Video.js"],
-      backend: ["Node.js", "Stripe"],
-      database: ["Postgres"],
-      deployment: ["AWS / CloudFront for video"],
-      tools: ["Moodle (optional), Zoom integration"],
+      frontend: ["React"],
+      backend: ["Node.js"],
+      database: ["PostgreSQL"],
+      deployment: ["AWS"],
+      tools: ["Video hosting"],
     },
-    auth: "Student and instructor accounts with role-based features.",
+    auth: "Student & instructor login system.",
   },
 
   {
     slug: "landing-conversion",
-    title: "Conversion Landing Pages",
-    image:
-      "/landing-conversion.webp",
+    title: "High Conversion Landing Pages",
+    image: "/landing-conversion.webp",
     shortDesc:
-      "High-conversion landing pages for campaigns, lead magnets and A/B testing.",
+      "Fast, SEO-optimized landing pages built for lead generation campaigns.",
     liveLink: "",
     repoLink: "",
+
     details:
-      "Campaign-optimized landing pages built for speed with A/B tests, analytics and lead capture.",
+      "Landing pages designed for ads, lead magnets and conversions with analytics and A/B testing.",
     features: [
-      "A/B testing & analytics",
-      "Fast load and AMP-ready pages",
-      "Integration with marketing CRMs",
+      "Fast loading pages",
+      "SEO optimized",
+      "Lead capture forms",
+      "Analytics tracking",
     ],
     tech: {
-      frontend: ["React", "Tailwind", "Lighthouse optimizations"],
-      backend: ["Serverless functions for form handling"],
-      database: ["None / external CRMs"],
+      frontend: ["React", "Tailwind CSS"],
+      backend: ["Serverless forms"],
+      database: ["Not required"],
       deployment: ["Vercel"],
-      tools: ["Google Optimize, Hotjar"],
+      tools: ["Google Analytics", "Hotjar"],
     },
-    auth: "No user accounts (campaign pages).",
+    auth: "No authentication required.",
   },
 ];
 

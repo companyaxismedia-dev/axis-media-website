@@ -1,81 +1,137 @@
-// src/data/googleAdsData.js
 const adsServices = [
   {
     slug: "google-search-ads",
-    title: "Google Search Ads",
+    title: "Google Search Ads Services",
     image: "/google-search-ads.webp",
     longDescription:
-      "Google Search Ads help you reach high-intent customers who are searching for your services right now.",
+      "Our Google Search Ads services help businesses in India reach high-intent customers instantly by appearing at the top of Google search results and generating qualified leads.",
+
     features: [
-      "Appear instantly on top of Google Search",
-      "Best for high-converting keywords",
-      "High-quality real customer leads",
-      "Perfect for service-based businesses",
+      "Instant visibility on Google Search",
+      "High-intent keyword targeting",
+      "Generate quality leads & inquiries",
+      "Ideal for service-based businesses",
+    ],
+
+    faqs: [
+      {
+        q: "How fast do Google Search Ads show results?",
+        a: "Google Search Ads can generate leads within 2–7 days after campaign launch.",
+      },
+      {
+        q: "Do you manage keywords and bidding?",
+        a: "Yes, we handle complete keyword research, bidding, and optimization.",
+      },
     ],
   },
+
   {
     slug: "google-display-ads",
-    title: "Google Display Ads",
+    title: "Google Display Ads Services",
     image: "/GoogleDisplay.webp",
     longDescription:
-      "Display Ads allow your business to show beautiful banners across millions of websites.",
+      "Our Google Display Ads services help businesses build brand awareness and retarget users with visually appealing banner ads across millions of websites.",
+
     features: [
-      "Massive brand awareness",
-      "Beautiful visual banner ads",
-      "Better reach at lower cost",
-      "Perfect for retargeting users",
+      "Massive online brand visibility",
+      "Attractive visual banner ads",
+      "Lower cost per impression",
+      "Powerful retargeting campaigns",
+    ],
+
+    faqs: [
+      {
+        q: "Are Google Display Ads good for branding?",
+        a: "Yes, Display Ads are excellent for brand awareness and remarketing.",
+      },
     ],
   },
+
   {
     slug: "shopping-ads",
-    title: "Shopping Ads",
+    title: "Google Shopping Ads Services",
     image: "/shopping-ads.webp",
     longDescription:
-      "Show your products directly on Google with images, price & reviews.",
+      "Google Shopping Ads showcase your products directly on Google with images, prices, and reviews to drive high-intent eCommerce traffic.",
+
     features: [
-      "Best for eCommerce stores",
-      "Higher purchase intent from shoppers",
+      "Best suited for eCommerce websites",
+      "Higher purchase intent traffic",
       "Direct product visibility",
-      "High ROI with optimized feed",
+      "Optimized product feed for high ROI",
+    ],
+
+    faqs: [
+      {
+        q: "Do you set up product feeds?",
+        a: "Yes, we create and optimize Google Merchant Center product feeds.",
+      },
     ],
   },
+
   {
     slug: "youtube-ads",
-    title: "YouTube Video Ads",
+    title: "YouTube Ads Services",
     image: "/youtube-ads.webp",
     longDescription:
-      "YouTube Ads help you create powerful emotional brand impact through video.",
+      "Our YouTube Ads services help businesses create strong brand awareness and engagement through high-impact video advertising.",
+
     features: [
-      "High brand recall",
-      "Best for storytelling",
-      "Massive reach across audiences",
-      "Strong engagement rate",
+      "High brand recall & engagement",
+      "Ideal for storytelling & promotions",
+      "Massive reach across YouTube audiences",
+      "Cost-effective video advertising",
+    ],
+
+    faqs: [
+      {
+        q: "Do you create YouTube ad videos?",
+        a: "Yes, we help with ad creatives, scripts, and video strategy.",
+      },
     ],
   },
+
   {
     slug: "remarketing-ads",
-    title: "Remarketing Ads",
+    title: "Google Remarketing Ads Services",
     image: "/remarketing-ads.webp",
     longDescription:
-      "Remarketing Ads bring back users who already visited your website.",
+      "Remarketing Ads help you reconnect with users who have already visited your website and increase conversions at a lower cost.",
+
     features: [
-      "Show ads only to interested visitors",
-      "Increase conversion rate",
-      "Perfect for long buyer journey",
-      "Higher ROI with lower cost",
+      "Target users already interested in your brand",
+      "Higher conversion rates",
+      "Lower advertising cost",
+      "Perfect for long sales cycles",
+    ],
+
+    faqs: [
+      {
+        q: "Is remarketing effective?",
+        a: "Yes, remarketing campaigns usually deliver the highest ROI.",
+      },
     ],
   },
+
   {
     slug: "performance-max",
-    title: "Performance Max Campaigns",
+    title: "Performance Max Campaign Services",
     image: "/Max Campaigns.webp",
     longDescription:
-      "Performance Max uses AI to show ads across all Google platforms automatically.",
+      "Performance Max campaigns use Google AI to run ads across Search, Display, YouTube, Maps, and Gmail for maximum reach and conversions.",
+
     features: [
-      "AI-driven smart automation",
-      "Covers Search, YouTube, Display & Maps",
+      "AI-powered smart automation",
+      "One campaign across all Google platforms",
       "Lower cost per acquisition",
-      "Perfect for scaling campaigns",
+      "Best for scaling paid advertising",
+    ],
+
+    faqs: [
+      {
+        q: "Is Performance Max good for small businesses?",
+        a: "Yes, it is ideal for businesses looking to scale efficiently with automation.",
+      },
     ],
   },
 ];

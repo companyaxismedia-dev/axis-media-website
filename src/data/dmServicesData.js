@@ -1,39 +1,43 @@
 const dmServicesData = [
   {
     slug: "social-media-marketing",
-    title: "Social Media Marketing",
-    description: "Ads, content creation & powerful engagement strategy.",
+    title: "Social Media Marketing Services",
+    description:
+      "Social media marketing services to grow followers, engagement and leads.",
     heroImage: "/social-media-marketing.webp",
 
     longContent: {
       intro:
-        "Social Media Marketing helps brands grow faster through targeted content, paid ads, and audience engagement. We create modern, research-based strategies that maximize reach and conversions.",
+        "Our social media marketing services help businesses in India grow brand awareness, engagement, and leads through high-performing content, paid ads, and audience targeting strategies across Instagram, Facebook, and LinkedIn.",
+
       benefits: [
-        "Grow followers and engagement organically",
-        "High-converting Instagram & Facebook ads",
-        "Content calendars and creative design",
-        "Influencer collaborations",
-        "Brand reputation management",
+        "Increase brand awareness & visibility",
+        "Generate high-quality leads & inquiries",
+        "Grow followers with organic & paid strategies",
+        "Improve engagement & customer trust",
+        "Consistent brand voice across platforms",
       ],
+
       features: [
-        "Daily posting & graphics",
-        "Ad campaigns setup + optimization",
-        "Lead generation funnels",
-        "Hashtag optimization & trend research",
-        "Monthly analytics & reporting",
+        "Instagram & Facebook ads management",
+        "Daily posts, reels & creatives",
+        "Lead generation campaigns",
+        "Hashtag & trend research",
+        "Monthly performance reports",
       ],
+
       faqs: [
         {
-          q: "How fast can I see results?",
-          a: "Paid ads show results within 5–10 days. Organic growth takes 30–60 days.",
+          q: "How long does social media marketing take to show results?",
+          a: "Paid ads show results in 7–10 days. Organic growth usually takes 30–60 days.",
         },
         {
-          q: "Do you also create reels?",
-          a: "Yes, we create reels, promos, and ads videos for all platforms.",
+          q: "Do you create reels and ad creatives?",
+          a: "Yes, we design reels, posts, stories, and ad creatives for all platforms.",
         },
         {
-          q: "Can you manage my full account?",
-          a: "Yes, complete social media management is included.",
+          q: "Can you manage my complete social media accounts?",
+          a: "Yes, we provide complete social media account management services.",
         },
       ],
     },
@@ -41,119 +45,83 @@ const dmServicesData = [
 
   {
     slug: "seo-optimization",
-    title: "SEO Optimization",
-    description: "Rank higher and grow organic website traffic.",
+    title: "SEO Optimization Services",
+    description:
+      "Professional SEO services to rank higher on Google and grow organic traffic.",
     heroImage: "/seo-optimization.webp",
 
     longContent: {
       intro:
-        "SEO helps your website appear at the top of Google search results. We improve your visibility, traffic, ranking, and long-term brand authority.",
+        "Our SEO optimization services help your website rank higher on Google search results, increase organic traffic, and build long-term brand authority through on-page, off-page, and technical SEO strategies.",
+
       benefits: [
-        "Higher Google ranking",
-        "More organic traffic",
-        "Better keyword targeting",
-        "Site speed optimization",
-        "Monthly SEO audit reports",
+        "Higher Google keyword rankings",
+        "Increase organic website traffic",
+        "Improved website speed & performance",
+        "Better user experience & engagement",
+        "Long-term digital growth",
       ],
+
       features: [
-        "On-page SEO",
-        "Off-page SEO (Backlinks)",
-        "Technical SEO",
-        "Content optimization",
-        "Google Search Console setup",
+        "On-page SEO optimization",
+        "Technical SEO fixes",
+        "High-quality backlink building",
+        "Content & keyword optimization",
+        "Google Search Console & Analytics setup",
       ],
+
       faqs: [
-        { q: "How long will SEO take?", a: "2–3 months for ranking improvement." },
-        { q: "Do you provide backlinks?", a: "Yes, high-quality DA40+ backlinks included." },
-        { q: "Will I get a keyword report?", a: "Yes, a complete keyword list is shared." },
+        {
+          q: "How long does SEO take to show results?",
+          a: "SEO usually shows improvement within 2–3 months depending on competition.",
+        },
+        {
+          q: "Do you provide backlinks?",
+          a: "Yes, we build high-quality and safe backlinks from authority websites.",
+        },
+        {
+          q: "Will I receive SEO reports?",
+          a: "Yes, monthly SEO performance and keyword ranking reports are provided.",
+        },
       ],
     },
   },
 
   {
     slug: "email-marketing",
-    title: "Email Marketing",
-    description: "Automation, newsletters & high-conversion campaigns.",
+    title: "Email Marketing Services",
+    description:
+      "Email marketing automation and campaigns to nurture leads & boost sales.",
     heroImage: "/email-marketing.webp",
 
     longContent: {
       intro:
-        "Email Marketing is one of the most powerful tools for nurturing leads and improving customer retention. Our automated sequences help increase conversions.",
+        "Our email marketing services help businesses nurture leads, retain customers, and increase conversions using automated campaigns, newsletters, and performance tracking.",
+
       benefits: [
-        "Automated drip campaigns",
-        "Higher email open rate",
-        "Professional newsletter designs",
-        "Customer retention and remarketing",
+        "Higher email open & click rates",
+        "Automated lead nurturing",
+        "Customer retention & remarketing",
+        "Increased sales & conversions",
       ],
+
       features: [
-        "Welcome sequence setup",
-        "Cart abandonment automation",
-        "Newsletter design",
-        "Campaign scheduling",
+        "Welcome & drip email sequences",
+        "Newsletter design & automation",
+        "Cart abandonment emails",
+        "Campaign analytics & reporting",
       ],
+
       faqs: [
-        { q: "How many emails will you design?", a: "As per the selected package." },
-        { q: "Do you track open/click rates?", a: "Yes, full analytics dashboard available." },
+        {
+          q: "Do you track email performance?",
+          a: "Yes, open rates, click rates, and conversions are fully tracked.",
+        },
+        {
+          q: "Can you design email templates?",
+          a: "Yes, professional email templates are included.",
+        },
       ],
-    },
-  },
-
-  {
-    slug: "google-ads",
-    title: "Google Ads",
-    description: "Paid ads for leads, sales, and brand visibility.",
-    heroImage: "/google-ads.webp",
-
-    longContent: {
-      intro:
-        "Google Ads place your business directly in front of people actively searching for your services. We create optimized campaigns that deliver high-quality leads.",
-      benefits: [
-        "Instant visibility on Google",
-        "High-quality targeted leads",
-        "Budget optimization",
-        "Conversion tracking setup",
-      ],
-      features: [
-        "Search Ads",
-        "Display Ads",
-        "YouTube Ads",
-        "Remarketing campaigns",
-        "Keyword & audience research",
-      ],
-      faqs: [
-        { q: "How much budget do I need?", a: "Depends on your industry, generally ₹5,000–₹20,000/month." },
-        { q: "Do you provide landing pages?", a: "Yes, conversion-optimized landing pages are available." },
-      ],
-    },
-  },
-
-  {
-    slug: "instagram-ads",
-    title: "Instagram Ads",
-    description: "Boost reach, engagement & conversions.",
-    heroImage: "/instagram-ads.webp",
-
-    longContent: {
-      intro:
-        "Instagram is one of the most powerful platforms for brand marketing. Our Instagram ad strategies generate higher engagement and targeted conversions.",
-      benefits: ["Higher reach", "More profile visits", "Better brand visibility"],
-      features: ["Reels ads", "Story ads", "Influencer collaborative ads"],
-      faqs: [],
-    },
-  },
-
-  {
-    slug: "facebook-ads",
-    title: "Facebook Ads",
-    description: "Targeted ad campaigns for local & global reach.",
-    heroImage: "/facebook-ads.webp",
-
-    longContent: {
-      intro:
-        "Facebook Ads help reach highly targeted users who are most likely to engage or purchase. We optimize ads for maximum ROI.",
-      benefits: ["Lead generation", "High conversions", "Strong retargeting"],
-      features: ["Carousel ads", "Lead form ads", "Custom audience ads"],
-      faqs: [],
     },
   },
 ];

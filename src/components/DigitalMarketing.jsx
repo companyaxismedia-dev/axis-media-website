@@ -1,4 +1,3 @@
-// src/components/DigitalMarketing.jsx
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
@@ -6,108 +5,103 @@ import dmServicesData from "../data/dmServicesData";
 
 export default function DigitalMarketing() {
   return (
-    <section className="py-24 bg-gradient-to-b from-[#EEF3FF] to-[#F3E8FF]">
+    <section
+      className="py-24 bg-gradient-to-b from-[#EEF3FF] to-[#F3E8FF]"
+      aria-labelledby="digital-marketing-heading"
+    >
       <div className="max-w-7xl mx-auto px-4">
 
-        {/* ===========================
-            ⭐ NEW HERO SECTION ADDED ⭐
-        ============================ */}
+        {/* HERO / INTRO */}
         <div className="grid md:grid-cols-2 gap-14 items-center mb-24">
 
-          {/* LEFT SIDE CONTENT */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-extrabold leading-snug mb-6">
-              Grow Your Business With  
-              <span className="text-blue-600"> Powerful Digital Marketing</span>
+            {/* ✅ H2 (H1 already in main Hero) */}
+            <h2
+              id="digital-marketing-heading"
+              className="text-4xl md:text-5xl font-extrabold leading-snug mb-6"
+            >
+              Grow Your Business With{" "}
+              <span className="text-blue-600">
+                Powerful Digital Marketing Services
+              </span>
             </h2>
 
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
-              We help businesses increase visibility, attract more customers, 
-              and scale faster with high-performing digital marketing strategies.  
-              From social media ads to SEO, content, branding, and automation —  
-              we handle everything needed to grow your business online.
+              We help businesses increase online visibility, attract high-quality
+              leads, and grow revenue with result-driven digital marketing
+              strategies including SEO, Google Ads, social media marketing,
+              content marketing, and conversion optimization.
             </p>
 
             <ul className="space-y-4 text-gray-700">
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="text-blue-600 mt-1" />
-                Result-driven campaigns built for higher ROI
-              </li>
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="text-blue-600 mt-1" />
-                Perfect for small businesses, startups & enterprises
-              </li>
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="text-blue-600 mt-1" />
-                Branding + Ads + SEO + Website optimization
-              </li>
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="text-blue-600 mt-1" />
-                Targeted advertising for maximum conversions
-              </li>
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="text-blue-600 mt-1" />
-                Expert team with years of real marketing experience
-              </li>
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="text-blue-600 mt-1" />
-                Transparent reporting & performance tracking
-              </li>
+              {[
+                "High-ROI digital marketing campaigns",
+                "Perfect for startups, small businesses & enterprises",
+                "SEO + Ads + Branding + Website optimization",
+                "Targeted marketing for better conversions",
+                "Experienced digital marketing professionals",
+                "Transparent reporting & analytics",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <FaCheckCircle className="text-blue-600 mt-1" />
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
 
             <NavLink
               to="/contact"
-              className="inline-block mt-8 py-3 px-8 bg-blue-600 text-white 
-                       rounded-xl font-semibold hover:bg-blue-700 transition"
+              className="inline-block mt-8 py-3 px-8 bg-blue-600 text-white
+              rounded-xl font-semibold hover:bg-blue-700 transition"
             >
               Get Free Marketing Consultation
             </NavLink>
           </div>
 
-          {/* RIGHT SIDE LARGE IMAGE */}
+          {/* ✅ LCP IMAGE (FIXED SIZE) */}
           <div className="flex justify-center">
             <img
               src="/Digital Marketing Team.webp"
-              alt="Digital Marketing Team"
-              className="rounded-3xl shadow-2xl w-full h-[420px] lg:h-[520px] object-cover"
-
+              alt="Digital Marketing Team at Axis Media"
+              width="720"
+              height="520"
+              fetchpriority="high"
+              className="rounded-3xl shadow-2xl w-full max-w-xl object-cover"
             />
           </div>
-
         </div>
-        {/* ===========================
-            ⭐ END OF NEW SECTION ⭐
-        ============================ */}
 
-
-        {/* STATIC HEADING — NO LAG */}
+        {/* SERVICES HEADING */}
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r 
-                           from-purple-500 via-blue-400 to-blue-500">
-            Smart Strategies For Fast Business Growth
-          </span>
+          Smart Digital Marketing Strategies for Business Growth
         </h2>
 
         <p className="text-lg text-center text-gray-700 mb-16 font-medium">
-          Complete marketing solutions to grow your brand online.
+          Complete digital marketing solutions to grow your brand online.
         </p>
 
         {/* SERVICES GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {dmServicesData.map((s, i) => (
-            <div
+            <article
               key={i}
               className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all"
             >
               <div className="overflow-hidden rounded-xl h-40 mb-4">
                 <img
                   src={s.heroImage}
+                  alt={`${s.title} Digital Marketing Service`}
+                  width="400"
+                  height="250"
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>
 
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">{s.title}</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                {s.title}
+              </h3>
+
               <p className="text-gray-700 mb-4">{s.description}</p>
 
               <NavLink
@@ -119,38 +113,39 @@ export default function DigitalMarketing() {
 
               <NavLink
                 to="/contact"
-                className="w-full block text-center py-2 rounded-lg bg-blue-600 
-                           text-white font-semibold hover:bg-blue-700 transition"
+                className="w-full block text-center py-2 rounded-lg bg-blue-600
+                text-white font-semibold hover:bg-blue-700 transition"
               >
                 Enquire Now
               </NavLink>
-            </div>
+            </article>
           ))}
         </div>
 
         {/* WHY CHOOSE US */}
         <div className="mt-24 bg-white p-12 rounded-3xl shadow-xl">
           <h2 className="text-4xl font-bold text-center text-green-700 mb-8">
-            Why Choose Axis Media?
+            Why Choose Axis Media for Digital Marketing?
           </h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
-              "Proven digital marketing experience",
+              "Proven digital marketing expertise",
               "High-ROI advertising strategies",
               "Dedicated account manager",
               "Real-time analytics & reporting",
-              "Creative graphic & ad design",
-              "End-to-end digital support",
+              "Creative ad & graphic design",
+              "End-to-end digital marketing support",
             ].map((item, i) => (
               <p key={i} className="flex gap-3 text-lg text-gray-700">
-                <FaCheckCircle className="text-green-600 mt-1" /> {item}
+                <FaCheckCircle className="text-green-600 mt-1" />
+                {item}
               </p>
             ))}
           </div>
         </div>
 
-        {/* PROCESS SECTION */}
+        {/* PROCESS */}
         <div className="mt-24">
           <h2 className="text-4xl font-bold text-center text-green-700 mb-12">
             Our Digital Marketing Process
@@ -158,13 +153,16 @@ export default function DigitalMarketing() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
             {[
-              { step: "01", title: "Research", text: "We study your market & competitors." },
-              { step: "02", title: "Strategy", text: "We build a custom marketing plan." },
-              { step: "03", title: "Execution", text: "We launch ads & campaigns." },
-              { step: "04", title: "Optimization", text: "We improve targeting & ROI." },
+              { step: "01", title: "Research", text: "Market & competitor analysis." },
+              { step: "02", title: "Strategy", text: "Custom marketing plan." },
+              { step: "03", title: "Execution", text: "Campaign launch & ads." },
+              { step: "04", title: "Optimization", text: "Continuous performance improvement." },
             ].map((box, i) => (
               <div key={i} className="bg-white p-8 rounded-xl shadow-lg">
-                <h1 className="text-4xl font-bold text-green-600 mb-2">{box.step}</h1>
+                {/* ❌ NOT H1 */}
+                <p className="text-4xl font-bold text-green-600 mb-2">
+                  {box.step}
+                </p>
                 <h3 className="text-xl font-bold mb-2">{box.title}</h3>
                 <p className="text-gray-700">{box.text}</p>
               </div>

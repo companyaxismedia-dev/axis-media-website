@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import {
-  FaPhone,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaWhatsapp,
   FaFacebook,
   FaInstagram,
   FaLinkedin,
@@ -37,44 +33,19 @@ export default function ContactCTA() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    setErrors((prev) => ({ ...prev, [name]: "" }));
+    setErrors((p) => ({ ...p, [name]: "" }));
   };
 
   const validate = () => {
-    const newErrors = {};
-
-    if (!formData.name.trim()) newErrors.name = "Enter your name";
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email))
-      newErrors.email = "Enter a valid email";
-
+    const err = {};
+    if (!formData.name.trim()) err.name = "Enter your name";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+      err.email = "Enter a valid email";
     if (formData.phone && !/^\d{10}$/.test(formData.phone))
-      newErrors.phone = "Phone must be 10 digits";
-
-    if (!formData.message.trim()) newErrors.message = "Enter a message";
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const sendToGoogleSheet = async () => {
-    try {
-      await fetch(GOOGLE_SHEET_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-    } catch (err) {
-      console.log("Google Sheet Error:", err);
-    }
-  };
-
-  const openWhatsApp = () => {
-    const msg = encodeURIComponent(
-      `Hi, I'm ${formData.name}. I am interested in ${formData.issue}.`
-    );
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
+      err.phone = "Phone must be 10 digits";
+    if (!formData.message.trim()) err.message = "Enter a message";
+    setErrors(err);
+    return Object.keys(err).length === 0;
   };
 
   const handleSubmit = async (e) => {
@@ -82,7 +53,6 @@ export default function ContactCTA() {
     if (!validate()) return;
 
     setIsSubmitting(true);
-
     try {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
@@ -98,8 +68,18 @@ export default function ContactCTA() {
         EMAILJS_PUBLIC_KEY
       );
 
-      await sendToGoogleSheet();
-      openWhatsApp();
+      await fetch(GOOGLE_SHEET_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      window.open(
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+          `Hi, I'm ${formData.name}. I need ${formData.issue}`
+        )}`,
+        "_blank"
+      );
 
       setSent(true);
       setFormData({
@@ -111,9 +91,8 @@ export default function ContactCTA() {
       });
 
       setTimeout(() => setSent(false), 4000);
-    } catch (error) {
+    } catch (err) {
       alert("Failed to send message. Try again!");
-      console.log(error);
     } finally {
       setIsSubmitting(false);
     }
@@ -121,123 +100,60 @@ export default function ContactCTA() {
 
   return (
     <section
-      id="contactcta"
-      className="relative py-24 text-white"
-      style={{ backgroundColor: "#073762" }} // ⭐ FIXED FULL BLUE BACKGROUND
+      id="contact"
+      className="py-24 text-white bg-[#073762]"
+      aria-labelledby="contact-heading"
     >
-
-      {/* SUCCESS POPUP */}
-      {sent && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-          <div className="bg-white text-gray-900 rounded-2xl px-10 py-8 shadow-2xl">
-            <h3 className="text-2xl font-bold mb-2 text-center">
-              🎉 Message Sent!
-            </h3>
-            <p className="text-center mb-4">
-              Thank you! Our team will contact you shortly.
-            </p>
-            <button
-              onClick={() => setSent(false)}
-              className="mt-2 px-6 py-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold w-full"
-            >
-              OK
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* HEADING */}
-      <h2 className="text-center text-5xl font-extrabold mb-4">
-        Contact Us
+      <h2
+        id="contact-heading"
+        className="text-center text-4xl md:text-5xl font-extrabold mb-4"
+      >
+        Contact Axis Media – Digital Marketing Experts
       </h2>
 
-      {/* SOCIAL ICONS */}
-      <div className="flex justify-center gap-6 text-3xl my-6">
-        <a href="https://www.facebook.com/profile.php?id=61584611262239" className="hover:text-blue-300"><FaFacebook /></a>
-        <a href="@axismedia123
-          " className="hover:text-pink-300"><FaInstagram /></a>
-        <a href="#" className="hover:text-blue-500"><FaLinkedin /></a>
-        <a href="#" className="hover:text-blue-300"><FaTwitter /></a>
+      <p className="text-center text-blue-100 mb-8 max-w-2xl mx-auto">
+        Get in touch with our digital marketing experts for SEO, Google Ads,
+        website development, and growth solutions.
+      </p>
+
+      {/* SOCIAL */}
+      <div className="flex justify-center gap-6 text-3xl mb-10">
+        <a href="https://www.facebook.com/profile.php?id=61584611262239" aria-label="Facebook"><FaFacebook /></a>
+        <a href="https://www.instagram.com/axismedia123" aria-label="Instagram"><FaInstagram /></a>
+        <a href="https://www.linkedin.com" aria-label="LinkedIn"><FaLinkedin /></a>
+        <a href="https://twitter.com" aria-label="Twitter"><FaTwitter /></a>
       </div>
 
       {/* FORM */}
       <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl p-10 max-w-3xl mx-auto">
         <form onSubmit={handleSubmit} className="space-y-6">
-          
-          {/* Name + Email */}
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Full Name"
-                className="w-full p-4 bg-white/20 rounded-xl text-white"
-              />
-              {errors.name && <p className="text-red-300">{errors.name}</p>}
-            </div>
+          <input type="text" name="name" placeholder="Full Name"
+            value={formData.name} onChange={handleChange}
+            autoComplete="name" aria-label="Full Name"
+            className="w-full p-4 bg-white/20 rounded-xl text-white" />
 
-            <div>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email Address"
-                className="w-full p-4 bg-white/20 rounded-xl text-white"
-              />
-              {errors.email && <p className="text-red-300">{errors.email}</p>}
-            </div>
-          </div>
+          <input type="email" name="email" placeholder="Email Address"
+            value={formData.email} onChange={handleChange}
+            autoComplete="email" aria-label="Email"
+            className="w-full p-4 bg-white/20 rounded-xl text-white" />
 
-          {/* Phone + Issue */}
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div>
-              <input
-                type="text"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="Phone Number"
-                className="w-full p-4 bg-white/20 rounded-xl text-white"
-              />
-              {errors.phone && <p className="text-red-300">{errors.phone}</p>}
-            </div>
+          <input type="text" name="phone" placeholder="Phone Number"
+            value={formData.phone} onChange={handleChange}
+            autoComplete="tel" aria-label="Phone"
+            className="w-full p-4 bg-white/20 rounded-xl text-white" />
 
-            <input
-              type="text"
-              name="issue"
-              value={formData.issue}
-              onChange={handleChange}
-              placeholder="Service Required"
-              className="w-full p-4 bg-white/20 rounded-xl text-white"
-            />
-          </div>
+          <textarea name="message" placeholder="Your Message"
+            value={formData.message} onChange={handleChange}
+            rows="4" aria-label="Message"
+            className="w-full p-4 bg-white/20 rounded-xl text-white" />
 
-          {/* Message */}
-          <div>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Your Message"
-              rows="4"
-              className="w-full p-4 bg-white/20 rounded-xl text-white"
-            ></textarea>
-            {errors.message && <p className="text-red-300">{errors.message}</p>}
-          </div>
-
-          {/* Submit Button */}
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold 
-            ${isSubmitting ? "opacity-60 cursor-not-allowed" : ""}`}
+            className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 font-semibold"
           >
             {isSubmitting ? "Sending..." : "Submit"}
           </button>
-
         </form>
       </div>
     </section>

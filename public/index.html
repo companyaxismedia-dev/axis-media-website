@@ -27,13 +27,38 @@
     <meta property="og:url" content="https://axismediadigital.com/" />
     <meta property="og:image" content="https://axismediadigital.com/hero.webp" />
 
-    <!-- TWITTER CARD -->
+    <!-- TWITTER -->
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- 🔥 TAILWIND CDN (KEEP THIS – WORKING METHOD) -->
+    <!-- TAILWIND CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- META PIXEL (DEFERRED – SAFE FOR SPEED) -->
+    <!-- TAILWIND CUSTOM CONFIG (SAFE) -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            keyframes: {
+              fadeUp: {
+                "0%": { opacity: 0, transform: "translateY(20px)" },
+                "100%": { opacity: 1, transform: "translateY(0)" },
+              },
+              floatSlow: {
+                "0%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-10px)" },
+                "100%": { transform: "translateY(0px)" },
+              },
+            },
+            animation: {
+              fadeUp: "fadeUp 1s ease-out forwards",
+              floatSlow: "floatSlow 5s ease-in-out infinite",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- META PIXEL (DEFERRED) -->
     <script defer>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?

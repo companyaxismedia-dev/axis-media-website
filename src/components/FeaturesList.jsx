@@ -1,31 +1,37 @@
 import React from "react";
+import { FaCheckCircle } from "react-icons/fa";
 
 export default function FeaturesList() {
   const items = [
-    "SEO-friendly & Performance Optimized",
-    "Payment gateway / E-commerce ready",
-    "CRM & third-party integrations",
-    "Secure & scalable architectures",
-    "Analytics & conversion tracking",
-    "Custom business workflows",
+    "SEO-friendly & performance optimized websites",
+    "Payment gateway & e-commerce ready solutions",
+    "CRM & third-party tool integrations",
+    "Secure, scalable & future-ready architecture",
+    "Advanced analytics & conversion tracking",
+    "Custom workflows tailored to business needs",
   ];
 
   return (
-    <section className="py-24 bg-[#F7F9FC] flex flex-col items-center justify-center">
-
-      {/* Heading */}
-      <h2 className="text-4xl font-bold text-center mb-12">
-        Why choose our solutions?
+    <section
+      className="py-24 bg-[#F7F9FC]"
+      aria-labelledby="features-heading"
+    >
+      {/* SECTION HEADING */}
+      <h2
+        id="features-heading"
+        className="text-4xl md:text-5xl font-extrabold text-center mb-12 text-gray-900"
+      >
+        Why Choose Axis Media for Digital Solutions?
       </h2>
 
-      {/* TWO COLUMN LIST CENTERED */}
-      <div className="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto">
+      {/* FEATURES GRID */}
+      <div className="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto px-6">
 
         {/* LEFT COLUMN */}
         <ul className="space-y-6 text-lg">
           {items.slice(0, 3).map((text, index) => (
             <li key={index} className="flex items-start gap-3">
-              <span className="text-blue-600 text-2xl mt-1">✓</span>
+              <FaCheckCircle className="text-blue-600 text-xl mt-1" />
               <span className="text-gray-700">{text}</span>
             </li>
           ))}
@@ -35,7 +41,7 @@ export default function FeaturesList() {
         <ul className="space-y-6 text-lg">
           {items.slice(3).map((text, index) => (
             <li key={index} className="flex items-start gap-3">
-              <span className="text-blue-600 text-2xl mt-1">✓</span>
+              <FaCheckCircle className="text-blue-600 text-xl mt-1" />
               <span className="text-gray-700">{text}</span>
             </li>
           ))}

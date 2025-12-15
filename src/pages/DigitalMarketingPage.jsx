@@ -1,11 +1,24 @@
-// src/pages/DigitalMarketingPage.jsx
-import React from "react";
-import DigitalMarketing from "../components/DigitalMarketing";
+import { Helmet } from "react-helmet-async";
 
-export default function DigitalMarketingPage() {
+export default function FAQSchema({ faqs }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((f) => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a
+      }
+    }))
+  };
+
   return (
-    <div>
-      <DigitalMarketing />
-    </div>
+    <Helmet>
+      <script type="application/ld+json">
+        {JSON.stringify(schema)}
+      </script>
+    </Helmet>
   );
 }

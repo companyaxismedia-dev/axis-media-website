@@ -1,261 +1,265 @@
+// src/data/IndustriesData.js
+
 import {
   FaStore,
   FaUtensils,
   FaBuilding,
   FaIndustry,
   FaHeartbeat,
-  FaEllipsisH
+  FaEllipsisH,
 } from "react-icons/fa";
 
 export const IndustriesData = [
+  /* =======================
+      RETAIL
+  ======================= */
   {
     id: "retail",
     title: "Retail",
     slugPrefix: "retail",
     colorClass: "text-emerald-600",
     icon: FaStore,
-    heroImage:
-      "/Retail.webp",
+    heroImage: "/Retail.webp",
     longDesc:
-      "Retail businesses need a strong local web presence, conversion-focused product pages and seamless checkout flows.",
+      "Retail businesses need a strong local web presence, conversion-focused product pages and seamless checkout experiences to attract customers and boost sales.",
     features: [
       "Responsive product pages & fast checkout",
       "Category filters, product variants & search",
       "Local SEO (Google Business & schema)",
       "Inventory sync & POS integration",
-      "Email & SMS automation"
+      "Email & SMS automation",
     ],
     benefits: [
       "Increase online visibility",
       "Boost conversion rates",
-      "Reduce cart abandonment"
+      "Reduce cart abandonment",
     ],
     faqs: [
-      { q: "Do you integrate payments?", a: "Yes — Stripe / PayPal support." },
-      {
-        q: "Can you add inventory sync?",
-        a: "Yes — POS or marketplace sync available."
-      }
+      { q: "Do you integrate online payments?", a: "Yes, Stripe, Razorpay & PayPal supported." },
+      { q: "Can inventory be synced?", a: "Yes, POS & marketplace inventory sync available." },
+      { q: "Is SEO included?", a: "Yes, on-page & local SEO are included." },
     ],
-
-    // 🔥 MISSING ITEMS FIXED HERE
     items: [
       { slug: "book-store", name: "Book Store" },
       { slug: "clothing-store", name: "Clothing Store" },
       { slug: "furniture-store", name: "Furniture Store" },
       { slug: "grocery-store", name: "Grocery Store" },
       { slug: "hardware-store", name: "Hardware Store" },
-      { slug: "toy-store", name: "Toy Store" }
-    ]
+      { slug: "toy-store", name: "Toy Store" },
+    ],
   },
 
+  /* =======================
+      FOOD & HOSPITALITY
+  ======================= */
   {
     id: "food-hospitality",
     title: "Food & Hospitality",
     slugPrefix: "food-hospitality",
     colorClass: "text-sky-600",
     icon: FaUtensils,
-    heroImage:
-      "/Food-hospitality.webp",
+    heroImage: "/Food-hospitality.webp",
     longDesc:
-      "Restaurants, hotels and guest houses need booking-capable websites and powerful menu systems.",
+      "Restaurants, hotels and guest houses need booking-enabled websites, strong menus and local SEO to attract more customers.",
     features: [
-      "Booking forms & reservation flow",
+      "Online booking & reservation system",
       "Menu pages & promotions",
-      "Local SEO & near-me optimisation",
+      "Local SEO & near-me optimization",
       "Ads to fill low-occupancy hours",
-      "Review & rating management"
+      "Review & rating management",
     ],
     benefits: [
       "More direct bookings",
-      "Higher customer visibility",
-      "Better repeat engagement"
+      "Higher local visibility",
+      "Better repeat customers",
     ],
     faqs: [
-      { q: "Online ordering available?", a: "Yes — full ordering setup." },
-      {
-        q: "Photography & menu design?",
-        a: "Yes — professional content support."
-      }
+      { q: "Can you enable online ordering?", a: "Yes, full ordering & payment setup available." },
+      { q: "Do you design menus?", a: "Yes, professional menu & food photography support." },
+      { q: "Is Google Maps SEO included?", a: "Yes, complete local SEO setup included." },
     ],
-
     items: [
       { slug: "restaurant", name: "Restaurant" },
       { slug: "fast-food", name: "Fast Food" },
       { slug: "hotel", name: "Hotel" },
       { slug: "guest-house", name: "Guest House" },
-      { slug: "beverage-distributor", name: "Beverage Distributor" }
-    ]
+      { slug: "beverage-distributor", name: "Beverage Distributor" },
+    ],
   },
 
+  /* =======================
+      REAL ESTATE
+  ======================= */
   {
     id: "real-estate",
     title: "Real Estate",
     slugPrefix: "real-estate",
     colorClass: "text-rose-600",
     icon: FaBuilding,
-    heroImage:
-      "/real-estate.webp",
+    heroImage: "/real-estate.webp",
     longDesc:
-      "Real estate websites need professional listings, lead capture and area-specific SEO.",
+      "Real estate businesses need professional listings, lead capture forms and location-based SEO to generate quality enquiries.",
     features: [
-      "Listing templates & filters",
-      "CRM-integrated lead forms",
+      "Property listings with filters",
+      "CRM-integrated enquiry forms",
       "Local landing pages",
-      "Heatmap analytics",
-      "Virtual tour/galleries"
+      "Analytics & heatmaps",
+      "Gallery & virtual tours",
     ],
     benefits: [
       "More property enquiries",
-      "Higher ranking by locality",
-      "Better viewing conversions"
+      "Higher ranking in local searches",
+      "Better lead quality",
     ],
     faqs: [
-      { q: "CRM integration?", a: "Yes — HubSpot, Zoho, custom APIs." },
-      { q: "Virtual tours?", a: "Yes — 3D & gallery support." }
+      { q: "Can you integrate CRM?", a: "Yes, HubSpot, Zoho & custom CRM supported." },
+      { q: "Do you support virtual tours?", a: "Yes, 3D tours & image galleries supported." },
     ],
-
     items: [
       { slug: "construction", name: "Construction" },
       { slug: "architecture-firm", name: "Architecture Firm" },
       { slug: "estate-management", name: "Estate Management" },
       { slug: "gardening", name: "Gardening" },
-      {
-        slug: "property-owner-association",
-        name: "Property Owner Association"
-      }
-    ]
+      { slug: "property-owner-association", name: "Property Owner Association" },
+    ],
   },
 
+  /* =======================
+      MANUFACTURING
+  ======================= */
   {
     id: "manufacturing",
     title: "Manufacturing",
     slugPrefix: "manufacturing",
     colorClass: "text-purple-600",
     icon: FaIndustry,
-    heroImage:
-      "/manufacturing.webp",
+    heroImage: "/manufacturing.webp",
     longDesc:
-      "Manufacturing needs B2B websites, catalogues & lead funnels.",
+      "Manufacturing companies need B2B websites, catalogs and lead funnels to attract distributors and bulk buyers.",
     features: [
-      "B2B product catalogue",
-      "RFQ forms & dealer portal",
+      "B2B product catalogs",
+      "RFQ & dealer enquiry forms",
       "Industrial SEO",
-      "Case studies & technical pages"
+      "Case studies & technical pages",
     ],
     benefits: [
-      "Shorter procurement cycles",
       "More vendor enquiries",
-      "Better trust and branding"
+      "Shorter sales cycles",
+      "Stronger brand credibility",
     ],
     faqs: [
-      {
-        q: "Can we protect pricing?",
-        a: "Yes — gated or partner-only pages available."
-      }
+      { q: "Can pricing be hidden?", a: "Yes, gated pricing & partner-only pages available." },
+      { q: "Do you support bulk enquiries?", a: "Yes, RFQ & bulk enquiry systems included." },
     ],
-
     items: [
       { slug: "textile", name: "Textile" },
       { slug: "metal", name: "Metal" },
       { slug: "food", name: "Food" },
       { slug: "brewery", name: "Brewery" },
-      { slug: "corporate-gifts", name: "Corporate Gifts" }
-    ]
+      { slug: "corporate-gifts", name: "Corporate Gifts" },
+    ],
   },
 
+  /* =======================
+      HEALTH & FITNESS
+  ======================= */
   {
     id: "health-fitness",
     title: "Health & Fitness",
     slugPrefix: "health-fitness",
     colorClass: "text-orange-600",
     icon: FaHeartbeat,
-    heroImage:
-      "/health-fitness.webp",
+    heroImage: "/health-fitness.webp",
     longDesc:
-      "Gyms, clinics & wellness centres need booking, schedules & trust-building content.",
+      "Health & fitness businesses need trust-building websites, appointment booking and strong local SEO.",
     features: [
-      "Appointment booking",
+      "Online appointment booking",
       "Service pages & pricing",
       "Testimonials & trust badges",
-      "Local SEO for city searches"
+      "City-based SEO optimization",
     ],
     benefits: [
       "More bookings",
-      "Higher visibility",
-      "Better customer experience"
+      "Higher local visibility",
+      "Improved customer trust",
     ],
     faqs: [
-      { q: "Booking reminders?", a: "Yes — SMS/email available." }
+      { q: "Do you support booking reminders?", a: "Yes, SMS & email reminders available." },
+      { q: "Is HIPAA or data security considered?", a: "Yes, secure data handling is ensured." },
     ],
-
     items: [
       { slug: "sports-club", name: "Sports Club" },
       { slug: "eyewear-store", name: "Eyewear Store" },
       { slug: "fitness-center", name: "Fitness Center" },
       { slug: "wellness-practitioners", name: "Wellness Practitioners" },
       { slug: "pharmacy", name: "Pharmacy" },
-      { slug: "hair-salon", name: "Hair Salon" }
-    ]
+      { slug: "hair-salon", name: "Hair Salon" },
+    ],
   },
 
+  /* =======================
+      OTHERS
+  ======================= */
   {
     id: "others",
     title: "Others",
     slugPrefix: "others",
     colorClass: "text-pink-600",
     icon: FaEllipsisH,
-    heroImage:
-      "/NGO.webp",
+    heroImage: "/NGO.webp",
     longDesc:
-      "NGOs, photographers, creatives & niche services need strong storytelling websites.",
+      "NGOs, creatives and niche businesses need storytelling-driven websites with strong messaging and lead funnels.",
     features: [
       "Portfolio & story-driven pages",
-      "Donation/contact funnels",
+      "Donation & contact funnels",
       "Niche SEO",
-      "Easy CMS"
+      "Easy CMS management",
     ],
     benefits: [
-      "Showcase work",
-      "More leads/supporters",
-      "Easy updates"
+      "Stronger brand story",
+      "More leads & supporters",
+      "Easy content updates",
     ],
     faqs: [
-      { q: "Multilingual?", a: "Yes — full language support." }
+      { q: "Do you support multilingual websites?", a: "Yes, full multi-language support available." },
+      { q: "Can donation payment be added?", a: "Yes, secure donation systems supported." },
     ],
-
     items: [
       { slug: "nonprofit-organization", name: "Nonprofit Organization" },
       { slug: "environmental-agency", name: "Environmental Agency" },
       { slug: "photography", name: "Photography" },
       { slug: "bike-leasing", name: "Bike Leasing" },
-      { slug: "software-reseller", name: "Software Reseller" }
-    ]
-  }
+      { slug: "software-reseller", name: "Software Reseller" },
+    ],
+  },
 ];
 
-// Helper function
+/* =======================
+   HELPER FUNCTION
+======================= */
 export function findIndustryBySlug(slug) {
   if (!slug) return null;
 
-  const byId = IndustriesData.find(
+  // Match category
+  const category = IndustriesData.find(
     (i) => i.id === slug || i.slugPrefix === slug
   );
-  if (byId) return { ...byId, name: byId.title };
+  if (category) {
+    return { ...category, name: category.title };
+  }
 
+  // Match sub-industry
   for (const cat of IndustriesData) {
-    const found = (cat.items || []).find((it) => it.slug === slug);
-
+    const found = cat.items.find((item) => item.slug === slug);
     if (found) {
       return {
         ...found,
         categoryId: cat.id,
         categoryTitle: cat.title,
-        name: found.name,
         longDesc: cat.longDesc,
         features: cat.features,
         benefits: cat.benefits,
-        faqs: cat.faqs
+        faqs: cat.faqs,
       };
     }
   }

@@ -1,11 +1,27 @@
 // src/App.js
-import React, { Suspense, lazy } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { Suspense, lazy, useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-/* 🔥 LAZY LOADED PAGES */
+/* =======================
+   🔄 SCROLL TO TOP (SEO + UX)
+======================= */
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
+
+  return null;
+}
+
+/* =======================
+   🔥 LAZY LOADED PAGES
+======================= */
 
 // Core pages
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -55,95 +71,102 @@ const ResetPasswordPage = lazy(() =>
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Navbar />
 
-      {/* 🔥 Suspense Wrapper */}
-      <Suspense
-        fallback={
-          <div className="min-h-[70vh] flex items-center justify-center text-xl font-semibold">
-            Loading...
-          </div>
-        }
-      >
-        <Routes>
-          {/* HOME */}
-          <Route path="/" element={<HomePage />} />
+        {/* =======================
+            🔥 SUSPENSE LOADER (NO CLS)
+        ======================= */}
+        <Suspense
+          fallback={
+            <div className="min-h-[70vh] flex items-center justify-center">
+              <span className="text-xl font-semibold animate-pulse">
+                Loading…
+              </span>
+            </div>
+          }
+        >
+          <Routes>
+            {/* HOME */}
+            <Route path="/" element={<HomePage />} />
 
-          {/* AUTH ROUTES */}
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
-          <Route
-            path="/forgot-password"
-            element={<ForgotPasswordPage />}
-          />
-          <Route
-            path="/reset-password"
-            element={<ResetPasswordPage />}
-          />
+            {/* AUTH */}
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
+            <Route
+              path="/forgot-password"
+              element={<ForgotPasswordPage />}
+            />
+            <Route
+              path="/reset-password"
+              element={<ResetPasswordPage />}
+            />
 
-          {/* MAIN PAGES */}
-          <Route
-            path="/digital-marketing"
-            element={<DigitalMarketingPage />}
-          />
-          <Route
-            path="/services-grid"
-            element={<ServicesGridPage />}
-          />
-          <Route path="/google-ads" element={<GoogleAdsPage />} />
-          <Route path="/portfolio" element={<PortfolioPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/packages" element={<PackagesPage />} />
-          <Route path="/contact" element={<ContactCTAPage />} />
-          <Route
-            path="/grow-business"
-            element={<GrowBusinessPage />}
-          />
+            {/* MAIN */}
+            <Route
+              path="/digital-marketing"
+              element={<DigitalMarketingPage />}
+            />
+            <Route
+              path="/services-grid"
+              element={<ServicesGridPage />}
+            />
+            <Route path="/google-ads" element={<GoogleAdsPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/packages" element={<PackagesPage />} />
+            <Route path="/contact" element={<ContactCTAPage />} />
+            <Route
+              path="/grow-business"
+              element={<GrowBusinessPage />}
+            />
 
-          {/* DETAIL PAGES */}
-          <Route
-            path="/services/:slug"
-            element={<ServiceDetailPage />}
-          />
-          <Route
-            path="/digital-marketing/:slug"
-            element={<DigitalMarketingDetailPage />}
-          />
-          <Route
-            path="/portfolio/:slug"
-            element={<PortfolioDetailPage />}
-          />
-          <Route
-            path="/google-ads/:slug"
-            element={<GoogleAdsDetailsPage />}
-          />
+            {/* DETAIL */}
+            <Route
+              path="/services/:slug"
+              element={<ServiceDetailPage />}
+            />
+            <Route
+              path="/digital-marketing/:slug"
+              element={<DigitalMarketingDetailPage />}
+            />
+            <Route
+              path="/portfolio/:slug"
+              element={<PortfolioDetailPage />}
+            />
+            <Route
+              path="/google-ads/:slug"
+              element={<GoogleAdsDetailsPage />}
+            />
 
-          {/* INDUSTRIES */}
-          <Route path="/industries" element={<IndustriesPage />} />
-          <Route
-            path="/industries/:category"
-            element={<CategoryPage />}
-          />
-          <Route
-            path="/industry/:name"
-            element={<IndustryDetailPage />}
-          />
+            {/* INDUSTRIES */}
+            <Route path="/industries" element={<IndustriesPage />} />
+            <Route
+              path="/industries/:category"
+              element={<CategoryPage />}
+            />
+            <Route
+              path="/industry/:name"
+              element={<IndustryDetailPage />}
+            />
 
-          {/* ❌ 404 FALLBACK */}
-          <Route
-            path="*"
-            element={
-              <div className="min-h-[60vh] flex items-center justify-center text-2xl font-bold">
-                Page Not Found
-              </div>
-            }
-          />
-        </Routes>
-      </Suspense>
+            {/* 404 */}
+            <Route
+              path="*"
+              element={
+                <div className="min-h-[60vh] flex items-center justify-center text-2xl font-bold">
+                  Page Not Found
+                </div>
+              }
+            />
+          </Routes>
+        </Suspense>
 
-      <Footer />
-    </BrowserRouter>
+        <Footer />
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

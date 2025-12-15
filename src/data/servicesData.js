@@ -1,38 +1,45 @@
-export const servicesData = [
+// src/data/servicesData.js
+
+const servicesData = [
   {
     slug: "website-development",
     title: "Website Development",
     summary:
-      "Modern, high-speed and mobile-friendly websites that elevate your brand’s credibility and convert visitors into customers.",
+      "Modern, high-speed and mobile-friendly websites that elevate your brand credibility and convert visitors into customers.",
     heroImage: "/WebsiteDevelopment.webp",
     colorClass: "bg-slate-800",
     accent: "text-sky-400",
+
     details:
-      "We build fully responsive, SEO-friendly, fast websites tailored to your brand. Our development covers accessibility, performance optimization, progressive enhancement, and easy content updates. We provide full-stack solutions — from discovery and wireframes to UI design, development, testing and launch. Typical deliverables: responsive UI, CMS integration (if needed), analytics setup, on-page SEO, and 30 days of post-launch support.",
+      "We build fully responsive, SEO-friendly and performance-optimized websites tailored to your business goals. Our website development process focuses on fast loading speed, accessibility, clean UI/UX, and strong on-page SEO. From business websites to custom web applications, we deliver scalable and secure solutions that grow with your business.",
+
     bullets: [
-      "Responsive & mobile-first design",
-      "Fast loading and optimized assets",
-      "SEO-ready structure & schema",
-      "Secure hosting recommendations",
-      "CMS or headless integrations",
+      "Responsive & mobile-first website design",
+      "Fast loading speed & optimized assets",
+      "SEO-friendly HTML structure & schema",
+      "Secure and scalable architecture",
+      "CMS or headless CMS integration",
     ],
   },
 
   {
     slug: "ecommerce-website",
-    title: "E-commerce Website",
+    title: "E-commerce Website Development",
     summary:
-      "Secure, conversion-focused online stores with smooth checkout, payment gateways and product management.",
+      "Secure, conversion-focused e-commerce websites with smooth checkout and online payment integration.",
     heroImage: "/E-CommerceWebsite.webp",
     colorClass: "bg-slate-800",
     accent: "text-violet-400",
+
     details:
-      "We build conversion-optimized e-commerce stores using platforms or custom solutions depending on your needs. Features include product catalog, inventory, secure payment gateways (Razorpay/Stripe/PayU), shipping rules, coupons, customer accounts, and analytics. We focus on UX that reduces cart abandonment and increases AOV.",
+      "We develop high-performing e-commerce websites that provide seamless shopping experiences. Our solutions include product management, secure payment gateways, order tracking, inventory management, and mobile-first UX designed to increase conversions and reduce cart abandonment.",
+
     bullets: [
-      "Payment & shipping integration",
-      "Product search & filters",
-      "Order management & reporting",
-      "Conversion-rate optimisation",
+      "Secure payment gateway integration",
+      "Product catalog & inventory management",
+      "User-friendly checkout experience",
+      "Order tracking & customer accounts",
+      "Conversion rate optimization",
     ],
   },
 
@@ -40,17 +47,20 @@ export const servicesData = [
     slug: "social-media-marketing",
     title: "Social Media Marketing",
     summary:
-      "High-impact social media strategies, content creation and paid campaigns to grow your audience and engagement.",
+      "Data-driven social media marketing strategies to grow your audience, engagement and brand awareness.",
     heroImage: "/SocialMediaMarketing.webp",
     colorClass: "bg-slate-800",
     accent: "text-emerald-400",
+
     details:
-      "Our social media service includes strategy, creative content calendars, post design, captions, hashtag research, community management and paid social campaigns. We focus on measurable KPIs — follower growth, engagement, lead generation and brand awareness.",
+      "Our social media marketing services help brands grow organically and through paid campaigns. We manage content creation, posting schedules, audience targeting, ad optimization and performance tracking across platforms like Instagram, Facebook and LinkedIn.",
+
     bullets: [
-      "Content calendar & creatives",
+      "Content strategy & creative design",
+      "Instagram & Facebook ad campaigns",
       "Audience research & targeting",
-      "Paid social campaigns (Meta, Instagram)",
-      "Community management",
+      "Engagement & community management",
+      "Performance tracking & reports",
     ],
   },
 
@@ -58,16 +68,19 @@ export const servicesData = [
     slug: "google-ads-management",
     title: "Google Ads Management",
     summary:
-      "Targeted, ROI-driven Google Search & Display campaigns to drive leads and sales quickly.",
+      "ROI-driven Google Ads campaigns to generate quality leads and increase sales quickly.",
     heroImage: "/GoogleAdsManagement.webp",
     colorClass: "bg-slate-800",
     accent: "text-indigo-400",
+
     details:
-      "We run search, display, shopping (if applicable) and remarketing campaigns with strong tracking. Our approach is granular keyword research, conversion tracking setup (GA4 + GTM), ad copy & landing page optimization and continuous bid & audience tuning for a positive ROI.",
+      "We manage high-performing Google Ads campaigns including Search, Display, YouTube and Remarketing ads. Our focus is on keyword research, conversion tracking, ad copy optimization and continuous performance improvements to maximize return on ad spend.",
+
     bullets: [
       "Keyword & competitor research",
-      "Conversion tracking + analytics",
-      "A/B ad testing & optimizations",
+      "Search, Display & YouTube ads",
+      "Conversion tracking setup (GA4 + GTM)",
+      "Ad copy & landing page optimization",
       "Remarketing & audience segmentation",
     ],
   },
@@ -76,17 +89,20 @@ export const servicesData = [
     slug: "seo-services",
     title: "SEO Services",
     summary:
-      "Result-driven SEO to increase organic visibility, traffic and qualified leads for your business.",
+      "Result-driven SEO services to improve Google ranking, organic traffic and long-term growth.",
     heroImage: "/SeoServices.webp",
     colorClass: "bg-slate-800",
     accent: "text-indigo-300",
+
     details:
-      "Our SEO service includes technical SEO audits, on-page optimization, content strategy, local SEO, backlink outreach and monthly reporting. We set clear keyword goals, improve site health, and create content that drives long-term organic growth.",
+      "Our SEO services focus on long-term organic growth through technical SEO, on-page optimization, content strategy and high-quality backlinks. We improve website health, keyword rankings and search visibility with transparent monthly reporting.",
+
     bullets: [
-      "Site audit & technical fixes",
-      "Keyword strategy & content plan",
-      "Local SEO & GMB optimisation",
-      "Monthly reporting & growth plan",
+      "Technical SEO audit & fixes",
+      "Keyword research & content optimization",
+      "On-page & off-page SEO",
+      "Local SEO & Google Business Profile",
+      "Monthly SEO reports & insights",
     ],
   },
 
@@ -94,17 +110,20 @@ export const servicesData = [
     slug: "graphic-designing",
     title: "Graphic Designing",
     summary:
-      "Branding, logo design, social creative and marketing assets with consistent visual identity.",
+      "Creative graphic design solutions for branding, marketing and digital campaigns.",
     heroImage: "/GraphicsDesign.webp",
     colorClass: "bg-slate-800",
     accent: "text-pink-400",
+
     details:
-      "From logo & brand identity to social media creatives, brochures and presentation design — our design team creates assets that reflect your brand values and convert viewers into customers.",
+      "Our graphic designing services help businesses build a strong brand identity. From logo design to social media creatives and marketing materials, we create visually appealing designs that communicate your brand message clearly and effectively.",
+
     bullets: [
-      "Logo & brand kit",
-      "Social & ad creatives",
-      "Print & digital assets",
-      "Brand guideline document",
+      "Logo & brand identity design",
+      "Social media creatives & ads",
+      "Marketing banners & brochures",
+      "Consistent brand guidelines",
+      "High-quality print & digital designs",
     ],
   },
 ];
