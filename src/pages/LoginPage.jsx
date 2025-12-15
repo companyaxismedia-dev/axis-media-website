@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 
 // ✅ LIVE BACKEND URL FROM ENV
-const API = `${import.meta.env.VITE_API_URL}/api/auth`;
+const API = `${process.env.REACT_APP_API_URL}/api/auth`;
+
 
 
 export default function LoginPage() {
