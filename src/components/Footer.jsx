@@ -7,123 +7,148 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import axisLogo from "../assets/axisLogo.jpeg";
+import axisLogo from "../assets/axismedia.WEBP";
 
 export default function Footer() {
   return (
     <footer
-      className="text-white relative overflow-hidden"
+      className="relative text-white overflow-hidden"
       role="contentinfo"
+      aria-label="Axis Media Footer"
     >
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#041A3A] via-[#082F62] to-[#0F3B8F]"></div>
-      <div className="absolute top-10 right-10 w-[400px] h-[400px] bg-blue-500/20 blur-[180px] rounded-full"></div>
-      <div className="absolute bottom-0 left-10 w-[350px] h-[350px] bg-purple-500/20 blur-[200px] rounded-full"></div>
+      {/* ================= BACKGROUND ================= */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#041A3A] via-[#072B55] to-[#0B3F8F]" />
+      <div className="absolute -top-20 -right-20 w-[420px] h-[420px] bg-sky-400/20 blur-[180px] rounded-full" />
+      <div className="absolute bottom-0 -left-20 w-[380px] h-[380px] bg-indigo-500/20 blur-[200px] rounded-full" />
 
-      <div className="relative pt-16 pb-10 px-6 z-10">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+      {/* ================= CONTENT ================= */}
+      <div className="relative z-10 pt-16 pb-10 px-6">
+        <div className="max-w-7xl mx-auto grid gap-12 md:grid-cols-4">
 
-          {/* LOGO + ABOUT */}
+          {/* ================= BRAND ================= */}
           <div className="max-w-sm">
-            <NavLink to="/" aria-label="Axis Media Home">
-              <div className="bg-white/90 p-4 w-32 h-32 rounded-2xl shadow-2xl flex items-center justify-center backdrop-blur-lg">
+            <NavLink
+              to="/"
+              aria-label="Axis Media Digital Marketing Agency Home"
+              className="inline-flex items-center gap-3"
+            >
+              {/* SAME STYLE AS NAVBAR LOGO */}
+              <div className="bg-white p-3 rounded-2xl shadow-xl flex items-center justify-center">
                 <img
                   src={axisLogo}
                   alt="Axis Media Digital Marketing Agency Logo"
-                  width="120"
-                  height="120"
+                  width="160"
+                  height="56"
                   loading="lazy"
-                  className="w-full h-full object-contain rounded-xl"
+                  className="h-14 w-auto object-contain"
                 />
               </div>
             </NavLink>
 
+            {/* SEO-OPTIMIZED DESCRIPTION */}
             <p className="text-gray-200 mt-5 leading-relaxed text-[15px]">
-              Axis Media is a digital marketing and website development agency
-              helping businesses grow online with SEO, Google Ads, web design,
-              and performance-driven marketing strategies.
+              <strong>Axis Media</strong> is a leading
+              <strong> digital marketing agency in Delhi NCR</strong>,
+              delivering professional SEO services, Google Ads management,
+              website development, e-commerce solutions and performance-driven
+              online marketing strategies for businesses of all sizes.
             </p>
           </div>
 
-          {/* FOR BUSINESSES */}
-          <div>
-            <h4 className="text-xl font-semibold mb-4 text-blue-200">
-              For Businesses
+          {/* ================= SERVICES ================= */}
+          <nav aria-label="Footer Services">
+            <h4 className="text-lg font-semibold mb-4 text-blue-200">
+              Digital Services
             </h4>
-            <ul className="space-y-2 text-gray-200">
+            <ul className="space-y-2 text-gray-200 text-sm">
               <li><NavLink to="/digital-marketing">Digital Marketing Services</NavLink></li>
-              <li><NavLink to="/website-development">Website Solutions</NavLink></li>
-              <li><NavLink to="/seo">SEO Strategy</NavLink></li>
-              <li><NavLink to="/contact">FAQs & Consultation</NavLink></li>
+              <li><NavLink to="/website-development">Website Development Services</NavLink></li>
+              <li><NavLink to="/seo">Professional SEO Services</NavLink></li>
+              <li><NavLink to="/google-ads">Google Ads Management</NavLink></li>
+              <li><NavLink to="/contact">Free Consultation</NavLink></li>
             </ul>
-          </div>
+          </nav>
 
-          {/* FOR AGENCIES */}
-          <div>
-            <h4 className="text-xl font-semibold mb-4 text-blue-200">
-              For Agencies
+          {/* ================= BUSINESS ================= */}
+          <nav aria-label="Business Solutions">
+            <h4 className="text-lg font-semibold mb-4 text-blue-200">
+              Business Solutions
             </h4>
-            <ul className="space-y-2 text-gray-200">
-              <li><NavLink to="/partner">Partner With Us</NavLink></li>
-              <li><NavLink to="/contact">Submit Your Agency</NavLink></li>
-              <li><NavLink to="/about">Sponsorships</NavLink></li>
-              <li><NavLink to="/portfolio">All Agencies</NavLink></li>
+            <ul className="space-y-2 text-gray-200 text-sm">
+              <li><NavLink to="/grow-business">Grow Your Business</NavLink></li>
+              <li><NavLink to="/industries">Industries We Serve</NavLink></li>
+              <li><NavLink to="/portfolio">Our Portfolio</NavLink></li>
+              <li><NavLink to="/packages">Affordable Packages</NavLink></li>
+              <li><NavLink to="/about">About Axis Media</NavLink></li>
             </ul>
-          </div>
+          </nav>
 
-          {/* CONTACT */}
+          {/* ================= CONTACT ================= */}
           <div>
-            <h4 className="text-xl font-semibold mb-4 text-blue-200">
-              Get in Touch
+            <h4 className="text-lg font-semibold mb-4 text-blue-200">
+              Contact Axis Media
             </h4>
 
-            <p className="text-gray-200">Delhi NCR, India</p>
+            {/* NAP FOR LOCAL SEO */}
+            <p className="text-gray-200 text-sm">
+              <strong>Axis Media</strong><br />
+              Digital Marketing Agency<br />
+              Delhi NCR, India<br />
+              Working Location: Office No. 820 , Suneja Tower II, District Center Janak Puri, Delhi – 110058
+            </p>
+
             <a
               href="mailto:companyaxismedia@gmail.com"
-              className="block text-gray-200 mt-1 hover:text-white"
+              className="block mt-2 text-gray-200 hover:text-white text-sm"
             >
               companyaxismedia@gmail.com
             </a>
             <a
+              href="mailto:axismediainbox@gmail.com"
+              className="block mt-2 text-gray-200 hover:text-white text-sm"
+            >
+              axismediainbox@gmail.com
+            </a>
+
+            <a
               href="tel:+919871584001"
-              className="block text-gray-200 mt-1 hover:text-white"
+              className="block mt-1 text-gray-200 hover:text-white text-sm"
             >
               +91 9871584001
             </a>
 
-            {/* SOCIAL */}
+            {/* SOCIAL TRUST SIGNALS */}
             <div className="flex gap-4 mt-6 text-xl">
-              <a href="https://www.linkedin.com" aria-label="Axis Media LinkedIn">
+              <a href="https://www.linkedin.com" aria-label="Axis Media LinkedIn" target="_blank" rel="noopener noreferrer">
                 <FaLinkedinIn />
               </a>
-              <a href="https://www.instagram.com/axismedia123" aria-label="Axis Media Instagram">
+              <a href="https://www.instagram.com/axismedia123" aria-label="Axis Media Instagram" target="_blank" rel="noopener noreferrer">
                 <FaInstagram />
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61584611262239" aria-label="Axis Media Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61584611262239" aria-label="Axis Media Facebook" target="_blank" rel="noopener noreferrer">
                 <FaFacebookF />
               </a>
-              <a href="https://twitter.com" aria-label="Axis Media Twitter">
+              <a href="https://twitter.com" aria-label="Axis Media Twitter" target="_blank" rel="noopener noreferrer">
                 <FaTwitter />
               </a>
-              <a href="https://www.youtube.com" aria-label="Axis Media YouTube">
+              <a href="https://www.youtube.com" aria-label="Axis Media YouTube" target="_blank" rel="noopener noreferrer">
                 <FaYoutube />
               </a>
             </div>
           </div>
         </div>
 
-        {/* BOTTOM */}
-        <div className="max-w-7xl mx-auto pt-10">
-          <div className="border-t border-white/20 pt-6 flex flex-wrap justify-center gap-6 text-gray-300 text-sm">
-            <NavLink to="/sitemap">Sitemap</NavLink>
-            <NavLink to="/terms">Terms of Use</NavLink>
+        {/* ================= BOTTOM ================= */}
+        <div className="max-w-7xl mx-auto pt-10 mt-10 border-t border-white/20">
+          <div className="flex flex-wrap justify-center gap-6 text-gray-300 text-sm">
+            <NavLink to="/sitemap">HTML Sitemap</NavLink>
             <NavLink to="/privacy">Privacy Policy</NavLink>
+            <NavLink to="/terms">Terms of Use</NavLink>
             <NavLink to="/accessibility">Accessibility</NavLink>
-            <NavLink to="/fraud-protection">Fraud Protection</NavLink>
           </div>
 
           <p className="text-center text-gray-300 mt-4 text-sm">
-            © {new Date().getFullYear()} Axis Media. All Rights Reserved.
+            © {new Date().getFullYear()} <strong>Axis Media</strong>. All Rights Reserved.
           </p>
         </div>
       </div>
