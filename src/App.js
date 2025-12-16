@@ -1,13 +1,19 @@
 // src/App.js
 import React, { Suspense, lazy, useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+  Navigate,
+} from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 /* =======================
-   🔄 SCROLL TO TOP (SEO + UX)
+   🔄 SCROLL TO TOP
 ======================= */
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,6 +43,12 @@ const DigitalMarketingPage = lazy(() =>
   import("./pages/DigitalMarketingPage")
 );
 const GoogleAdsPage = lazy(() => import("./pages/GoogleAdsPage"));
+const SeoServicesPage = lazy(() =>
+  import("./pages/SeoServicesPage")
+);
+const BrandingPage = lazy(() =>
+  import("./pages/BrandingPage")
+);
 
 // Detail pages
 const ServiceDetailPage = lazy(() =>
@@ -76,9 +88,6 @@ function App() {
         <ScrollToTop />
         <Navbar />
 
-        {/* =======================
-            🔥 SUSPENSE LOADER (NO CLS)
-        ======================= */}
         <Suspense
           fallback={
             <div className="min-h-[70vh] flex items-center justify-center">
@@ -110,6 +119,14 @@ function App() {
               element={<DigitalMarketingPage />}
             />
             <Route
+              path="/seo-services"
+              element={<SeoServicesPage />}
+            />
+            <Route
+              path="/services/branding"
+              element={<BrandingPage />}
+            />
+            <Route
               path="/services-grid"
               element={<ServicesGridPage />}
             />
@@ -121,6 +138,12 @@ function App() {
             <Route
               path="/grow-business"
               element={<GrowBusinessPage />}
+            />
+
+            {/* SEO SAFE REDIRECT */}
+            <Route
+              path="/branding"
+              element={<Navigate to="/services/branding" replace />}
             />
 
             {/* DETAIL */}

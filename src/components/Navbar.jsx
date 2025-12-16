@@ -101,7 +101,7 @@ export default function Navbar() {
                   <li><NavLink to="/services-grid">All Services</NavLink></li>
                   <li><NavLink to="/digital-marketing">Digital Marketing</NavLink></li>
                   <li><NavLink to="/google-ads">Google Ads</NavLink></li>
-                  <li><NavLink to="/seo">SEO Services</NavLink></li>
+                  <li><NavLink to="/seo-services">SEO Services</NavLink></li>
                   <li><NavLink to="/branding">Branding & Graphics</NavLink></li>
                 </ul>
               </div>
