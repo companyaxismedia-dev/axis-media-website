@@ -25,7 +25,7 @@ const allAbout = [
   {
     title: "Website Development",
     desc: "Fast, responsive, and SEO-optimized websites that convert visitors into customers.",
-    image: "/website-developmentwebp",
+    image: "website-development1.webp",
   },
   {
     title: "UI/UX Website Design",
