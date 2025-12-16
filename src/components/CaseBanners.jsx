@@ -20,7 +20,7 @@ export default function CaseBanners() {
     {
       id: 3,
       title: "SEO Ranking & Lead Generation",
-      img: "/SEO Ranking & Lead Generation.webp",
+      img: "/google-ads (1).webp",
       desc: "Achieved top Google rankings for competitive keywords and generated consistent monthly business leads.",
       link: "/case-studies/seo-lead-generation",
     },

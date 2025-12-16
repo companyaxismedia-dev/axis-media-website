@@ -4,7 +4,7 @@ const reviews = [
   {
     name: "Amit Verma",
     text: "Their SEO work ranked our website in top Google results. Very happy!",
-    img: "/Amit Verma.webp",
+    img: "/Amit Verma (1).webp",
     color: "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white",
   },
   {
@@ -16,37 +16,37 @@ const reviews = [
   {
     name: "Mahesh Kumar",
     text: "Affordable and fast service. Perfect for startups looking to grow online.",
-    img: "/Mahesh Kumar.webp",
+    img: "/Mahesh Kumar (1).webp",
     color: "bg-gradient-to-br from-teal-500 to-cyan-600 text-white",
   },
   {
     name: "Divya Kapoor",
     text: "Marketing campaigns doubled our conversions. Brilliant work!",
-    img: "/Divya Kapoor.webp",
+    img: "/Divya Kapoor (1).webp",
     color: "bg-gradient-to-br from-yellow-500 to-orange-600 text-white",
   },
   {
     name: "Arjun Rao",
     text: "Premium-quality website delivered on time. Great communication from the team.",
-    img: "/Arjun Rao.webp",
+    img: "/Arjun Rao (1).webp",
     color: "bg-gradient-to-br from-red-500 to-red-700 text-white",
   },
   {
     name: "Karan Sharma",
     text: "Axis Media helped us scale our e-commerce store profitably. 5/5 stars!",
-    img: "/Karan Sharma.webp",
+    img: "/Karan Sharma (1).webp",
     color: "bg-gradient-to-br from-sky-500 to-blue-600 text-white",
   },
   {
     name: "Neha Agarwal",
     text: "Amazing digital marketing team! Our brand visibility increased massively.",
-    img: "/Neha Agarwal.webp",
+    img: "/Neha Agarwal (1).webp",
     color: "bg-gradient-to-br from-purple-500 to-purple-700 text-white",
   },
   {
     name: "Rohit Khanna",
     text: "Professional service & great ROI. Highly recommended for businesses.",
-    img: "/Rohit Khanna.webp",
+    img: "/Rohit Khanna (1).webp",
     color: "bg-gradient-to-br from-green-500 to-emerald-700 text-white",
   },
 ];

@@ -4,7 +4,7 @@ const dmServicesData = [
     title: "Social Media Marketing Services",
     description:
       "Social media marketing services to grow followers, engagement and leads.",
-    heroImage: "/social-media-marketing.webp",
+    heroImage: "/social-media-marketing (1).webp",
 
     longContent: {
       intro:
@@ -48,7 +48,7 @@ const dmServicesData = [
     title: "SEO Optimization Services",
     description:
       "Professional SEO services to rank higher on Google and grow organic traffic.",
-    heroImage: "/seo-optimization.webp",
+    heroImage: "/seo-optimization (1).webp",
 
     longContent: {
       intro:
@@ -92,7 +92,7 @@ const dmServicesData = [
     title: "Email Marketing Services",
     description:
       "Email marketing automation and campaigns to nurture leads & boost sales.",
-    heroImage: "/email-marketing.webp",
+    heroImage: "/email-marketing (1).webp",
 
     longContent: {
       intro:

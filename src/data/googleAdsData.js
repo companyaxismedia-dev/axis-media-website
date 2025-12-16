@@ -116,7 +116,7 @@ const adsServices = [
   {
     slug: "performance-max",
     title: "Performance Max Campaign Services",
-    image: "/Max Campaigns.webp",
+    image: "/Performance Max Campaigns.webp",
     longDescription:
       "Performance Max campaigns use Google AI to run ads across Search, Display, YouTube, Maps, and Gmail for maximum reach and conversions.",
 

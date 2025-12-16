@@ -161,10 +161,10 @@ export default function ServicesGrid() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-max lg:w-full pb-4">
 
             {[
-              { img: "/IBMimage.webp", logo: "/ibm.webp", text: "IBM rolled out digital programs across 23 countries." },
-              { img: "/SAPimage.webp", logo: "/sap.webp", text: "SAP improved workflow efficiency by 52%." },
-              { img: "/VODAFONEimage.webp", logo: "/vodafone.webp", text: "Vodafone trained 4,000+ global marketers." },
-              { img: "/COCACOLAimage.webp", logo: "/cocacola.webp", text: "Coca-Cola boosted marketing efficiency by 29%." },
+              { img: "/IBMimage (1).webp", logo: "/ibm.webp", text: "IBM rolled out digital programs across 23 countries." },
+              { img: "/Straumannimage (1).webp", logo: "/sap.webp", text: "SAP improved workflow efficiency by 52%." },
+              { img: "/VODAFONEimage (1).webp", logo: "/vodafone.webp", text: "Vodafone trained 4,000+ global marketers." },
+              { img: "/SONYIMAGE (1).webp", logo: "/cocacola.webp", text: "Coca-Cola boosted marketing efficiency by 29%." },
             ].map((c, i) => (
               <article
                 key={i}

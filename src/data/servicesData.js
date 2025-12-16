@@ -6,7 +6,7 @@ const servicesData = [
     title: "Website Development",
     summary:
       "Modern, high-speed and mobile-friendly websites that elevate your brand credibility and convert visitors into customers.",
-    heroImage: "/WebsiteDevelopment.webp",
+    heroImage: "/WebsiteDevelopment (1).webp",
     colorClass: "bg-slate-800",
     accent: "text-sky-400",
 
@@ -27,7 +27,7 @@ const servicesData = [
     title: "E-commerce Website Development",
     summary:
       "Secure, conversion-focused e-commerce websites with smooth checkout and online payment integration.",
-    heroImage: "/E-CommerceWebsite.webp",
+    heroImage: "/website-development (1).webp",
     colorClass: "bg-slate-800",
     accent: "text-violet-400",
 
@@ -90,7 +90,7 @@ const servicesData = [
     title: "SEO Services",
     summary:
       "Result-driven SEO services to improve Google ranking, organic traffic and long-term growth.",
-    heroImage: "/SeoServices.webp",
+    heroImage: "/SeoServices (1).webp",
     colorClass: "bg-slate-800",
     accent: "text-indigo-300",
 
@@ -111,7 +111,7 @@ const servicesData = [
     title: "Graphic Designing",
     summary:
       "Creative graphic design solutions for branding, marketing and digital campaigns.",
-    heroImage: "/GraphicsDesign.webp",
+    heroImage: "/email-marketing (1).webp",
     colorClass: "bg-slate-800",
     accent: "text-pink-400",
 

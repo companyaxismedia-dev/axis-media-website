@@ -25,7 +25,7 @@ const adsServices = [
     slug: "youtube-ads",
     title: "YouTube Video Ads",
     description: "High-engagement video ads for strong brand recall.",
-    image: "/YouTube Ads.webp",
+    image: "/youtube-ads.webp",
   },
   {
     slug: "remarketing-ads",
@@ -62,11 +62,12 @@ const techIcons = [
     img: "/Google Display.webp",
     desc: "Banner ads across millions of websites and apps.",
   },
+  
   {
     title: "Smart Campaigns",
-    img: "/Smart Campaigns.webp",
+    img: "/remarketing-ads.webp",
     desc: "AI-driven automated bidding & targeting.",
-  },
+  }, 
   {
     title: "Analytics & Conversion Tracking",
     img: "/Analytics Tracking.webp",

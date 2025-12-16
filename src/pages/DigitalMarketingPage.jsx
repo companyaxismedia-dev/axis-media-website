@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import DigitalMarketing from "../components/DigitalMarketing";
+import AdvertiseBrand from "../components/AdvertiseBrand";
 
 export default function DigitalMarketingPage() {
   return (
@@ -21,6 +22,7 @@ export default function DigitalMarketingPage() {
 
       {/* PAGE CONTENT */}
       <DigitalMarketing />
+      <AdvertiseBrand />
 
     </main>
   );
