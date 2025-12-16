@@ -5,42 +5,42 @@ const allAbout = [
   {
     title: "Google Ads Management",
     desc: "High-converting Google Ads campaigns that drive qualified traffic and increase ROI.",
-    image: "/GoogleAdsManagement.webp",
+    image: "/google-ads1.webp",
   },
   {
     title: "Digital Marketing Services",
     desc: "Complete digital marketing solutions including SEO, SMM, and performance marketing.",
-    image: "/SociaMediaMarketing.webp",
+    image: "/social-media.webp",
   },
   {
     title: "Business Growth Strategy",
     desc: "Data-driven strategies to scale your business and maximize online visibility.",
-    image: "/INDUSTRIES.jpeg",
+    image: "/Business-industries.webp",
   },
   {
     title: "Brand Advertising",
     desc: "Creative branding and advertising solutions to build strong brand authority.",
-    image: "/Straumannimage.webp",
+    image: "/brand-advertising.webp",
   },
   {
     title: "Website Development",
     desc: "Fast, responsive, and SEO-optimized websites that convert visitors into customers.",
-    image: "/WebsiteDevelopment.webp",
+    image: "website-developmentwebp",
   },
   {
     title: "UI/UX Website Design",
     desc: "Modern UI/UX designs focused on user experience and engagement.",
-    image: "/IBMimage.webp",
+    image: "/ui-ux.webp",
   },
   {
     title: "Business Partnership",
     desc: "Long-term partnerships focused on sustainable business growth.",
-    image: "/SONYIMAGE.webp",
+    image: "/business-partnership.webp",
   },
   {
     title: "Online Business Promotion",
     desc: "Increase traffic, leads, and conversions with result-driven promotion strategies.",
-    image: "/IBMimage.webp",
+    image: "/online-promotion.webp",
   },
 ];
 
@@ -57,23 +57,19 @@ export default function About() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
-        {/* ✅ H2 */}
         <h2
           id="about-heading"
-          className="text-center text-4xl md:text-5xl font-extrabold mb-12
-          text-gray-900"
+          className="text-center text-4xl md:text-5xl font-extrabold mb-12 text-gray-900"
         >
           We Help Businesses Grow Smarter 🚀
         </h2>
 
-        {/* SUB TEXT */}
         <p className="text-center max-w-3xl mx-auto mb-16 text-gray-600 text-lg">
           Axis Media delivers performance-driven digital marketing, SEO,
           Google Ads and website development solutions designed for long-term
           business growth.
         </p>
 
-        {/* SERVICES GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {allAbout.map((card, i) => (
             <article
@@ -88,6 +84,7 @@ export default function About() {
                   width="400"
                   height="300"
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition duration-500 hover:scale-110"
                 />
               </div>
@@ -103,7 +100,6 @@ export default function About() {
           ))}
         </div>
 
-        {/* WHY CHOOSE US */}
         <div className="mt-24 max-w-5xl mx-auto">
 
           <SectionTitle title="Why Businesses Choose Axis Media" />
