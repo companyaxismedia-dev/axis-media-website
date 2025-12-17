@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/axismedia.WEBP";
 
 export default function Navbar() {
@@ -9,10 +9,24 @@ export default function Navbar() {
 
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
+  const location = useLocation();
 
-  // ✅ Navbar hide on scroll (smooth)
+  // ✅ Navbar hide on scroll (SAFE for auth pages)
   useEffect(() => {
     const handleScroll = () => {
+      // 🔒 Pages where navbar should NEVER hide
+      const noHidePages = [
+        "/login",
+        "/signup",
+        "/forgot-password",
+        "/reset-password",
+      ];
+
+      if (noHidePages.includes(location.pathname)) {
+        setHidden(false);
+        return;
+      }
+
       const current = window.scrollY;
 
       if (!ticking.current) {
@@ -31,7 +45,7 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const toggleMenu = (menu) => setOpenMenu(menu);
   const closeMenu = () => setOpenMenu(null);
@@ -53,19 +67,9 @@ export default function Navbar() {
       <nav className="w-full h-full">
         <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
 
-          {/* ================= LOGO (FIXED & PROFESSIONAL) ================= */}
+          {/* ================= LOGO ================= */}
           <NavLink to="/" className="flex items-center">
-            <div
-              className="
-                flex items-center justify-center
-                h-[48px] px-4
-                bg-white
-                rounded-xl
-                shadow-md
-                transition-all duration-300
-                hover:shadow-lg hover:scale-[1.02]
-              "
-            >
+            <div className="flex items-center justify-center h-[48px] px-4 bg-white rounded-xl shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
               <img
                 src={logo}
                 alt="Axis Media Digital Marketing Agency"
@@ -129,9 +133,7 @@ export default function Navbar() {
               </div>
             </li>
 
-            
-
-            {/* WebDevelopment */}
+            {/* WEB DEVELOPMENT */}
             <li
               className="relative"
               onMouseEnter={() => toggleMenu("WebDevelopment")}
@@ -154,9 +156,7 @@ export default function Navbar() {
             </li>
 
             <li><NavLink to="/about">About Us</NavLink></li>
-            
             <li><NavLink to="/contact">Contact</NavLink></li>
-
 
             {/* CTA */}
             <NavLink
@@ -200,6 +200,7 @@ export default function Navbar() {
           >
             ☰
           </button>
+
         </div>
       </nav>
     </header>
