@@ -11,7 +11,7 @@ export default function Navbar() {
   const ticking = useRef(false);
   const location = useLocation();
 
-  // ✅ Navbar hide on scroll (SAFE for auth pages)
+  // ✅ Navbar hide on scroll
   useEffect(() => {
     const handleScroll = () => {
       const noHidePages = [
@@ -30,11 +30,7 @@ export default function Navbar() {
 
       if (!ticking.current) {
         window.requestAnimationFrame(() => {
-          if (current > lastScrollY.current && current > 120) {
-            setHidden(true);
-          } else {
-            setHidden(false);
-          }
+          setHidden(current > lastScrollY.current && current > 120);
           lastScrollY.current = current;
           ticking.current = false;
         });
@@ -45,9 +41,6 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [location.pathname]);
-
-  const toggleMenu = (menu) => setOpenMenu(menu);
-  const closeMenu = () => setOpenMenu(null);
 
   const isLoggedIn = !!localStorage.getItem("token");
 
@@ -62,7 +55,7 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 w-full z-[100]
         bg-sky-500 h-[80px] shadow-lg
-        transition-transform duration-500
+        transition-transform duration-300
         ${hidden ? "-translate-y-full" : "translate-y-0"}`}
       >
         <nav className="w-full h-full">
@@ -71,15 +64,11 @@ export default function Navbar() {
             {/* LOGO */}
             <NavLink to="/" className="flex items-center">
               <div className="flex items-center justify-center h-[48px] px-4 bg-white rounded-xl shadow-md">
-                <img
-                  src={logo}
-                  alt="Axis Media Digital Marketing Agency"
-                  className="h-8 w-auto object-contain"
-                />
+                <img src={logo} alt="Axis Media" className="h-8 w-auto" />
               </div>
             </NavLink>
 
-            {/* ================= DESKTOP MENU (UNCHANGED) ================= */}
+            {/* ================= DESKTOP MENU ================= */}
             <ul className="hidden md:flex items-center gap-9 font-semibold text-white text-[15px]">
 
               <li><NavLink to="/">Home</NavLink></li>
@@ -87,12 +76,12 @@ export default function Navbar() {
               {/* SERVICES */}
               <li
                 className="relative"
-                onMouseEnter={() => toggleMenu("services")}
-                onMouseLeave={closeMenu}
+                onMouseEnter={() => setOpenMenu("services")}
+                onMouseLeave={() => setOpenMenu(null)}
               >
                 <span className="cursor-pointer">Services ▾</span>
-                <div className={`absolute mt-3 bg-white text-gray-800 p-5 rounded-xl w-80 shadow-xl
-                  ${openMenu === "services" ? "block" : "hidden"}`}>
+                <div className={`absolute top-full left-0 bg-white text-gray-800 p-5 rounded-xl
+                  w-80 shadow-xl ${openMenu === "services" ? "block" : "hidden"}`}>
                   <h3 className="font-bold text-sky-600 mb-3">Our Services</h3>
                   <ul className="space-y-2 text-sm">
                     <li><NavLink to="/services/website-development">Website Development</NavLink></li>
@@ -108,12 +97,12 @@ export default function Navbar() {
               {/* BUSINESS */}
               <li
                 className="relative"
-                onMouseEnter={() => toggleMenu("business")}
-                onMouseLeave={closeMenu}
+                onMouseEnter={() => setOpenMenu("business")}
+                onMouseLeave={() => setOpenMenu(null)}
               >
                 <span className="cursor-pointer">Business Solutions ▾</span>
-                <div className={`absolute mt-3 bg-white text-gray-800 p-5 rounded-xl w-64 shadow-xl
-                  ${openMenu === "business" ? "block" : "hidden"}`}>
+                <div className={`absolute top-full left-0 bg-white text-gray-800 p-5 rounded-xl
+                  w-64 shadow-xl ${openMenu === "business" ? "block" : "hidden"}`}>
                   <ul className="space-y-2 text-sm">
                     <li><NavLink to="/grow-business">Grow Business</NavLink></li>
                     <li><NavLink to="/industries">Industries</NavLink></li>
@@ -124,12 +113,12 @@ export default function Navbar() {
               {/* WEB DEV */}
               <li
                 className="relative"
-                onMouseEnter={() => toggleMenu("web")}
-                onMouseLeave={closeMenu}
+                onMouseEnter={() => setOpenMenu("web")}
+                onMouseLeave={() => setOpenMenu(null)}
               >
                 <span className="cursor-pointer">Web Development ▾</span>
-                <div className={`absolute mt-3 bg-white text-gray-800 p-5 rounded-xl w-64 shadow-xl
-                  ${openMenu === "web" ? "block" : "hidden"}`}>
+                <div className={`absolute top-full left-0 bg-white text-gray-800 p-5 rounded-xl
+                  w-64 shadow-xl ${openMenu === "web" ? "block" : "hidden"}`}>
                   <ul className="space-y-2 text-sm">
                     <li><NavLink to="/portfolio">Portfolio</NavLink></li>
                     <li><NavLink to="/packages">Packages</NavLink></li>
@@ -150,7 +139,10 @@ export default function Navbar() {
                   <NavLink to="/signup">Signup</NavLink>
                 </>
               ) : (
-                <button onClick={logoutHandler} className="bg-red-600 px-4 py-2 rounded-lg">
+                <button
+                  onClick={logoutHandler}
+                  className="bg-red-600 px-4 py-2 rounded-lg"
+                >
                   Logout
                 </button>
               )}
@@ -172,12 +164,9 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="fixed inset-0 z-[9999] bg-black/50">
           <div className="absolute right-0 top-0 w-72 h-full bg-white shadow-xl p-6 overflow-y-auto">
-
             <button onClick={() => setMobileOpen(false)} className="text-2xl mb-6">✕</button>
 
             <nav className="flex flex-col gap-4 font-semibold text-gray-800">
-
-              {/* EXISTING (UNCHANGED) */}
               <NavLink to="/">Home</NavLink>
               <NavLink to="/services-grid">Services</NavLink>
               <NavLink to="/digital-marketing">Digital Marketing</NavLink>
@@ -186,7 +175,6 @@ export default function Navbar() {
               <NavLink to="/login">Login</NavLink>
               <NavLink to="/signup">Signup</NavLink>
 
-              {/* ADDED FROM SCREENSHOTS */}
               <hr />
               <p className="font-bold text-sky-600">Services</p>
               <NavLink to="/services/website-development">Website Development</NavLink>
@@ -201,7 +189,6 @@ export default function Navbar() {
               <p className="font-bold text-sky-600 mt-3">Web Development</p>
               <NavLink to="/portfolio">Portfolio</NavLink>
               <NavLink to="/packages">Packages</NavLink>
-
             </nav>
           </div>
         </div>
@@ -209,4 +196,3 @@ export default function Navbar() {
     </>
   );
 }
-
