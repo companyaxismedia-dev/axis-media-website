@@ -11,7 +11,7 @@ export default function Navbar() {
   const ticking = useRef(false);
   const location = useLocation();
 
-  // ✅ Navbar hide on scroll
+  /* ================= NAVBAR HIDE ON SCROLL ================= */
   useEffect(() => {
     const handleScroll = () => {
       const noHidePages = [
@@ -54,8 +54,7 @@ export default function Navbar() {
       {/* ================= HEADER ================= */}
       <header
         className={`fixed top-0 left-0 w-full z-[100]
-        bg-sky-500 h-[80px] shadow-lg
-        transition-transform duration-300
+        bg-sky-500 h-[80px] shadow-lg transition-transform duration-300
         ${hidden ? "-translate-y-full" : "translate-y-0"}`}
       >
         <nav className="w-full h-full">
@@ -79,7 +78,10 @@ export default function Navbar() {
                 onMouseEnter={() => setOpenMenu("services")}
                 onMouseLeave={() => setOpenMenu(null)}
               >
-                <span className="cursor-pointer">Services ▾</span>
+                <NavLink to="/services-grid" className="cursor-pointer">
+                  Services ▾
+                </NavLink>
+
                 <div className={`absolute top-full left-0 bg-white text-gray-800 p-5 rounded-xl
                   w-80 shadow-xl ${openMenu === "services" ? "block" : "hidden"}`}>
                   <h3 className="font-bold text-sky-600 mb-3">Our Services</h3>
@@ -94,13 +96,16 @@ export default function Navbar() {
                 </div>
               </li>
 
-              {/* BUSINESS */}
+              {/* BUSINESS SOLUTIONS */}
               <li
                 className="relative"
                 onMouseEnter={() => setOpenMenu("business")}
                 onMouseLeave={() => setOpenMenu(null)}
               >
-                <span className="cursor-pointer">Business Solutions ▾</span>
+                <NavLink to="/industries" className="cursor-pointer">
+                  Business Solutions ▾
+                </NavLink>
+
                 <div className={`absolute top-full left-0 bg-white text-gray-800 p-5 rounded-xl
                   w-64 shadow-xl ${openMenu === "business" ? "block" : "hidden"}`}>
                   <ul className="space-y-2 text-sm">
@@ -110,7 +115,7 @@ export default function Navbar() {
                 </div>
               </li>
 
-              {/* WEB DEV */}
+              {/* WEB DEVELOPMENT */}
               <li
                 className="relative"
                 onMouseEnter={() => setOpenMenu("web")}
@@ -155,7 +160,6 @@ export default function Navbar() {
             >
               ☰
             </button>
-
           </div>
         </nav>
       </header>
@@ -169,6 +173,7 @@ export default function Navbar() {
             <nav className="flex flex-col gap-4 font-semibold text-gray-800">
               <NavLink to="/">Home</NavLink>
               <NavLink to="/services-grid">Services</NavLink>
+              <NavLink to="/industries">Business Solutions</NavLink>
               <NavLink to="/digital-marketing">Digital Marketing</NavLink>
               <NavLink to="/about">About Us</NavLink>
               <NavLink to="/contact">Contact</NavLink>
@@ -176,6 +181,7 @@ export default function Navbar() {
               <NavLink to="/signup">Signup</NavLink>
 
               <hr />
+
               <p className="font-bold text-sky-600">Services</p>
               <NavLink to="/services/website-development">Website Development</NavLink>
               <NavLink to="/google-ads">Google Ads</NavLink>
@@ -196,3 +202,4 @@ export default function Navbar() {
     </>
   );
 }
+
