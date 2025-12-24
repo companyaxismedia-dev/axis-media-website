@@ -20,20 +20,18 @@ export default function IndustryDetailPage() {
     );
   }
 
-  const Icon = industry.icon;
   const pageUrl = `https://www.axismediadigital.com/industries/${slug}`;
+  const Icon = industry.icon;
 
   return (
     <>
-      {/* ================= SEO ================= */}
+      {/* ================= SEO (AUTO FROM DATA) ================= */}
       <Helmet>
-        <title>
-          {industry.title} Digital Marketing Services | Axis Media Digital
-        </title>
+        <title>{industry.seoTitle}</title>
 
         <meta
           name="description"
-          content={`Axis Media Digital provides tailored digital marketing services for the ${industry.title.toLowerCase()} industry including SEO, Google Ads and high-converting websites.`}
+          content={industry.seoDesc}
         />
 
         <link rel="canonical" href={pageUrl} />
@@ -67,20 +65,22 @@ export default function IndustryDetailPage() {
         </script>
 
         {/* FAQ Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": industry.faqs.map((f) => ({
-              "@type": "Question",
-              "name": f.q,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": f.a
-              }
-            }))
-          })}
-        </script>
+        {industry.faqs && (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": industry.faqs.map((f) => ({
+                "@type": "Question",
+                "name": f.q,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": f.a
+                }
+              }))
+            })}
+          </script>
+        )}
       </Helmet>
 
       <main className="pt-24 pb-20 bg-gradient-to-b from-[#F4FFF7] to-[#E8F8EE] min-h-screen text-gray-900">
@@ -154,40 +154,15 @@ export default function IndustryDetailPage() {
                 >
                   Book Free Consultation
                 </Link>
-
-                <a
-                  href="#faq"
-                  className="inline-block px-6 py-3 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200 transition"
-                >
-                  Read FAQs
-                </a>
               </div>
             </div>
 
             <div className="h-72 lg:h-auto">
               <img
                 src={industry.heroImage}
-                alt={`${industry.title} digital marketing services`}
+                alt={industry.primaryKeyword}
                 className="w-full h-full object-cover"
               />
-            </div>
-          </section>
-
-          {/* FAQ */}
-          <section id="faq" className="mt-10">
-            <div className="bg-white p-8 rounded-2xl shadow border border-gray-200">
-              <h2 className="text-2xl font-bold mb-4">
-                {industry.title} Digital Marketing FAQs
-              </h2>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                {industry.faqs.map((f, i) => (
-                  <div key={i} className="p-4 border rounded-lg bg-gray-50">
-                    <div className="font-semibold mb-2">{f.q}</div>
-                    <div className="text-gray-700">{f.a}</div>
-                  </div>
-                ))}
-              </div>
             </div>
           </section>
 
@@ -196,4 +171,3 @@ export default function IndustryDetailPage() {
     </>
   );
 }
-
