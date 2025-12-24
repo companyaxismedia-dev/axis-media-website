@@ -19,25 +19,74 @@ export default function CategoryPage() {
   }
 
   const Icon = cat.icon;
+  const pageUrl = `https://axismediadigital.com/industries/${cat.id}`;
+
+  /* ================= SERVICE SCHEMA ================= */
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: `${cat.title} Website & Digital Marketing Services`,
+    provider: {
+      "@type": "Organization",
+      name: "Axis Media",
+      url: "https://axismediadigital.com",
+    },
+    areaServed: "India",
+    description: cat.longDesc,
+  };
+
+  /* ================= BREADCRUMB SCHEMA ================= */
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://axismediadigital.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Industries",
+        item: "https://axismediadigital.com/industries",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: cat.title,
+        item: pageUrl,
+      },
+    ],
+  };
 
   return (
     <section className="pt-40 pb-20 min-h-screen bg-[#E4FBE7]">
       {/* ================= SEO ================= */}
       <Helmet>
-        <title>{cat.title} Website & Digital Marketing Services | Axis Media</title>
+        <title>
+          {cat.title} Website & Digital Marketing Services | Axis Media
+        </title>
+
         <meta
           name="description"
           content={`Axis Media provides industry-specific website development, SEO and digital marketing solutions for ${cat.title} businesses.`}
         />
-        <link
-          rel="canonical"
-          href={`https://axismediadigital.com/industry/${cat.id}`}
-        />
+
+        <link rel="canonical" href={pageUrl} />
+
+        {/* SCHEMA */}
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4">
-
-        {/* ================= BREADCRUMB ================= */}
+        {/* ================= BREADCRUMB UI ================= */}
         <p className="text-gray-600 mb-6">
           <NavLink to="/industries" className="text-green-700 font-semibold">
             Industries
@@ -49,7 +98,7 @@ export default function CategoryPage() {
         <div className="flex items-center gap-4 mb-10">
           {Icon && <Icon className="text-5xl text-green-700" />}
           <h1 className="text-5xl font-extrabold text-gray-900">
-            {cat.title} Businesses
+            {cat.title} Website & Digital Marketing Services
           </h1>
         </div>
 
@@ -81,7 +130,7 @@ export default function CategoryPage() {
           </>
         )}
 
-        {/* ================= INDUSTRY ITEMS ================= */}
+        {/* ================= SUB-INDUSTRIES ================= */}
         {cat.items?.length > 0 && (
           <div className="grid md:grid-cols-2 gap-10">
             {cat.items.map((item) => (
