@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://axismediadigital.com/sitemap.xml
+Sitemap: https://www.axismediadigital.com/sitemap.xml
