@@ -164,6 +164,32 @@ const servicesData = [
       "High-quality print & digital designs",
     ],
   },
+    {
+    slug: "services",
+    title: "Services Provided",
+
+    seoTitle: " Services in Delhi | Axis Media Digital",
+    seoDesc:
+      "Creative services provided in Delhi including logo design, branding, social media creatives and marketing materials.",
+
+    summary:
+      "Creative web design solutions for branding, marketing and digital campaigns.",
+
+    heroImage: "/Business-industries.webp",
+    colorClass: "bg-slate-800",
+    accent: "text-pink-400",
+
+    details:
+      "Our web services help businesses build a strong brand identity. From logo design to social media creatives and marketing materials, we create visually appealing designs that communicate your brand message clearly and effectively.",
+
+    bullets: [
+      "Logo & brand identity design",
+      "Social media creatives & ads",
+      "Marketing banners & brochures",
+      "Consistent brand guidelines",
+      "High-quality print & digital designs",
+    ],
+  },
 ];
 
 /* ======================================
