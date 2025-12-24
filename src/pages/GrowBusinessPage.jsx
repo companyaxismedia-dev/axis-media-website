@@ -41,64 +41,94 @@ export default function GrowBusinessPage() {
     return () => clearInterval(typing);
   }, [index]);
 
+  /* ================= SERVICE SCHEMA (IMPORTANT) ================= */
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Business Growth & Digital Marketing Services",
+    provider: {
+      "@type": "Organization",
+      name: "Axis Media",
+      url: "https://axismediadigital.com",
+    },
+    areaServed: "India",
+    description:
+      "Business growth services including SEO, Google Ads, social media marketing, branding and high-converting websites to scale revenue.",
+  };
+
+  /* ================= FAQ SCHEMA ================= */
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How can digital marketing grow my business?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Digital marketing increases online visibility, generates quality leads and improves sales using SEO, Google Ads and social media.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How long does SEO take to show results?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "SEO typically shows noticeable ranking improvements within 2–3 months depending on competition.",
+        },
+      },
+    ],
+  };
+
+  /* ================= BREADCRUMB SCHEMA ================= */
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://axismediadigital.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Grow Business",
+        item: "https://axismediadigital.com/grow-business",
+      },
+    ],
+  };
+
   return (
     <div className="text-white bg-gradient-to-b from-[#052b23] via-[#063a30] to-[#084d3f]">
-
       {/* ================= SEO ================= */}
       <Helmet>
-        <title>Grow Your Business | Digital Marketing, SEO & Ads – Axis Media</title>
+        <title>
+          Grow Your Business | Digital Marketing, SEO & Ads – Axis Media
+        </title>
+
         <meta
           name="description"
           content="Grow your business with SEO, Google Ads, social media marketing and high-converting websites. Axis Media helps brands scale faster."
         />
-        <link rel="canonical" href="https://axismediadigital.com/grow-business" />
 
-        {/* FAQ Schema */}
+        <link
+          rel="canonical"
+          href="https://axismediadigital.com/grow-business"
+        />
+
+        {/* SCHEMA */}
         <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "How can digital marketing grow my business?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Digital marketing increases online visibility, generates quality leads and improves sales using SEO, Google Ads and social media."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How long does SEO take to show results?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "SEO typically shows noticeable ranking improvements within 2–3 months depending on competition."
-                }
-              }
-            ]
-          })}
+          {JSON.stringify(serviceSchema)}
         </script>
-
-        {/* Breadcrumb Schema */}
         <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://axismediadigital.com/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Grow Business",
-                "item": "https://axismediadigital.com/grow-business"
-              }
-            ]
-          })}
+          {JSON.stringify(faqSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
         </script>
       </Helmet>
 
@@ -115,7 +145,7 @@ export default function GrowBusinessPage() {
             Grow Your Business With Digital Marketing, SEO & Google Ads
           </h1>
 
-          {/* Visible Animated Text */}
+          {/* Animated Heading */}
           <h2 className="text-4xl md:text-5xl font-extrabold drop-shadow-xl">
             {displayText}
             <span className="animate-pulse border-r-2 ml-1"></span>
