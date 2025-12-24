@@ -13,7 +13,7 @@ import {
 } from "react-icons/fa";
 
 export default function Retail() {
-  /* ================= FAQ DATA (for schema + UI) ================= */
+  /* ================= FAQ DATA ================= */
   const faqs = [
     {
       q: "How can a retail website increase my in-store sales?",
@@ -25,7 +25,7 @@ export default function Retail() {
     },
     {
       q: "Can you help run ads for my retail store?",
-      a: "Yes, we run Google + Meta ads that bring real enquiries and store visits.",
+      a: "Yes, we run Google and Meta ads that bring real enquiries and store visits.",
     },
   ];
 
@@ -33,12 +33,12 @@ export default function Retail() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map((f) => ({
+    mainEntity: faqs.map((f) => ({
       "@type": "Question",
-      "name": f.q,
-      "acceptedAnswer": {
+      name: f.q,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": f.a,
+        text: f.a,
       },
     })),
   };
@@ -47,26 +47,41 @@ export default function Retail() {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://axismediadigital.com/",
+        position: 1,
+        name: "Home",
+        item: "https://axismediadigital.com/",
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "Industries",
-        "item": "https://axismediadigital.com/industries",
+        position: 2,
+        name: "Industries",
+        item: "https://axismediadigital.com/industries",
       },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": "Retail Industry",
-        "item": "https://axismediadigital.com/industries/retail",
+        position: 3,
+        name: "Retail Industry",
+        item: "https://axismediadigital.com/industries/retail",
       },
     ],
+  };
+
+  /* ================= SERVICE SCHEMA (IMPORTANT) ================= */
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Retail Digital Marketing Services",
+    provider: {
+      "@type": "Organization",
+      name: "Axis Media",
+      url: "https://axismediadigital.com",
+    },
+    areaServed: "India",
+    description:
+      "Digital marketing, website development, local SEO, ecommerce and advertising solutions for retail businesses to increase store visits and sales.",
   };
 
   return (
@@ -78,17 +93,24 @@ export default function Retail() {
     >
       {/* ================= SEO META ================= */}
       <Helmet>
-        <title>Retail Industry Digital Marketing & Website Solutions | Axis Media</title>
+        <title>
+          Retail Industry Digital Marketing & Website Solutions | Axis Media
+        </title>
+
         <meta
           name="description"
           content="Digital solutions for retail businesses including websites, local SEO, Google Ads, ecommerce and branding to increase store visits and sales."
         />
+
         <link
           rel="canonical"
           href="https://axismediadigital.com/industries/retail"
         />
 
-        {/* Schema */}
+        {/* SCHEMA */}
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>
@@ -105,9 +127,9 @@ export default function Retail() {
             Retail Industry Solutions
           </h1>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            We help retail businesses (Book Store, Clothing Shop, Furniture Store,
-            Grocery & more) grow visibility, sales and customer trust using
-            modern digital solutions.
+            We help retail businesses (Book Store, Clothing Shop, Furniture
+            Store, Grocery & more) grow visibility, sales and customer trust
+            using modern digital solutions.
           </p>
         </div>
 
@@ -119,7 +141,7 @@ export default function Retail() {
             { icon: <FaMobileAlt />, title: "Mobile Responsive Design" },
             { icon: <FaSearch />, title: "Local SEO Visibility" },
             { icon: <FaChartLine />, title: "Business Growth Strategy" },
-            { icon: <FaBullhorn />, title: "Google + Meta Ads" },
+            { icon: <FaBullhorn />, title: "Google & Meta Ads" },
           ].map((item, i) => (
             <div
               key={i}
@@ -140,11 +162,15 @@ export default function Retail() {
           </h2>
           <p className="text-gray-700 text-lg leading-relaxed">
             Customers now search online before visiting a store. A strong
-            digital presence builds trust, increases footfall, generates online
+            digital presence builds trust, increases footfall, generates
             enquiries and improves sales.
-            <br /><br />
-            Whether you run a <strong>book store, clothing showroom, furniture shop or grocery store</strong>,
-            we build complete digital systems that help you grow faster.
+            <br />
+            <br />
+            Whether you run a{" "}
+            <strong>
+              book store, clothing showroom, furniture shop or grocery store
+            </strong>
+            , we build complete digital systems that help you grow faster.
           </p>
         </section>
 
@@ -161,7 +187,7 @@ export default function Retail() {
               "Google My Business optimization",
               "Local SEO ranking improvement",
               "Social media branding & creatives",
-              "Google + Facebook Ads",
+              "Google & Facebook Ads",
               "Customer engagement strategies",
               "E-commerce setup (optional)",
               "Mobile responsive layouts",
@@ -175,7 +201,7 @@ export default function Retail() {
           </ul>
         </section>
 
-        {/* ================= FAQ SECTION ================= */}
+        {/* ================= FAQ ================= */}
         <section className="mb-20">
           <h2 className="text-3xl font-bold mb-6">
             Frequently Asked Questions
