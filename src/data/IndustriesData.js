@@ -1,5 +1,3 @@
-// src/data/IndustriesData.js
-
 import {
   FaStore,
   FaUtensils,
@@ -16,6 +14,10 @@ export const IndustriesData = [
   {
     id: "retail",
     title: "Retail",
+    primaryKeyword: "retail digital marketing services",
+    seoTitle: "Retail Digital Marketing Services | Axis Media Digital",
+    seoDesc:
+      "Axis Media Digital provides retail digital marketing services including SEO, Google Ads, ecommerce websites and conversion optimization for retail businesses.",
     slugPrefix: "retail",
     colorClass: "text-emerald-600",
     icon: FaStore,
@@ -55,6 +57,10 @@ export const IndustriesData = [
   {
     id: "food-hospitality",
     title: "Food & Hospitality",
+    primaryKeyword: "restaurant digital marketing services",
+    seoTitle: "Restaurant & Hotel Digital Marketing Services | Axis Media Digital",
+    seoDesc:
+      "Get restaurant and hotel digital marketing services including local SEO, Google Ads, booking websites and online ordering systems.",
     slugPrefix: "food-hospitality",
     colorClass: "text-sky-600",
     icon: FaUtensils,
@@ -93,6 +99,10 @@ export const IndustriesData = [
   {
     id: "real-estate",
     title: "Real Estate",
+    primaryKeyword: "real estate digital marketing services",
+    seoTitle: "Real Estate Digital Marketing Services | Axis Media Digital",
+    seoDesc:
+      "Axis Media Digital offers real estate digital marketing services including SEO, property lead generation, Google Ads and high-converting websites.",
     slugPrefix: "real-estate",
     colorClass: "text-rose-600",
     icon: FaBuilding,
@@ -130,6 +140,10 @@ export const IndustriesData = [
   {
     id: "manufacturing",
     title: "Manufacturing",
+    primaryKeyword: "manufacturing digital marketing services",
+    seoTitle: "Manufacturing Digital Marketing Services | Axis Media Digital",
+    seoDesc:
+      "B2B manufacturing digital marketing services including industrial SEO, lead generation websites and distributor enquiry systems.",
     slugPrefix: "manufacturing",
     colorClass: "text-purple-600",
     icon: FaIndustry,
@@ -166,6 +180,10 @@ export const IndustriesData = [
   {
     id: "health-fitness",
     title: "Health & Fitness",
+    primaryKeyword: "healthcare digital marketing services",
+    seoTitle: "Healthcare & Fitness Digital Marketing Services | Axis Media Digital",
+    seoDesc:
+      "Healthcare and fitness digital marketing services including appointment booking websites, local SEO and lead generation.",
     slugPrefix: "health-fitness",
     colorClass: "text-orange-600",
     icon: FaHeartbeat,
@@ -203,6 +221,10 @@ export const IndustriesData = [
   {
     id: "others",
     title: "Others",
+    primaryKeyword: "custom digital marketing services",
+    seoTitle: "Custom Digital Marketing Solutions | Axis Media Digital",
+    seoDesc:
+      "Custom digital marketing solutions for NGOs, creatives and niche businesses including SEO, content and lead funnels.",
     slugPrefix: "others",
     colorClass: "text-pink-600",
     icon: FaEllipsisH,
@@ -240,29 +262,19 @@ export const IndustriesData = [
 export function findIndustryBySlug(slug) {
   if (!slug) return null;
 
-  // Match category
   const category = IndustriesData.find(
     (i) => i.id === slug || i.slugPrefix === slug
   );
-  if (category) {
-    return { ...category, name: category.title };
-  }
+  if (category) return category;
 
-  // Match sub-industry
   for (const cat of IndustriesData) {
     const found = cat.items.find((item) => item.slug === slug);
     if (found) {
       return {
-        ...found,
-        categoryId: cat.id,
-        categoryTitle: cat.title,
-        longDesc: cat.longDesc,
-        features: cat.features,
-        benefits: cat.benefits,
-        faqs: cat.faqs,
+        ...cat,
+        title: found.name,
       };
     }
   }
-
   return null;
 }
