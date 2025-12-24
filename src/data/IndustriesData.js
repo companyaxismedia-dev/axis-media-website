@@ -5,9 +5,11 @@ import {
   FaIndustry,
   FaHeartbeat,
   FaEllipsisH,
+  FaGraduationCap,
 } from "react-icons/fa";
 
 export const IndustriesData = [
+
   /* =======================
       RETAIL
   ======================= */
@@ -129,89 +131,82 @@ export const IndustriesData = [
       { slug: "construction", name: "Construction" },
       { slug: "architecture-firm", name: "Architecture Firm" },
       { slug: "estate-management", name: "Estate Management" },
-      { slug: "gardening", name: "Gardening" },
-      { slug: "property-owner-association", name: "Property Owner Association" },
     ],
   },
 
   /* =======================
-      MANUFACTURING
+      EDUCATION ✅ ADDED
   ======================= */
   {
-    id: "manufacturing",
-    title: "Manufacturing",
-    primaryKeyword: "manufacturing digital marketing services",
-    seoTitle: "Manufacturing Digital Marketing Services | Axis Media Digital",
+    id: "education",
+    title: "Education",
+    primaryKeyword: "education digital marketing services",
+    seoTitle: "Education Digital Marketing Services | Axis Media Digital",
     seoDesc:
-      "B2B manufacturing digital marketing services including industrial SEO, lead generation websites and distributor enquiry systems.",
-    slugPrefix: "manufacturing",
-    colorClass: "text-purple-600",
-    icon: FaIndustry,
-    heroImage: "/manufacturing.webp",
+      "Education digital marketing services for schools, colleges and coaching institutes including SEO, websites and lead generation.",
+    slugPrefix: "education",
+    colorClass: "text-indigo-600",
+    icon: FaGraduationCap,
+    heroImage: "/education.webp",
     longDesc:
-      "Manufacturing companies need B2B websites, catalogs and lead funnels to attract distributors and bulk buyers.",
+      "Educational institutions need admission-focused websites, SEO and digital campaigns to increase enrollments.",
     features: [
-      "B2B product catalogs",
-      "RFQ & dealer enquiry forms",
-      "Industrial SEO",
-      "Case studies & technical pages",
+      "Admission landing pages",
+      "Course detail pages",
+      "Lead & enquiry forms",
+      "Local SEO for institutes",
     ],
     benefits: [
-      "More vendor enquiries",
-      "Shorter sales cycles",
-      "Stronger brand credibility",
+      "More admissions",
+      "Higher visibility",
+      "Better student enquiries",
     ],
     faqs: [
-      { q: "Can pricing be hidden?", a: "Yes, gated pricing & partner-only pages available." },
-      { q: "Do you support bulk enquiries?", a: "Yes, RFQ & bulk enquiry systems included." },
+      { q: "Do you create admission landing pages?", a: "Yes, high-converting admission pages are included." },
+      { q: "Is SEO included for institutes?", a: "Yes, complete on-page & local SEO included." },
     ],
     items: [
-      { slug: "textile", name: "Textile" },
-      { slug: "metal", name: "Metal" },
-      { slug: "food", name: "Food" },
-      { slug: "brewery", name: "Brewery" },
-      { slug: "corporate-gifts", name: "Corporate Gifts" },
+      { slug: "school", name: "School" },
+      { slug: "college", name: "College" },
+      { slug: "coaching-institute", name: "Coaching Institute" },
     ],
   },
 
   /* =======================
-      HEALTH & FITNESS
+      HEALTHCARE ✅ ADDED
   ======================= */
   {
-    id: "health-fitness",
-    title: "Health & Fitness",
+    id: "healthcare",
+    title: "Healthcare",
     primaryKeyword: "healthcare digital marketing services",
-    seoTitle: "Healthcare & Fitness Digital Marketing Services | Axis Media Digital",
+    seoTitle: "Healthcare Digital Marketing Services | Axis Media Digital",
     seoDesc:
-      "Healthcare and fitness digital marketing services including appointment booking websites, local SEO and lead generation.",
-    slugPrefix: "health-fitness",
-    colorClass: "text-orange-600",
+      "Healthcare digital marketing services including appointment booking websites, SEO and Google Maps optimization.",
+    slugPrefix: "healthcare",
+    colorClass: "text-red-600",
     icon: FaHeartbeat,
-    heroImage: "/health-fitness.webp",
+    heroImage: "/healthcare.webp",
     longDesc:
-      "Health & fitness businesses need trust-building websites, appointment booking and strong local SEO.",
+      "Healthcare providers need trust-focused websites, appointment booking and local SEO.",
     features: [
-      "Online appointment booking",
-      "Service pages & pricing",
-      "Testimonials & trust badges",
-      "City-based SEO optimization",
+      "Appointment booking",
+      "Doctor profile pages",
+      "Google Maps SEO",
+      "Trust & testimonial sections",
     ],
     benefits: [
-      "More bookings",
-      "Higher local visibility",
-      "Improved customer trust",
+      "More appointments",
+      "Higher patient trust",
+      "Improved local visibility",
     ],
     faqs: [
-      { q: "Do you support booking reminders?", a: "Yes, SMS & email reminders available." },
-      { q: "Is HIPAA or data security considered?", a: "Yes, secure data handling is ensured." },
+      { q: "Do you support appointment booking?", a: "Yes, booking systems are included." },
+      { q: "Is patient data secure?", a: "Yes, secure data handling is ensured." },
     ],
     items: [
-      { slug: "sports-club", name: "Sports Club" },
-      { slug: "eyewear-store", name: "Eyewear Store" },
-      { slug: "fitness-center", name: "Fitness Center" },
-      { slug: "wellness-practitioners", name: "Wellness Practitioners" },
-      { slug: "pharmacy", name: "Pharmacy" },
-      { slug: "hair-salon", name: "Hair Salon" },
+      { slug: "clinic", name: "Clinic" },
+      { slug: "hospital", name: "Hospital" },
+      { slug: "diagnostic-center", name: "Diagnostic Center" },
     ],
   },
 
@@ -224,34 +219,30 @@ export const IndustriesData = [
     primaryKeyword: "custom digital marketing services",
     seoTitle: "Custom Digital Marketing Solutions | Axis Media Digital",
     seoDesc:
-      "Custom digital marketing solutions for NGOs, creatives and niche businesses including SEO, content and lead funnels.",
+      "Custom digital marketing solutions for NGOs, creatives and niche businesses.",
     slugPrefix: "others",
     colorClass: "text-pink-600",
     icon: FaEllipsisH,
     heroImage: "/NGO.webp",
     longDesc:
-      "NGOs, creatives and niche businesses need storytelling-driven websites with strong messaging and lead funnels.",
+      "NGOs, creatives and niche businesses need storytelling-driven websites with strong messaging.",
     features: [
-      "Portfolio & story-driven pages",
+      "Story-driven pages",
       "Donation & contact funnels",
-      "Niche SEO",
       "Easy CMS management",
     ],
     benefits: [
       "Stronger brand story",
-      "More leads & supporters",
-      "Easy content updates",
+      "More supporters",
+      "Easy updates",
     ],
     faqs: [
-      { q: "Do you support multilingual websites?", a: "Yes, full multi-language support available." },
+      { q: "Do you support multilingual websites?", a: "Yes, multi-language support available." },
       { q: "Can donation payment be added?", a: "Yes, secure donation systems supported." },
     ],
     items: [
-      { slug: "nonprofit-organization", name: "Nonprofit Organization" },
-      { slug: "environmental-agency", name: "Environmental Agency" },
+      { slug: "ngo", name: "NGO" },
       { slug: "photography", name: "Photography" },
-      { slug: "bike-leasing", name: "Bike Leasing" },
-      { slug: "software-reseller", name: "Software Reseller" },
     ],
   },
 ];
