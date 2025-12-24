@@ -9,17 +9,17 @@ export default function IndustriesPage() {
       {/* ================= SEO ================= */}
       <Helmet>
         <title>
-          Industries We Serve | Axis Media – Websites, SEO & Digital Marketing
+          Digital Marketing Solutions for Different Industries | Axis Media Digital
         </title>
 
         <meta
           name="description"
-          content="Axis Media provides website development, SEO, Google Ads and digital marketing solutions for retail, real estate, food, manufacturing and more industries."
+          content="Axis Media Digital provides industry-specific digital marketing solutions including SEO, Google Ads and website development for retail, real estate, food, healthcare, manufacturing and more industries."
         />
 
         <link
           rel="canonical"
-          href="https://axismediadigital.com/industries"
+          href="https://www.axismediadigital.com/industries"
         />
 
         {/* Breadcrumb Schema */}
@@ -32,13 +32,13 @@ export default function IndustriesPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://axismediadigital.com/"
+                "item": "https://www.axismediadigital.com/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Industries",
-                "item": "https://axismediadigital.com/industries"
+                "item": "https://www.axismediadigital.com/industries"
               }
             ]
           })}
@@ -48,14 +48,31 @@ export default function IndustriesPage() {
       <main className="bg-gradient-to-b from-[#F4FFF7] to-[#E8F8EE] text-gray-900">
 
         {/* ================= HERO ================= */}
-        <section className="pt-32 pb-20 text-center max-w-5xl mx-auto px-6">
+        <section className="pt-32 pb-16 text-center max-w-5xl mx-auto px-6">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
-            Industries We Serve
+            Industry-Specific Digital Marketing Services
           </h1>
 
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            We build industry-specific websites, SEO strategies, advertising
-            funnels and automation systems to help businesses grow faster.
+            Axis Media Digital delivers customized digital marketing solutions
+            for different industries. From SEO and Google Ads to conversion-focused
+            websites, we help businesses generate leads, increase visibility and grow faster.
+          </p>
+
+          {/* INTERNAL LINKS (SEO BOOST) */}
+          <p className="mt-6 text-gray-600">
+            Explore our{" "}
+            <Link to="/digital-marketing" className="text-emerald-700 font-semibold underline">
+              Digital Marketing Services
+            </Link>
+            ,{" "}
+            <Link to="/seo-services" className="text-emerald-700 font-semibold underline">
+              SEO Solutions
+            </Link>{" "}
+            and{" "}
+            <Link to="/google-ads" className="text-emerald-700 font-semibold underline">
+              Google Ads Management
+            </Link>.
           </p>
 
           <div className="mt-10 flex justify-center">
@@ -82,21 +99,21 @@ export default function IndustriesPage() {
                   min-h-[420px] flex flex-col
                 "
               >
-                {/* ICON + TITLE */}
                 <div className="flex items-center gap-5 mb-6">
                   <div className="p-5 rounded-xl bg-gray-50 shadow-inner">
                     <Icon className={`text-5xl ${cat.colorClass}`} />
                   </div>
 
                   <div>
-                    <h2 className="text-3xl font-bold">{cat.title}</h2>
+                    <h2 className="text-2xl font-bold">
+                      {cat.title} Digital Marketing
+                    </h2>
                     <p className="text-gray-600 text-sm mt-1 leading-snug">
-                      {cat.longDesc?.slice(0, 120)}…
+                      {cat.longDesc?.slice(0, 140)}…
                     </p>
                   </div>
                 </div>
 
-                {/* FEATURES */}
                 <ul className="text-gray-700 mb-8 space-y-3 text-[15px]">
                   {cat.features?.slice(0, 4).map((f, i) => (
                     <li key={i} className="flex items-start gap-3">
@@ -106,26 +123,17 @@ export default function IndustriesPage() {
                   ))}
                 </ul>
 
-                {/* ACTION BUTTONS */}
                 <div className="mt-auto flex gap-4">
                   <Link
                     to={`/industries/${cat.id}`}
-                    className="
-                      flex-1 text-center px-5 py-3
-                      bg-emerald-600 text-white rounded-lg font-semibold
-                      hover:bg-emerald-700 transition
-                    "
+                    className="flex-1 text-center px-5 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition"
                   >
                     View Industry →
                   </Link>
 
                   <Link
                     to="/contact"
-                    className="
-                      flex-1 text-center px-5 py-3
-                      bg-gray-100 text-gray-800 rounded-lg
-                      hover:bg-gray-200 transition
-                    "
+                    className="flex-1 text-center px-5 py-3 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200 transition"
                   >
                     Consultation
                   </Link>
@@ -137,28 +145,19 @@ export default function IndustriesPage() {
 
         {/* ================= CTA ================= */}
         <section className="pb-24 px-6">
-          <div
-            className="
-              max-w-7xl mx-auto
-              bg-emerald-600 text-white p-12 rounded-3xl shadow-xl
-              flex flex-col md:flex-row md:items-center md:justify-between gap-8
-            "
-          >
+          <div className="max-w-7xl mx-auto bg-emerald-600 text-white p-12 rounded-3xl shadow-xl flex flex-col md:flex-row md:items-center md:justify-between gap-8">
             <div>
               <h3 className="text-3xl font-extrabold">
-                Not sure which industry fits your business?
+                Looking for digital marketing tailored to your industry?
               </h3>
               <p className="text-white/90 mt-2 text-lg">
-                Talk to our experts — we’ll guide you step-by-step.
+                Our experts create custom strategies that deliver real business growth.
               </p>
             </div>
 
             <Link
               to="/contact"
-              className="
-                px-8 py-4 bg-white text-emerald-700
-                rounded-lg font-semibold text-lg hover:bg-gray-100
-              "
+              className="px-8 py-4 bg-white text-emerald-700 rounded-lg font-semibold text-lg hover:bg-gray-100"
             >
               Book Free Strategy Call
             </Link>
