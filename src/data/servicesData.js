@@ -1,9 +1,12 @@
-// src/data/servicesData.js
-
 const servicesData = [
   {
     slug: "website-development",
     title: "Website Development",
+
+    seoTitle: "Website Development Company in Delhi | Axis Media Digital",
+    seoDesc:
+      "Axis Media Digital provides professional website development services in Delhi including fast, mobile-friendly and SEO-optimized websites for businesses.",
+
     summary:
       "Modern, high-speed and mobile-friendly websites that elevate your brand credibility and convert visitors into customers.",
     heroImage: "/WebsiteDevelopment (1).webp",
@@ -25,6 +28,11 @@ const servicesData = [
   {
     slug: "ecommerce-website",
     title: "E-commerce Website Development",
+
+    seoTitle: "E-commerce Website Development in Delhi | Axis Media Digital",
+    seoDesc:
+      "Professional e-commerce website development services in Delhi with secure payment gateways, inventory management and conversion-focused design.",
+
     summary:
       "Secure, conversion-focused e-commerce websites with smooth checkout and online payment integration.",
     heroImage: "/website-development (1).webp",
@@ -46,6 +54,11 @@ const servicesData = [
   {
     slug: "social-media-marketing",
     title: "Social Media Marketing",
+
+    seoTitle: "Social Media Marketing Company in Delhi | Axis Media Digital",
+    seoDesc:
+      "Axis Media Digital is a leading social media marketing company in Delhi offering Instagram, Facebook and LinkedIn marketing services to grow brand awareness and leads.",
+
     summary:
       "Data-driven social media marketing strategies to grow your audience, engagement and brand awareness.",
     heroImage: "/SocialMediaMarketing.webp",
@@ -67,6 +80,11 @@ const servicesData = [
   {
     slug: "google-ads-management",
     title: "Google Ads Management",
+
+    seoTitle: "Google Ads Management Company in Delhi | Axis Media Digital",
+    seoDesc:
+      "ROI-driven Google Ads management services in Delhi including Search, Display and YouTube ads to generate quality leads quickly.",
+
     summary:
       "ROI-driven Google Ads campaigns to generate quality leads and increase sales quickly.",
     heroImage: "/GoogleAdsManagement.webp",
@@ -88,6 +106,11 @@ const servicesData = [
   {
     slug: "seo-services",
     title: "SEO Services",
+
+    seoTitle: "SEO Services in Delhi | SEO Company in Delhi – Axis Media Digital",
+    seoDesc:
+      "Axis Media Digital provides professional SEO services in Delhi to improve Google rankings, organic traffic and long-term business growth.",
+
     summary:
       "Result-driven SEO services to improve Google ranking, organic traffic and long-term growth.",
     heroImage: "/SeoServices (1).webp",
@@ -109,6 +132,11 @@ const servicesData = [
   {
     slug: "graphic-designing",
     title: "Graphic Designing",
+
+    seoTitle: "Graphic Designing Services in Delhi | Axis Media Digital",
+    seoDesc:
+      "Creative graphic designing services in Delhi including logo design, branding, social media creatives and marketing materials.",
+
     summary:
       "Creative graphic design solutions for branding, marketing and digital campaigns.",
     heroImage: "/email-marketing (1).webp",
@@ -129,3 +157,4 @@ const servicesData = [
 ];
 
 export default servicesData;
+
