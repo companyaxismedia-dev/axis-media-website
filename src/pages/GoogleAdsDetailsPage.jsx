@@ -1,6 +1,5 @@
-// src/pages/GoogleAdsDetailsPage.jsx
 import React from "react";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, NavLink, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import {
   FaCheckCircle,
@@ -25,6 +24,8 @@ export default function GoogleAdsDetailsPage() {
     );
   }
 
+  const pageUrl = `https://axismediadigital.com/google-ads/${service.slug}`;
+
   /* ================= BREADCRUMB SCHEMA ================= */
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -39,53 +40,51 @@ export default function GoogleAdsDetailsPage() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Google Ads",
+        name: "Google Ads Services",
         item: "https://axismediadigital.com/google-ads",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: service.title,
-        item: `https://axismediadigital.com/google-ads/${service.slug}`,
+        item: pageUrl,
       },
     ],
   };
 
-  /* ================= FAQ SCHEMA ================= */
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: service.features.map((f) => ({
-      "@type": "Question",
-      name: `Why is ${f} important?`,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: `${f} helps improve campaign performance, ROI and business growth when managed professionally.`,
-      },
-    })),
-  };
+  /* ================= FAQ SCHEMA (FROM DATA) ================= */
+  const faqSchema = service.faqs
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: service.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: f.a,
+          },
+        })),
+      }
+    : null;
 
   return (
     <main className="pt-24 pb-20 bg-gray-100 min-h-screen">
       {/* ================= SEO ================= */}
       <Helmet>
-        <title>{service.title} | Google Ads Services – Axis Media</title>
-        <meta
-          name="description"
-          content={service.longDescription}
-        />
-        <link
-          rel="canonical"
-          href={`https://axismediadigital.com/google-ads/${service.slug}`}
-        />
+        <title>{service.seoTitle}</title>
+        <meta name="description" content={service.seoDesc} />
+        <link rel="canonical" href={pageUrl} />
 
-        {/* JSON-LD Schemas */}
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbSchema)}
         </script>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
+
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
       </Helmet>
 
       <div className="max-w-6xl mx-auto px-6 text-gray-900">
@@ -98,9 +97,24 @@ export default function GoogleAdsDetailsPage() {
         </p>
 
         {/* ===== TITLE ===== */}
-        <h1 className="text-5xl font-extrabold mb-4">{service.title}</h1>
+        <h1 className="text-5xl font-extrabold mb-4">
+          {service.title} in Delhi
+        </h1>
+
         <p className="text-xl text-gray-700 mb-10">
           {service.longDescription}
+        </p>
+
+        {/* INTERNAL LINKING */}
+        <p className="mb-10 text-gray-700">
+          This service is part of our complete{" "}
+          <Link
+            to="/digital-marketing"
+            className="text-green-600 underline font-semibold"
+          >
+            digital marketing solutions
+          </Link>{" "}
+          designed to generate high-quality leads and ROI.
         </p>
 
         {/* ===== IMAGE ===== */}
