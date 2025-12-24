@@ -1,6 +1,5 @@
-// src/pages/GoogleAdsPage.jsx
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import googleAdsData from "../data/googleAdsData";
 
@@ -31,15 +30,15 @@ export default function GoogleAdsPage() {
 
       {/* ================= SEO ================= */}
       <Helmet>
-        <title>Google Ads Services | PPC & Lead Generation – Axis Media</title>
+        <title>
+          Google Ads Services in Delhi | PPC & Lead Generation – Axis Media Digital
+        </title>
+
         <meta
           name="description"
-          content="Professional Google Ads services including Search Ads, Display Ads, YouTube Ads & Remarketing to generate high-quality leads and sales."
+          content="Axis Media Digital provides professional Google Ads services in Delhi including Search Ads, Display Ads, YouTube Ads and Remarketing to generate high-quality leads and sales."
         />
-        <meta
-          name="keywords"
-          content="Google Ads services, PPC agency India, Google Ads management, search ads, display ads, YouTube ads"
-        />
+
         <link
           rel="canonical"
           href="https://axismediadigital.com/google-ads"
@@ -55,17 +54,29 @@ export default function GoogleAdsPage() {
 
         {/* ================= PAGE HEADING ================= */}
         <h1 className="text-5xl font-extrabold text-center text-gray-900 mb-4">
-          Google Ads Services
+          Google Ads Services in Delhi
         </h1>
 
-        <p className="text-gray-600 text-center text-lg max-w-3xl mx-auto mb-14">
+        <p className="text-gray-600 text-center text-lg max-w-3xl mx-auto mb-10">
           High-performance Google Ads campaigns designed to generate
           instant leads, sales and maximum ROI for your business.
         </p>
 
+        {/* INTERNAL LINKING (VERY IMPORTANT) */}
+        <p className="text-center text-gray-700 max-w-3xl mx-auto mb-14">
+          Our Google Ads services are part of our complete{" "}
+          <Link
+            to="/digital-marketing"
+            className="text-green-700 font-semibold underline"
+          >
+            digital marketing solutions
+          </Link>{" "}
+          and work seamlessly with SEO and landing page optimization for
+          better conversions.
+        </p>
+
         {/* ================= GOOGLE ADS SERVICES GRID ================= */}
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-
           {googleAdsData.map((item) => (
             <article
               key={item.slug}
@@ -102,7 +113,6 @@ export default function GoogleAdsPage() {
               </NavLink>
             </article>
           ))}
-
         </section>
 
         {/* ================= CTA BOTTOM ================= */}
