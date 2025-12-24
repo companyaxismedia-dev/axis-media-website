@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import {
   FaSearch,
   FaTools,
@@ -10,19 +11,78 @@ import {
 } from "react-icons/fa";
 
 export default function SeoServicesPage() {
+
+  /* ================= SCHEMA ================= */
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "SEO Services",
+    provider: {
+      "@type": "Organization",
+      name: "Axis Media Digital",
+      url: "https://axismediadigital.com",
+    },
+    areaServed: "India",
+    description:
+      "Professional SEO services in India including technical SEO, on-page SEO, local SEO and content optimization.",
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How long does SEO take to show results?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "SEO usually shows visible improvement within 2–3 months depending on competition and website condition.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you provide local SEO services?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Yes, we provide complete local SEO including Google Business Profile optimization and local rankings.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is your SEO process safe?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Yes, we use 100% white-hat SEO techniques aligned with Google guidelines.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
-      {/* SEO META */}
+      {/* ================= SEO META ================= */}
       <Helmet>
-        <title>SEO Services in India | Axis Media Digital</title>
+        <title>SEO Services in India | SEO Company & Agency – Axis Media</title>
+
         <meta
           name="description"
-          content="Axis Media Digital is a professional SEO company in India helping businesses rank on Google, increase traffic, and generate quality leads."
+          content="Axis Media Digital is a professional SEO company in India offering white-hat SEO services to rank higher on Google, increase organic traffic and generate leads."
         />
+
         <link
           rel="canonical"
           href="https://axismediadigital.com/seo-services"
         />
+
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
 
       {/* ================= HERO ================= */}
@@ -31,24 +91,27 @@ export default function SeoServicesPage() {
           <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
             Professional SEO Services in India
           </h1>
+
           <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto">
-            We help businesses rank higher on Google, attract organic traffic,
-            and convert visitors into paying customers.
+            Axis Media Digital is a trusted SEO agency helping businesses rank
+            higher on Google, increase organic traffic and generate quality
+            leads.
           </p>
 
           <div className="mt-10 flex justify-center gap-4 flex-wrap">
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="bg-white text-blue-700 font-semibold px-8 py-4 rounded-xl shadow-lg hover:bg-gray-100 transition"
             >
               Get Free SEO Audit
-            </a>
-            <a
-              href="/portfolio"
+            </Link>
+
+            <Link
+              to="/portfolio"
               className="border border-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-700 transition"
             >
               View Our Work
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -57,12 +120,24 @@ export default function SeoServicesPage() {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">
-            Result-Driven SEO Agency for Business Growth
+            Result-Driven SEO Company for Business Growth
           </h2>
+
           <p className="text-gray-600 text-lg max-w-4xl mx-auto">
-            Axis Media Digital is a trusted digital marketing agency offering
-            white-hat SEO services designed to improve your Google rankings,
-            increase brand visibility, and generate long-term ROI.
+            Our SEO strategies focus on long-term rankings, brand authority and
+            real business growth through ethical, data-driven optimization.
+          </p>
+
+          {/* INTERNAL LINKS */}
+          <p className="mt-6 text-gray-700">
+            Explore our complete{" "}
+            <Link to="/services" className="text-blue-600 underline font-semibold">
+              digital marketing services
+            </Link>{" "}
+            and{" "}
+            <Link to="/digital-marketing" className="text-blue-600 underline font-semibold">
+              growth solutions
+            </Link>.
           </p>
         </div>
       </section>
@@ -75,60 +150,18 @@ export default function SeoServicesPage() {
           </h2>
 
           <div className="grid md:grid-cols-3 gap-10">
-            <ServiceCard
-              icon={<FaSearch />}
-              title="Keyword Research & Strategy"
-              desc="In-depth keyword research to target high-intent and high-converting search terms."
-            />
-            <ServiceCard
-              icon={<FaTools />}
-              title="On-Page & Technical SEO"
-              desc="Optimize website structure, speed, core web vitals, and on-page elements."
-            />
-            <ServiceCard
-              icon={<FaMapMarkerAlt />}
-              title="Local SEO"
-              desc="Rank your business on Google Maps & local searches with optimized GBP."
-            />
-            <ServiceCard
-              icon={<FaPenFancy />}
-              title="Content Optimization"
-              desc="SEO-optimized content that ranks and engages your audience."
-            />
-            <ServiceCard
-              icon={<FaLink />}
-              title="Link Building"
-              desc="High-quality backlinks from trusted and relevant websites."
-            />
-            <ServiceCard
-              icon={<FaChartLine />}
-              title="SEO Reporting & Growth"
-              desc="Transparent monthly reports with ranking, traffic, and performance insights."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ================= WHY US ================= */}
-      <section className="py-20 bg-[#0A1B3F] text-white">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-10">
-            Why Choose Axis Media Digital?
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <WhyCard
-              title="100% White-Hat SEO"
-              desc="Google-approved techniques for safe and sustainable rankings."
-            />
-            <WhyCard
-              title="ROI-Focused Strategy"
-              desc="We focus on leads, conversions, and real business growth."
-            />
-            <WhyCard
-              title="Transparent Process"
-              desc="No fake promises. Clear communication & monthly reporting."
-            />
+            <ServiceCard icon={<FaSearch />} title="Keyword Research & Strategy"
+              desc="Target high-intent keywords that convert visitors into leads." />
+            <ServiceCard icon={<FaTools />} title="On-Page & Technical SEO"
+              desc="Optimize site structure, speed, Core Web Vitals & indexing." />
+            <ServiceCard icon={<FaMapMarkerAlt />} title="Local SEO"
+              desc="Rank higher on Google Maps & local search results." />
+            <ServiceCard icon={<FaPenFancy />} title="Content Optimization"
+              desc="SEO-friendly content that ranks and engages users." />
+            <ServiceCard icon={<FaLink />} title="Link Building"
+              desc="High-authority backlinks for long-term SEO growth." />
+            <ServiceCard icon={<FaChartLine />} title="SEO Reporting"
+              desc="Transparent monthly reports with real metrics." />
           </div>
         </div>
       </section>
@@ -139,14 +172,14 @@ export default function SeoServicesPage() {
           Want to Rank on Google?
         </h2>
         <p className="text-lg mb-8">
-          Get a free SEO consultation from our experts today.
+          Talk to our SEO experts and get a free consultation today.
         </p>
-        <a
-          href="/contact"
+        <Link
+          to="/contact"
           className="bg-white text-blue-700 font-semibold px-10 py-4 rounded-xl shadow-lg hover:bg-gray-100 transition"
         >
           Talk to SEO Expert
-        </a>
+        </Link>
       </section>
     </>
   );
@@ -157,20 +190,9 @@ export default function SeoServicesPage() {
 function ServiceCard({ icon, title, desc }) {
   return (
     <div className="bg-white p-8 rounded-3xl shadow hover:shadow-xl transition text-center">
-      <div className="text-blue-600 text-4xl mb-4 mx-auto">
-        {icon}
-      </div>
+      <div className="text-blue-600 text-4xl mb-4 mx-auto">{icon}</div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       <p className="text-gray-600 text-sm">{desc}</p>
-    </div>
-  );
-}
-
-function WhyCard({ title, desc }) {
-  return (
-    <div className="bg-white/10 p-8 rounded-2xl">
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-blue-100 text-sm">{desc}</p>
     </div>
   );
 }
