@@ -1,3 +1,7 @@
+/* ======================================
+   SERVICES MASTER DATA – FULL & WORKING
+====================================== */
+
 const servicesData = [
   {
     slug: "website-development",
@@ -9,6 +13,7 @@ const servicesData = [
 
     summary:
       "Modern, high-speed and mobile-friendly websites that elevate your brand credibility and convert visitors into customers.",
+
     heroImage: "/WebsiteDevelopment (1).webp",
     colorClass: "bg-slate-800",
     accent: "text-sky-400",
@@ -35,6 +40,7 @@ const servicesData = [
 
     summary:
       "Secure, conversion-focused e-commerce websites with smooth checkout and online payment integration.",
+
     heroImage: "/website-development (1).webp",
     colorClass: "bg-slate-800",
     accent: "text-violet-400",
@@ -61,6 +67,7 @@ const servicesData = [
 
     summary:
       "Data-driven social media marketing strategies to grow your audience, engagement and brand awareness.",
+
     heroImage: "/SocialMediaMarketing.webp",
     colorClass: "bg-slate-800",
     accent: "text-emerald-400",
@@ -87,6 +94,7 @@ const servicesData = [
 
     summary:
       "ROI-driven Google Ads campaigns to generate quality leads and increase sales quickly.",
+
     heroImage: "/GoogleAdsManagement.webp",
     colorClass: "bg-slate-800",
     accent: "text-indigo-400",
@@ -113,6 +121,7 @@ const servicesData = [
 
     summary:
       "Result-driven SEO services to improve Google ranking, organic traffic and long-term growth.",
+
     heroImage: "/SeoServices (1).webp",
     colorClass: "bg-slate-800",
     accent: "text-indigo-300",
@@ -139,6 +148,7 @@ const servicesData = [
 
     summary:
       "Creative graphic design solutions for branding, marketing and digital campaigns.",
+
     heroImage: "/email-marketing (1).webp",
     colorClass: "bg-slate-800",
     accent: "text-pink-400",
@@ -155,6 +165,15 @@ const servicesData = [
     ],
   },
 ];
+
+/* ======================================
+   HELPER – SERVICE FINDER (IMPORTANT)
+====================================== */
+
+export function findServiceBySlug(slug) {
+  if (!slug) return null;
+  return servicesData.find((service) => service.slug === slug) || null;
+}
 
 export default servicesData;
 
