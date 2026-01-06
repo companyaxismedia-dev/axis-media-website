@@ -1,4 +1,3 @@
-// src/pages/ServicesGridPage.jsx
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { NavLink } from "react-router-dom";
@@ -16,13 +15,13 @@ export default function ServicesGridPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://axismediadigital.com/",
+        "item": "https://www.axismediadigital.com/",
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Services",
-        "item": "https://axismediadigital.com/services",
+        "item": "https://www.axismediadigital.com/services",
       },
     ],
   };
@@ -34,11 +33,20 @@ export default function ServicesGridPage() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What digital marketing services does Axis Media provide?",
+        "name": "What digital marketing services does Axis Media Digital provide?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text":
-            "Axis Media provides SEO services, Google Ads management, social media marketing, website development, e-commerce solutions and complete digital growth strategies.",
+            "Axis Media Digital provides SEO services, Google Ads management, social media marketing, website development, e-commerce solutions and complete digital growth strategies.",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide digital marketing services in Delhi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text":
+            "Yes, Axis Media Digital provides professional digital marketing services in Delhi and NCR for startups, local businesses and enterprises.",
         },
       },
       {
@@ -47,16 +55,7 @@ export default function ServicesGridPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text":
-            "Yes, all websites developed by Axis Media are fast, mobile responsive and SEO optimized for better Google rankings.",
-        },
-      },
-      {
-        "@type": "Question",
-        "name": "Is Axis Media suitable for small businesses?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text":
-            "Yes, Axis Media offers affordable digital marketing packages for startups, small businesses and enterprises.",
+            "Yes, all websites developed by Axis Media Digital are fast, mobile responsive and SEO optimized for better Google rankings.",
         },
       },
     ],
@@ -68,17 +67,17 @@ export default function ServicesGridPage() {
       {/* ================= SEO META ================= */}
       <Helmet>
         <title>
-          Digital Marketing Services & Website Development | Axis Media
+          Digital Marketing Services in Delhi | Axis Media Digital
         </title>
 
         <meta
           name="description"
-          content="Axis Media is a full-service digital marketing agency offering SEO, Google Ads, social media marketing, website development and e-commerce solutions to grow your business online."
+          content="Axis Media Digital is a full-service digital marketing company in Delhi offering SEO, Google Ads, social media marketing, website development and e-commerce solutions to grow your business."
         />
 
         <link
           rel="canonical"
-          href="https://axismediadigital.com/services"
+          href="https://www.axismediadigital.com/services"
         />
 
         {/* Schema */}
@@ -92,9 +91,9 @@ export default function ServicesGridPage() {
       </Helmet>
 
       {/* ================= SERVICES GRID ================= */}
-      {/* Hidden H2 for SEO (no UI impact) */}
+      {/* SEO helper heading */}
       <h2 className="sr-only">
-        Axis Media Digital Marketing Services
+        Axis Media Digital Marketing Services in Delhi
       </h2>
 
       <ServicesGrid />
@@ -104,14 +103,13 @@ export default function ServicesGridPage() {
 
         {/* ONE & ONLY H1 */}
         <h1 className="text-3xl md:text-4xl font-extrabold text-center mb-6">
-          Digital Marketing & Web Development Services
+          Digital Marketing & Web Development Services in Delhi
         </h1>
 
         <p className="text-center max-w-4xl mx-auto mb-14 text-gray-700 text-lg leading-relaxed">
-          Axis Media is a results-driven digital marketing agency delivering
-          SEO services, Google Ads management, social media marketing, website
-          development and e-commerce solutions to help businesses grow online
-          with measurable results.
+          Axis Media Digital is a results-driven <strong>digital marketing company in Delhi</strong> 
+          providing SEO services, Google Ads management, social media marketing, website development 
+          and e-commerce solutions to help businesses grow online with measurable results.
         </p>
 
         {/* ================= SERVICE CARDS ================= */}
@@ -129,19 +127,19 @@ export default function ServicesGridPage() {
               link: "/services/ecommerce",
             },
             {
-              title: "SEO Services",
+              title: "SEO Services in Delhi",
               text: "On-page, technical and content SEO to improve Google rankings and organic traffic.",
-              link: "/services/seo",
+              link: "/digital-marketing/seo-optimization",
             },
             {
               title: "Google Ads Management",
               text: "High-ROI Google Ads campaigns with advanced tracking and optimization.",
-              link: "/services/google-ads",
+              link: "/google-ads",
             },
             {
               title: "Social Media Marketing",
               text: "Content creation, branding and paid social media growth strategies.",
-              link: "/services/social-media",
+              link: "/digital-marketing/social-media-marketing",
             },
             {
               title: "Graphic Design & Branding",
@@ -174,15 +172,15 @@ export default function ServicesGridPage() {
         {/* ================= WHY CHOOSE US ================= */}
         <div className="max-w-4xl mx-auto mt-20">
           <h2 className="text-2xl font-bold text-center mb-8">
-            Why Choose Axis Media?
+            Why Choose Axis Media Digital?
           </h2>
 
           <ul className="grid sm:grid-cols-2 gap-4 text-gray-700">
             {[
               "Result-driven digital marketing strategies",
               "Transparent reporting & honest communication",
-              "Affordable pricing for all business sizes",
-              "Long-term support & continuous optimization",
+              "Affordable pricing for startups & businesses",
+              "Long-term SEO & growth support",
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3">
                 <FaCheckCircle className="text-green-500 mt-1" />

@@ -10,29 +10,81 @@ import {
 } from "react-icons/fa";
 
 export default function BrandingPage() {
+  const pageUrl = "https://axismediadigital.com/services/branding";
+
+  /* ================= SERVICE SCHEMA ================= */
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Branding & Graphic Design Services",
+    provider: {
+      "@type": "Organization",
+      name: "Axis Media Digital",
+      url: "https://axismediadigital.com",
+    },
+    areaServed: "India",
+    description:
+      "Professional branding and graphic design services including logo design, brand identity, social media creatives, marketing graphics and print design.",
+  };
+
+  /* ================= BREADCRUMB SCHEMA ================= */
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://axismediadigital.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://axismediadigital.com/services",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Branding & Graphic Design",
+        item: pageUrl,
+      },
+    ],
+  };
+
   return (
     <>
       {/* ================= SEO ================= */}
       <Helmet>
         <title>
-          Branding & Graphics Design Services in India | Axis Media Digital
+          Branding & Graphic Design Services in India | Axis Media Digital
         </title>
+
         <meta
           name="description"
-          content="Axis Media Digital offers professional branding & graphic design services in India including logo design, brand identity, social media creatives, and marketing graphics."
+          content="Axis Media Digital offers professional branding & graphic design services in India including logo design, brand identity, social media creatives, marketing graphics and print design."
         />
-        <link
-          rel="canonical"
-          href="https://axismediadigital.com/services/branding"
-        />
+
+        <link rel="canonical" href={pageUrl} />
+
+        {/* SCHEMA */}
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
       </Helmet>
 
       {/* ================= HERO ================= */}
       <section className="pt-32 pb-24 bg-gradient-to-r from-pink-600 to-purple-700 text-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
+          {/* SEO SAFE H1 */}
           <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
-            Branding & Graphics Design Services
+            Branding & Graphic Design Services in India
           </h1>
+
           <p className="text-lg md:text-xl text-pink-100 max-w-3xl mx-auto">
             Build a strong brand identity with creative designs that connect,
             convert, and leave a lasting impression.

@@ -32,7 +32,6 @@ export default function Footer() {
               aria-label="Axis Media Digital Marketing Agency Home"
               className="inline-flex items-center gap-3"
             >
-              {/* SAME STYLE AS NAVBAR LOGO */}
               <div className="bg-white p-3 rounded-2xl shadow-xl flex items-center justify-center">
                 <img
                   src={axisLogo}
@@ -45,7 +44,6 @@ export default function Footer() {
               </div>
             </NavLink>
 
-            {/* SEO-OPTIMIZED DESCRIPTION */}
             <p className="text-gray-200 mt-5 leading-relaxed text-[15px]">
               <strong>Axis Media</strong> is a leading
               <strong> digital marketing agency in Delhi NCR</strong>,
@@ -62,6 +60,17 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-gray-200 text-sm">
               <li><NavLink to="/digital-marketing">Digital Marketing Services</NavLink></li>
+
+              {/* 🔥 SEO POWER LINK */}
+              <li>
+                <NavLink
+                  to="/digital-marketing-company-in-delhi"
+                  className="font-semibold text-sky-300 hover:text-white"
+                >
+                  Digital Marketing Company in Delhi
+                </NavLink>
+              </li>
+
               <li><NavLink to="/website-development">Website Development Services</NavLink></li>
               <li><NavLink to="/seo">Professional SEO Services</NavLink></li>
               <li><NavLink to="/google-ads">Google Ads Management</NavLink></li>
@@ -89,12 +98,13 @@ export default function Footer() {
               Contact Axis Media
             </h4>
 
-            {/* NAP FOR LOCAL SEO */}
+            {/* ✅ UPDATED ADDRESS */}
             <p className="text-gray-200 text-sm">
               <strong>Axis Media</strong><br />
               Digital Marketing Agency<br />
               Delhi NCR, India<br />
-              Working Location: Office No. 820 , Suneja Tower II, District Center Janak Puri, Delhi – 110058
+              Working Location: Office No. 820, Jaina Tower-2,
+              District Center Janak Puri, Delhi – 110058
             </p>
 
             <a
@@ -110,28 +120,34 @@ export default function Footer() {
               axismediainbox@gmail.com
             </a>
 
+            {/* ✅ UPDATED PHONE NUMBERS */}
             <a
               href="tel:+919871584001"
               className="block mt-1 text-gray-200 hover:text-white text-sm"
             >
               +91 9871584001
             </a>
+            <a
+              href="tel:+919871147666"
+              className="block mt-1 text-gray-200 hover:text-white text-sm"
+            >
+              +91 9871147666
+            </a>
 
-            {/* SOCIAL TRUST SIGNALS */}
             <div className="flex gap-4 mt-6 text-xl">
-              <a href="https://www.linkedin.com" aria-label="Axis Media LinkedIn" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
                 <FaLinkedinIn />
               </a>
-              <a href="https://www.instagram.com/axismedia123" aria-label="Axis Media Instagram" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/axismedia123" target="_blank" rel="noopener noreferrer">
                 <FaInstagram />
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61584611262239" aria-label="Axis Media Facebook" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/profile.php?id=61584611262239" target="_blank" rel="noopener noreferrer">
                 <FaFacebookF />
               </a>
-              <a href="https://twitter.com" aria-label="Axis Media Twitter" target="_blank" rel="noopener noreferrer">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
                 <FaTwitter />
               </a>
-              <a href="https://www.youtube.com" aria-label="Axis Media YouTube" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
                 <FaYoutube />
               </a>
             </div>
@@ -141,6 +157,15 @@ export default function Footer() {
         {/* ================= BOTTOM ================= */}
         <div className="max-w-7xl mx-auto pt-10 mt-10 border-t border-white/20">
           <div className="flex flex-wrap justify-center gap-6 text-gray-300 text-sm">
+
+            {/* 🔥 SEO LINK */}
+            <NavLink
+              to="/digital-marketing-company-in-delhi"
+              className="font-semibold text-sky-300 hover:text-white"
+            >
+              Digital Marketing Company in Delhi
+            </NavLink>
+
             <NavLink to="/sitemap">HTML Sitemap</NavLink>
             <NavLink to="/privacy">Privacy Policy</NavLink>
             <NavLink to="/terms">Terms of Use</NavLink>

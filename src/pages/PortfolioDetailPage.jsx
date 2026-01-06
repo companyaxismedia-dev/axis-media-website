@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, NavLink, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import portfolioItems from "../data/portfolioData";
 
@@ -20,8 +20,20 @@ export default function PortfolioDetailPage() {
     );
   }
 
-  const { title, image, details, features, tech, liveLink, repoLink, auth } =
-    project;
+  const {
+    title,
+    image,
+    details,
+    features,
+    tech,
+    liveLink,
+    repoLink,
+    auth,
+    seoTitle,
+    seoDesc,
+  } = project;
+
+  const pageUrl = `https://axismediadigital.com/portfolio/${slug}`;
 
   /* ---------------- SEO SCHEMA ---------------- */
   const breadcrumbSchema = {
@@ -44,6 +56,7 @@ export default function PortfolioDetailPage() {
         "@type": "ListItem",
         position: 3,
         name: title,
+        item: pageUrl,
       },
     ],
   };
@@ -52,20 +65,9 @@ export default function PortfolioDetailPage() {
     <main className="pt-24 pb-20 bg-[#EEF5FF] min-h-screen text-gray-900">
       {/* ================= SEO ================= */}
       <Helmet>
-        <title>{title} | Portfolio – Axis Media</title>
-
-        <meta
-          name="description"
-          content={`${title} project by Axis Media. ${details.slice(
-            0,
-            150
-          )}`}
-        />
-
-        <link
-          rel="canonical"
-          href={`https://axismediadigital.com/portfolio/${slug}`}
-        />
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDesc} />
+        <link rel="canonical" href={pageUrl} />
 
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbSchema)}
@@ -88,8 +90,30 @@ export default function PortfolioDetailPage() {
         {/* ================= TOP CARD ================= */}
         <section className="bg-white rounded-2xl shadow-lg overflow-hidden grid lg:grid-cols-2 border border-gray-200 mb-12">
           <div className="p-8">
-            <h1 className="text-4xl font-extrabold mb-4">{title}</h1>
+            <h1 className="text-4xl font-extrabold mb-4">
+              {title} Website Development
+            </h1>
+
             <p className="text-lg text-gray-700 mb-6">{details}</p>
+
+            {/* INTERNAL LINKING */}
+            <p className="mb-6 text-gray-700">
+              This project is part of our professional{" "}
+              <Link
+                to="/services"
+                className="text-blue-600 underline font-semibold"
+              >
+                website development services
+              </Link>{" "}
+              and{" "}
+              <Link
+                to="/digital-marketing"
+                className="text-blue-600 underline font-semibold"
+              >
+                digital marketing solutions
+              </Link>
+              .
+            </p>
 
             <h2 className="text-2xl font-semibold mb-3">Key Features</h2>
             <ul className="list-disc pl-5 space-y-1 mb-6 text-gray-700">

@@ -56,7 +56,29 @@ export default function AboutPage() {
             sameAs: [
               "https://www.facebook.com/profile.php?id=61584611262239",
               "https://www.instagram.com/axismedia123",
-              "https://www.linkedin.com/company/axis-media-digital"
+              "https://www.linkedin.com/company/axis-media-digital",
+            ],
+          })}
+        </script>
+
+        {/* BREADCRUMB SCHEMA */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://axismediadigital.com/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "About Axis Media",
+                item: "https://axismediadigital.com/about",
+              },
             ],
           })}
         </script>
@@ -68,15 +90,15 @@ export default function AboutPage() {
       {/* ================= PAGE CONTENT ================= */}
       <section className="container mx-auto px-6 py-16 text-gray-800">
 
-        {/* ✅ SINGLE H1 (ONLY ONE ON PAGE) */}
+        {/* ✅ SINGLE H1 */}
         <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-center">
           About Axis Media
         </h1>
 
         <p className="text-center mb-12 max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed">
           Axis Media is a full-service digital marketing and web development
-          agency helping businesses grow online with SEO, Google Ads, high-
-          performance websites and data-driven strategies.
+          agency helping businesses grow online with SEO, Google Ads,
+          high-performance websites and data-driven strategies.
         </p>
 
         <p className="text-center max-w-4xl mx-auto text-gray-600 mb-14">
@@ -150,13 +172,13 @@ export default function AboutPage() {
           </div>
 
           <div className="flex justify-center gap-6 text-xl text-blue-600">
-            <a href="https://www.facebook.com/profile.php?id=61584611262239" aria-label="Axis Media Facebook">
+            <a href="https://www.facebook.com/profile.php?id=61584611262239">
               <FaFacebookF />
             </a>
-            <a href="https://www.instagram.com/axismedia123" aria-label="Axis Media Instagram">
+            <a href="https://www.instagram.com/axismedia123">
               <FaInstagram />
             </a>
-            <a href="https://www.linkedin.com/company/axis-media-digital" aria-label="Axis Media LinkedIn">
+            <a href="https://www.linkedin.com/company/axis-media-digital">
               <FaLinkedinIn />
             </a>
           </div>

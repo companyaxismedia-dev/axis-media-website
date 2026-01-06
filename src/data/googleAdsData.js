@@ -2,6 +2,11 @@ const adsServices = [
   {
     slug: "google-search-ads",
     title: "Google Search Ads Services",
+
+    seoTitle: "Google Search Ads Services in Delhi | Axis Media Digital",
+    seoDesc:
+      "Axis Media Digital provides Google Search Ads services in Delhi to generate high-intent leads and instant visibility on Google search results.",
+
     image: "/google-search-ads.webp",
     longDescription:
       "Our Google Search Ads services help businesses in India reach high-intent customers instantly by appearing at the top of Google search results and generating qualified leads.",
@@ -28,6 +33,11 @@ const adsServices = [
   {
     slug: "google-display-ads",
     title: "Google Display Ads Services",
+
+    seoTitle: "Google Display Ads Services in Delhi | Axis Media Digital",
+    seoDesc:
+      "Professional Google Display Ads services in Delhi for brand awareness, retargeting and visual banner advertising across millions of websites.",
+
     image: "/GoogleDisplay.webp",
     longDescription:
       "Our Google Display Ads services help businesses build brand awareness and retarget users with visually appealing banner ads across millions of websites.",
@@ -50,6 +60,11 @@ const adsServices = [
   {
     slug: "shopping-ads",
     title: "Google Shopping Ads Services",
+
+    seoTitle: "Google Shopping Ads Services in Delhi | Axis Media Digital",
+    seoDesc:
+      "Google Shopping Ads services in Delhi to promote eCommerce products with images, prices and high purchase intent traffic.",
+
     image: "/shopping-ads.webp",
     longDescription:
       "Google Shopping Ads showcase your products directly on Google with images, prices, and reviews to drive high-intent eCommerce traffic.",
@@ -72,6 +87,11 @@ const adsServices = [
   {
     slug: "youtube-ads",
     title: "YouTube Ads Services",
+
+    seoTitle: "YouTube Ads Services in Delhi | Axis Media Digital",
+    seoDesc:
+      "YouTube Ads services in Delhi for video advertising, brand awareness and audience engagement across YouTube.",
+
     image: "/youtube-ads.webp",
     longDescription:
       "Our YouTube Ads services help businesses create strong brand awareness and engagement through high-impact video advertising.",
@@ -94,6 +114,11 @@ const adsServices = [
   {
     slug: "remarketing-ads",
     title: "Google Remarketing Ads Services",
+
+    seoTitle: "Google Remarketing Ads Services in Delhi | Axis Media Digital",
+    seoDesc:
+      "Google Remarketing Ads services in Delhi to re-target website visitors and increase conversions at lower cost.",
+
     image: "/remarketing-ads.webp",
     longDescription:
       "Remarketing Ads help you reconnect with users who have already visited your website and increase conversions at a lower cost.",
@@ -116,6 +141,11 @@ const adsServices = [
   {
     slug: "performance-max",
     title: "Performance Max Campaign Services",
+
+    seoTitle: "Performance Max Campaign Services in Delhi | Axis Media Digital",
+    seoDesc:
+      "Performance Max campaign services in Delhi using Google AI to maximize conversions across Search, Display, YouTube, Maps and Gmail.",
+
     image: "/Performance Max Campaigns.webp",
     longDescription:
       "Performance Max campaigns use Google AI to run ads across Search, Display, YouTube, Maps, and Gmail for maximum reach and conversions.",

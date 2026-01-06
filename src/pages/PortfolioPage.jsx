@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import portfolioItems from "../data/portfolioData";
 import Portfolio from "../components/Portfolio";
@@ -9,7 +9,7 @@ export default function PortfolioPage() {
   const portfolioSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Axis Media Portfolio",
+    name: "Axis Media Digital Portfolio",
     itemListElement: portfolioItems.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
@@ -25,11 +25,13 @@ export default function PortfolioPage() {
     >
       {/* ================= SEO ================= */}
       <Helmet>
-        <title>Portfolio | Axis Media – Websites, Apps & Digital Projects</title>
+        <title>
+          Website Development & Digital Marketing Portfolio | Axis Media Digital
+        </title>
 
         <meta
           name="description"
-          content="Explore Axis Media portfolio – websites, ecommerce platforms, dashboards and digital solutions built for performance, SEO and real business growth."
+          content="Explore Axis Media Digital portfolio featuring website development, e-commerce platforms, dashboards and digital marketing projects built for performance and SEO."
         />
 
         <link
@@ -48,12 +50,32 @@ export default function PortfolioPage() {
       {/* ================= MAIN GRID ================= */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <h1 className="text-4xl font-bold mb-4 text-center text-gray-900">
-          Our Complete Portfolio
+          Website Development & Digital Marketing Portfolio
         </h1>
 
-        <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-          Explore our professionally designed projects — crafted for UI/UX,
-          performance and real business results.
+        <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+          Explore our professionally delivered projects including websites,
+          e-commerce platforms, dashboards and digital marketing solutions —
+          built for performance, SEO and real business growth.
+        </p>
+
+        {/* INTERNAL LINKING */}
+        <p className="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
+          These projects are part of our complete{" "}
+          <Link
+            to="/services"
+            className="text-blue-600 font-semibold underline"
+          >
+            website development services
+          </Link>{" "}
+          and{" "}
+          <Link
+            to="/digital-marketing"
+            className="text-blue-600 font-semibold underline"
+          >
+            digital marketing solutions
+          </Link>{" "}
+          for businesses of all sizes.
         </p>
 
         {/* PROJECT GRID */}

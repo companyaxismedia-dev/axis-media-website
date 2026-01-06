@@ -39,21 +39,18 @@ const ServicesGridPage = lazy(() => import("./pages/ServicesGridPage"));
 const GrowBusinessPage = lazy(() => import("./pages/GrowBusinessPage"));
 
 // Marketing pages
-const DigitalMarketingPage = lazy(() =>
-  import("./pages/DigitalMarketingPage")
-);
+const DigitalMarketingPage = lazy(() => import("./pages/DigitalMarketingPage"));
 const GoogleAdsPage = lazy(() => import("./pages/GoogleAdsPage"));
-const SeoServicesPage = lazy(() =>
-  import("./pages/SeoServicesPage")
-);
-const BrandingPage = lazy(() =>
-  import("./pages/BrandingPage")
+const SeoServicesPage = lazy(() => import("./pages/SeoServicesPage"));
+const BrandingPage = lazy(() => import("./pages/BrandingPage"));
+
+// ✅ SEO POWER PAGE (NEW)
+const DigitalMarketingCompanyDelhi = lazy(() =>
+  import("./pages/DigitalMarketingCompanyDelhi")
 );
 
 // Detail pages
-const ServiceDetailPage = lazy(() =>
-  import("./pages/ServiceDetailPage")
-);
+const ServiceDetailPage = lazy(() => import("./pages/ServiceDetailPage"));
 const DigitalMarketingDetailPage = lazy(() =>
   import("./pages/DigitalMarketingDetailPage")
 );
@@ -104,41 +101,30 @@ function App() {
             {/* AUTH */}
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
-            <Route
-              path="/forgot-password"
-              element={<ForgotPasswordPage />}
-            />
-            <Route
-              path="/reset-password"
-              element={<ResetPasswordPage />}
-            />
+            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+            <Route path="/reset-password" element={<ResetPasswordPage />} />
 
             {/* MAIN */}
+            <Route path="/digital-marketing" element={<DigitalMarketingPage />} />
+            <Route path="/seo-services" element={<SeoServicesPage />} />
+            <Route path="/services/branding" element={<BrandingPage />} />
+
+            {/* ✅ POWER SEO ROUTE */}
             <Route
-              path="/digital-marketing"
-              element={<DigitalMarketingPage />}
+              path="/digital-marketing-company-in-delhi"
+              element={<DigitalMarketingCompanyDelhi />}
             />
-            <Route
-              path="/seo-services"
-              element={<SeoServicesPage />}
-            />
-            <Route
-              path="/services/branding"
-              element={<BrandingPage />}
-            />
-            <Route
-              path="/services-grid"
-              element={<ServicesGridPage />}
-            />
+
+            {/* SERVICES GRID */}
+            <Route path="/services" element={<ServicesGridPage />} />
+            <Route path="/services-grid" element={<ServicesGridPage />} />
+
             <Route path="/google-ads" element={<GoogleAdsPage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/packages" element={<PackagesPage />} />
             <Route path="/contact" element={<ContactCTAPage />} />
-            <Route
-              path="/grow-business"
-              element={<GrowBusinessPage />}
-            />
+            <Route path="/grow-business" element={<GrowBusinessPage />} />
 
             {/* SEO SAFE REDIRECT */}
             <Route
@@ -147,33 +133,18 @@ function App() {
             />
 
             {/* DETAIL */}
-            <Route
-              path="/services/:slug"
-              element={<ServiceDetailPage />}
-            />
+            <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route
               path="/digital-marketing/:slug"
               element={<DigitalMarketingDetailPage />}
             />
-            <Route
-              path="/portfolio/:slug"
-              element={<PortfolioDetailPage />}
-            />
-            <Route
-              path="/google-ads/:slug"
-              element={<GoogleAdsDetailsPage />}
-            />
+            <Route path="/portfolio/:slug" element={<PortfolioDetailPage />} />
+            <Route path="/google-ads/:slug" element={<GoogleAdsDetailsPage />} />
 
             {/* INDUSTRIES */}
             <Route path="/industries" element={<IndustriesPage />} />
-            <Route
-              path="/industries/:category"
-              element={<CategoryPage />}
-            />
-            <Route
-              path="/industry/:name"
-              element={<IndustryDetailPage />}
-            />
+            <Route path="/industries/:category" element={<CategoryPage />} />
+            <Route path="/industry/:name" element={<IndustryDetailPage />} />
 
             {/* 404 */}
             <Route
