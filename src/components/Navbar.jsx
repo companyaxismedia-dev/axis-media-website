@@ -1,17 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import logo from "../assets/axismedia.WEBP";
+import logo from "../assets/AxisMedia.png";
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); // ✅ logo behavior
 
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
   const location = useLocation();
 
-  /* ================= NAVBAR HIDE ON SCROLL ================= */
+  /* ================= NAVBAR HIDE + LOGO SCROLL ================= */
   useEffect(() => {
     const handleScroll = () => {
       const noHidePages = [
@@ -21,12 +22,15 @@ export default function Navbar() {
         "/reset-password",
       ];
 
+      const current = window.scrollY;
+
+      // ✅ logo shrink trigger (theme dependent)
+      setIsScrolled(current > 80);
+
       if (noHidePages.includes(location.pathname)) {
         setHidden(false);
         return;
       }
-
-      const current = window.scrollY;
 
       if (!ticking.current) {
         window.requestAnimationFrame(() => {
@@ -52,22 +56,34 @@ export default function Navbar() {
   return (
     <>
       {/* ================= HEADER ================= */}
-      <header
+       <header
         className={`fixed top-0 left-0 w-full z-[100]
-        bg-sky-500 h-[80px] shadow-lg transition-transform duration-300
-        ${hidden ? "-translate-y-full" : "translate-y-0"}`}
+        bg-sky-500 shadow-lg transition-all duration-300
+        ${hidden ? "-translate-y-full" : "translate-y-0"}
+        ${isScrolled ? "h-[72px]" : "h-[96px]"}`}
+        style={{ backgroundColor: "#0ea5e9" }}
       >
         <nav className="w-full h-full">
           <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
 
-            {/* LOGO */}
-            <NavLink to="/" className="flex items-center">
-              <div className="flex items-center justify-center h-[48px] px-4 bg-white rounded-xl shadow-md">
-                <img src={logo} alt="Axis Media" className="h-8 w-auto" />
-              </div>
-            </NavLink>
 
-            {/* ================= DESKTOP MENU ================= */}
+            {/* ================= LOGO ================= */}
+            
+                <NavLink
+  to="/"
+  className="flex items-center h-full shrink-0 pr-4"
+>
+  <img
+    src={logo}
+    alt="Axis Media Digital Marketing Agency"
+    className={`
+      object-contain transition-all duration-300
+      ${isScrolled ? "h-[100px]" : "h-[120px]"}
+    `}
+  />
+</NavLink>
+
+              {/* ================= DESKTOP MENU ================= */}
             <ul className="hidden md:flex items-center gap-9 font-semibold text-white text-[15px]">
 
               <li><NavLink to="/">Home</NavLink></li>
@@ -88,13 +104,7 @@ export default function Navbar() {
                 >
                   <h3 className="font-bold text-sky-600 mb-3">Our Services</h3>
                   <ul className="space-y-2 text-sm">
-                    <li>
-                      <NavLink to="/services/website-development">
-                        Website Development
-                      </NavLink>
-                    </li>
-
-                    {/* ✅ SEO POWER LINK */}
+                    <li><NavLink to="/services/website-development">Website Development</NavLink></li>
                     <li>
                       <NavLink
                         to="/digital-marketing-company-in-delhi"
@@ -103,7 +113,6 @@ export default function Navbar() {
                         Digital Marketing Company in Delhi
                       </NavLink>
                     </li>
-
                     <li><NavLink to="/services-grid">All Services</NavLink></li>
                     <li><NavLink to="/digital-marketing">Digital Marketing</NavLink></li>
                     <li><NavLink to="/google-ads">Google Ads</NavLink></li>
@@ -199,15 +208,12 @@ export default function Navbar() {
             <nav className="flex flex-col gap-4 font-semibold text-gray-800">
               <NavLink to="/">Home</NavLink>
               <NavLink to="/services-grid">Services</NavLink>
-
-              {/* ✅ SEO LINK (MOBILE) */}
               <NavLink
                 to="/digital-marketing-company-in-delhi"
                 className="text-sky-700 font-bold"
               >
                 Digital Marketing Company in Delhi
               </NavLink>
-
               <NavLink to="/industries">Business Solutions</NavLink>
               <NavLink to="/digital-marketing">Digital Marketing</NavLink>
               <NavLink to="/about">About Us</NavLink>
@@ -218,22 +224,16 @@ export default function Navbar() {
               <hr />
 
               <p className="font-bold text-sky-600">Services</p>
-              <NavLink to="/services/website-development">
-                Website Development
-              </NavLink>
+              <NavLink to="/services/website-development">Website Development</NavLink>
               <NavLink to="/google-ads">Google Ads</NavLink>
               <NavLink to="/seo-services">SEO Services</NavLink>
               <NavLink to="/branding">Branding & Graphics</NavLink>
 
-              <p className="font-bold text-sky-600 mt-3">
-                Business Solutions
-              </p>
+              <p className="font-bold text-sky-600 mt-3">Business Solutions</p>
               <NavLink to="/grow-business">Grow Business</NavLink>
               <NavLink to="/industries">Industries</NavLink>
 
-              <p className="font-bold text-sky-600 mt-3">
-                Web Development
-              </p>
+              <p className="font-bold text-sky-600 mt-3">Web Development</p>
               <NavLink to="/portfolio">Portfolio</NavLink>
               <NavLink to="/packages">Packages</NavLink>
             </nav>

@@ -7,7 +7,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import axisLogo from "../assets/axismedia.WEBP";
+import axisLogo from "../assets/AxisMedia.png";
 
 export default function Footer() {
   return (
@@ -26,32 +26,32 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto grid gap-12 md:grid-cols-4">
 
           {/* ================= BRAND ================= */}
-          <div className="max-w-sm">
-            <NavLink
-              to="/"
-              aria-label="Axis Media Digital Marketing Agency Home"
-              className="inline-flex items-center gap-3"
-            >
-              <div className="bg-white p-3 rounded-2xl shadow-xl flex items-center justify-center">
-                <img
-                  src={axisLogo}
-                  alt="Axis Media Digital Marketing Agency Logo"
-                  width="160"
-                  height="56"
-                  loading="lazy"
-                  className="h-14 w-auto object-contain"
-                />
-              </div>
-            </NavLink>
+          
+<div className="max-w-sm">
+  <NavLink
+    to="/"
+    aria-label="Axis Media Digital Marketing Agency Home"
+    className="inline-flex items-center gap-3"
+  >
+    <div className="flex items-center justify-start">
+      <img
+        src={axisLogo}
+        alt="Axis Media Digital Marketing Agency Logo"
+        loading="lazy"
+        className="h-[150px] w-auto object-contain opacity-90"
+      />
+    </div>
+  </NavLink>
 
-            <p className="text-gray-200 mt-5 leading-relaxed text-[15px]">
-              <strong>Axis Media</strong> is a leading
-              <strong> digital marketing agency in Delhi NCR</strong>,
-              delivering professional SEO services, Google Ads management,
-              website development, e-commerce solutions and performance-driven
-              online marketing strategies for businesses of all sizes.
-            </p>
-          </div>
+  <p className="text-gray-200 mt-5 leading-relaxed text-[15px]">
+    <strong>Axis Media</strong> is a leading
+    <strong> digital marketing agency in Delhi NCR</strong>,
+    delivering professional SEO services, Google Ads management,
+    website development, e-commerce solutions and performance-driven
+    online marketing strategies for businesses of all sizes.
+  </p>
+</div>
+
 
           {/* ================= SERVICES ================= */}
           <nav aria-label="Footer Services">
