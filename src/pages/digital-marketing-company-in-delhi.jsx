@@ -21,7 +21,7 @@ export default function DigitalMarketingCompanyDelhi() {
 
         <link
           rel="canonical"
-          href="https://axismediadigital.com/digital-marketing-company-delhi"
+          href="https://axismediadigital.com/digital-marketing-company-in-delhi"
         />
 
         {/* ✅ FAQ SCHEMA */}

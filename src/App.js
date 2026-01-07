@@ -46,7 +46,7 @@ const BrandingPage = lazy(() => import("./pages/BrandingPage"));
 
 // ✅ SEO POWER PAGE (NEW)
 const DigitalMarketingCompanyDelhi = lazy(() =>
-  import("./pages/DigitalMarketingCompanyDelhi")
+  import("./pages/digital-marketing-company-in-delhi")
 );
 
 // Detail pages
