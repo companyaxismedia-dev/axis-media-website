@@ -6,7 +6,7 @@ export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false); // ✅ logo behavior
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
@@ -24,7 +24,7 @@ export default function Navbar() {
 
       const current = window.scrollY;
 
-      // ✅ logo shrink trigger (theme dependent)
+      // logo shrink
       setIsScrolled(current > 80);
 
       if (noHidePages.includes(location.pathname)) {
@@ -46,6 +46,11 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [location.pathname]);
 
+  /* ================= AUTO CLOSE MOBILE MENU ON PAGE CHANGE ================= */
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
   const isLoggedIn = !!localStorage.getItem("token");
 
   const logoutHandler = () => {
@@ -56,9 +61,9 @@ export default function Navbar() {
   return (
     <>
       {/* ================= HEADER ================= */}
-       <header
+      <header
         className={`fixed top-0 left-0 w-full z-[100]
-        bg-sky-500 shadow-lg transition-all duration-300
+        shadow-lg transition-all duration-300
         ${hidden ? "-translate-y-full" : "translate-y-0"}
         ${isScrolled ? "h-[72px]" : "h-[96px]"}`}
         style={{ backgroundColor: "#0ea5e9" }}
@@ -66,24 +71,18 @@ export default function Navbar() {
         <nav className="w-full h-full">
           <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
 
-
             {/* ================= LOGO ================= */}
-            
-                <NavLink
-  to="/"
-  className="flex items-center h-full shrink-0 pr-4"
->
-  <img
-    src={logo}
-    alt="Axis Media Digital Marketing Agency"
-    className={`
-      object-contain transition-all duration-300
-      ${isScrolled ? "h-[100px]" : "h-[120px]"}
-    `}
-  />
-</NavLink>
+            <NavLink to="/" className="flex items-center h-full shrink-0 pr-4">
+              <img
+                src={logo}
+                alt="Axis Media Digital Marketing Agency"
+                className={`object-contain transition-all duration-300 ${
+                  isScrolled ? "h-[100px]" : "h-[120px]"
+                }`}
+              />
+            </NavLink>
 
-              {/* ================= DESKTOP MENU ================= */}
+            {/* ================= DESKTOP MENU ================= */}
             <ul className="hidden md:flex items-center gap-9 font-semibold text-white text-[15px]">
 
               <li><NavLink to="/">Home</NavLink></li>
@@ -122,7 +121,7 @@ export default function Navbar() {
                 </div>
               </li>
 
-              {/* BUSINESS SOLUTIONS */}
+              {/* BUSINESS */}
               <li
                 className="relative"
                 onMouseEnter={() => setOpenMenu("business")}
@@ -143,7 +142,7 @@ export default function Navbar() {
                 </div>
               </li>
 
-              {/* WEB DEVELOPMENT */}
+              {/* WEB DEV */}
               <li
                 className="relative"
                 onMouseEnter={() => setOpenMenu("web")}
@@ -183,7 +182,7 @@ export default function Navbar() {
               )}
             </ul>
 
-            {/* MOBILE ICON */}
+            {/* ================= MOBILE ICON ================= */}
             <button
               onClick={() => setMobileOpen(true)}
               className="md:hidden text-white text-3xl"
@@ -198,6 +197,7 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="fixed inset-0 z-[9999] bg-black/50">
           <div className="absolute right-0 top-0 w-72 h-full bg-white shadow-xl p-6 overflow-y-auto">
+
             <button
               onClick={() => setMobileOpen(false)}
               className="text-2xl mb-6"
@@ -206,6 +206,7 @@ export default function Navbar() {
             </button>
 
             <nav className="flex flex-col gap-4 font-semibold text-gray-800">
+
               <NavLink to="/">Home</NavLink>
               <NavLink to="/services-grid">Services</NavLink>
               <NavLink
@@ -236,6 +237,7 @@ export default function Navbar() {
               <p className="font-bold text-sky-600 mt-3">Web Development</p>
               <NavLink to="/portfolio">Portfolio</NavLink>
               <NavLink to="/packages">Packages</NavLink>
+
             </nav>
           </div>
         </div>
