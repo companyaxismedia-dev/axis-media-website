@@ -7,9 +7,13 @@ export default function GoogleFormEmbed() {
       style={{
         background: "linear-gradient(180deg, #0b3a63 0%, #0a2f52 100%)",
       }}
+      aria-labelledby="google-form-heading"
     >
       {/* Heading */}
-      <h2 className="text-center text-2xl md:text-3xl font-bold mb-4">
+      <h2
+        id="google-form-heading"
+        className="text-center text-2xl md:text-3xl font-bold mb-4"
+      >
         Prefer Detailed Form?
       </h2>
 
@@ -22,11 +26,14 @@ export default function GoogleFormEmbed() {
       <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl bg-white px-2 md:px-0">
         <iframe
           src="https://docs.google.com/forms/d/e/1FAIpQLScKkxPcWcxd_YhT6gQmq_djGFomi-FoLa6BpuuvYLYovd2nTQ/viewform?embedded=true"
+          title="Axis Media Contact Form"
+          aria-label="Axis Media Detailed Contact Form"
           className="block w-full h-[1000px] md:h-[1200px]"
           frameBorder="0"
           loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
         >
-          Loading…
+          Loading contact form…
         </iframe>
       </div>
     </section>

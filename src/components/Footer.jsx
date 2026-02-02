@@ -117,7 +117,7 @@ export default function Footer() {
               href="mailto:axismediainbox@gmail.com"
               className="block mt-2 text-gray-200 hover:text-white text-sm"
             >
-              axismediainbox@gmail.com
+              info@axismediadigital.com
             </a>
 
             {/* ✅ UPDATED PHONE NUMBERS */}

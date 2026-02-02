@@ -2,9 +2,12 @@ import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
+/* ================= PACKAGES DATA ================= */
 const packages = [
   {
     name: "Basic Website",
+    price: "₹5,999",
+    duration: "One Time",
     features: [
       "Free TLD Domain",
       "Free Cloud Hosting",
@@ -17,36 +20,47 @@ const packages = [
     ],
     color: "bg-white text-black border border-gray-200",
   },
+
   {
     name: "Starter Website",
+    price: "₹14,999",
+    duration: "Most Popular",
+    highlight: true,
     features: [
       "Free Domain + Hosting",
       "SSL Certificate",
-      "10 Pages",
+      "10 Pages Website",
       "Premium SEO",
       "3 Business Emails",
       "Content Optimization",
       "Monthly Backup",
       "Responsive Layout",
     ],
-    color: "bg-gradient-to-br from-blue-500 to-blue-700 text-white shadow-xl",
+    color:
+      "bg-gradient-to-br from-blue-500 to-blue-700 text-white shadow-2xl ring-4 ring-blue-300",
   },
+
   {
     name: "Plus Website",
+    price: "₹21,999",
+    duration: "One Time",
     features: [
       "Domain + Hosting",
       "SEO Optimized",
       "Mobile Optimization",
       "Content Optimization",
       "Social Media Integration",
-      "Google Map",
+      "Google Map Integration",
       "Admin Panel",
       "24/7 Support",
     ],
     color: "bg-white text-black border border-gray-200",
   },
+
   {
     name: "Pro Business Website",
+    price: "₹34,999",
+    duration: "Premium",
     features: [
       "Free .com Domain",
       "Advanced Hosting",
@@ -56,11 +70,19 @@ const packages = [
       "5 Business Emails",
       "Speed Optimization",
       "Premium Security",
+
+      /* 🔥 ADDED */
+      "Social Media Handling (2 Platforms)",
+      "SEO Friendly Content Writing (Up to 10 Pages)",
     ],
-    color: "bg-gradient-to-br from-blue-500 to-blue-800 text-white shadow-xl",
+    color:
+      "bg-gradient-to-br from-blue-600 to-blue-900 text-white shadow-2xl",
   },
+
   {
     name: "E-Commerce Starter",
+    price: "₹27,999",
+    duration: "One Time",
     features: [
       "10 Products Upload",
       "COD + Online Payment",
@@ -69,26 +91,34 @@ const packages = [
       "Product Filters",
       "Customer Login",
       "SEO Ready",
-      "1 Month Support",
+      "1 Year Support",
     ],
     color: "bg-white text-black border border-gray-200",
   },
+
   {
     name: "E-Commerce Pro",
+    price: "₹49,999",
+    duration: "Advanced",
     features: [
       "Unlimited Products",
       "Payment Gateway",
-      "Order/Stock System",
-      "Coupons + Offers",
+      "Order / Stock Management",
+      "Coupons + Offers System",
       "Invoice System",
       "Delivery Management",
       "Advanced SEO",
-      "3 Month Support",
+      "3 Year Support",
+
+      /* 🔥 ADDED */
+      "Social Media Handling (3 Platforms)",
+      "Product & Website Content Writing",
     ],
     color: "bg-white text-black border border-gray-200",
   },
 ];
 
+/* ================= COMPONENT ================= */
 export default function Packages() {
   return (
     <section
@@ -97,10 +127,8 @@ export default function Packages() {
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
-        {/* HERO SECTION */}
+        {/* HERO SECTION (UNCHANGED – SEO SAFE) */}
         <div className="grid md:grid-cols-2 gap-14 items-center mb-24">
-
-          {/* LEFT CONTENT */}
           <div>
             <h2
               id="packages-heading"
@@ -132,14 +160,12 @@ export default function Packages() {
 
             <NavLink
               to="/contact"
-              className="inline-block mt-8 bg-green-700 text-white py-3 px-8
-              rounded-xl font-semibold hover:bg-green-800 transition"
+              className="inline-block mt-8 bg-green-700 text-white py-3 px-8 rounded-xl font-semibold hover:bg-green-800 transition"
             >
               Get Free Package Consultation
             </NavLink>
           </div>
 
-          {/* RIGHT IMAGE */}
           <div className="flex justify-center">
             <img
               src="/Website Pricing Plans.webp"
@@ -163,13 +189,25 @@ export default function Packages() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {packages.map((pkg, i) => (
-            <article key={i} className={`rounded-2xl p-6 ${pkg.color}`}>
-              <h4 className="text-2xl font-bold mb-4">{pkg.name}</h4>
+            <article
+              key={i}
+              className={`relative rounded-2xl p-6 ${pkg.color}`}
+            >
+              {pkg.highlight && (
+                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-black text-sm font-bold px-4 py-1 rounded-full shadow">
+                  Most Popular
+                </span>
+              )}
 
-              <ul className="space-y-2 text-sm max-h-[220px] overflow-y-auto pr-2">
+              <h4 className="text-2xl font-bold mb-2">{pkg.name}</h4>
+
+              <p className="text-3xl font-extrabold mb-1">{pkg.price}</p>
+              <p className="text-sm opacity-80 mb-4">{pkg.duration}</p>
+
+              <ul className="space-y-2 text-sm max-h-[230px] overflow-y-auto pr-2">
                 {pkg.features.map((f, idx) => (
                   <li key={idx} className="flex gap-2">
-                    <span className="text-green-700 font-bold">✔</span>
+                    <FaCheckCircle className="text-green-500 mt-1" />
                     {f}
                   </li>
                 ))}
@@ -177,52 +215,13 @@ export default function Packages() {
 
               <NavLink
                 to="/contact"
-                className="mt-6 block text-center bg-black/40 text-white py-2
-                rounded-lg border hover:bg-white hover:text-black transition"
+                className="mt-6 block text-center bg-black/40 text-white py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition"
               >
-                Buy Now
+                Get Started
               </NavLink>
             </article>
           ))}
         </div>
-
-        {/* BENEFITS */}
-        <h3 className="text-3xl font-bold text-center text-green-900 mt-20 mb-6">
-          How Our Website Packages Help You
-        </h3>
-
-        <ul className="grid sm:grid-cols-2 gap-6 text-lg text-green-950 max-w-4xl mx-auto">
-          {[
-            "Boost your online visibility",
-            "Increase customer trust with premium designs",
-            "Rank higher with SEO-ready pages",
-            "Fast & mobile-friendly performance",
-          ].map((t, i) => (
-            <li key={i} className="flex items-center gap-3">
-              <FaCheckCircle className="text-green-700" /> {t}
-            </li>
-          ))}
-        </ul>
-
-        {/* PROCESS */}
-        <h3 className="text-3xl font-bold text-center text-green-900 mt-20 mb-6">
-          Our Website Development Process
-        </h3>
-
-        <div className="grid sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {[
-            { step: "01", title: "Plan", text: "Understand your business needs." },
-            { step: "02", title: "Design", text: "Create a professional layout." },
-            { step: "03", title: "Launch", text: "Deploy your website live." },
-          ].map((box, i) => (
-            <div key={i} className="bg-white/90 p-6 rounded-xl shadow-xl text-center border">
-              <p className="text-4xl font-bold text-green-700 mb-2">{box.step}</p>
-              <h4 className="text-xl font-bold">{box.title}</h4>
-              <p className="text-gray-700 mt-2">{box.text}</p>
-            </div>
-          ))}
-        </div>
-
       </div>
     </section>
   );
