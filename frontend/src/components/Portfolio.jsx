@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import {
   FaGlobe,
   FaShoppingBag,
-  FaStore,
   FaGem,
   FaTshirt,
   FaPrayingHands,
@@ -163,7 +162,6 @@ export default function Portfolio() {
         <div className="overflow-x-auto no-scrollbar py-4">
           <div className="flex gap-8 w-max">
             {mergedPortfolio.slice(0, 12).map((p, index) => {
-              const isFeatured = featuredProjects.some((fp) => fp.slug === p.slug);
 
               return (
                 <article

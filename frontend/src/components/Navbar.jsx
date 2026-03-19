@@ -51,12 +51,7 @@ export default function Navbar() {
     setMobileOpen(false);
   }, [location.pathname]);
 
-  const isLoggedIn = !!localStorage.getItem("token");
 
-  const logoutHandler = () => {
-    localStorage.clear();
-    window.location.reload();
-  };
 
   return (
     <>

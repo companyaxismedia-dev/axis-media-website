@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import {
   FaRocket,
@@ -15,31 +15,36 @@ import {
 } from "react-icons/fa";
 
 export default function GrowBusinessPage() {
-  const lines = [
-    "Grow Your Business With Powerful Digital Strategies 🚀",
-    "Get More Customers & Boost Your Sales",
-    "Rank Higher on Google With SEO",
-    "Build Strong Online Presence Across Platforms",
-  ];
+const lines = useMemo(() => [
+  "Grow Your Business With Powerful Digital Strategies 🚀",
+  "Get More Customers & Boost Your Sales",
+  "Rank Higher on Google With SEO",
+  "Build Strong Online Presence Across Platforms",
+], []);
 
-  const [index, setIndex] = useState(0);
+const [index, setIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
 
   useEffect(() => {
-    let i = 0;
-    const typing = setInterval(() => {
-      setDisplayText(lines[index].slice(0, i));
-      i++;
-      if (i > lines[index].length) {
-        clearInterval(typing);
-        setTimeout(() => {
-          setDisplayText("");
-          setIndex((prev) => (prev + 1) % lines.length);
-        }, 800);
-      }
-    }, 60);
-    return () => clearInterval(typing);
-  }, [index]);
+  let i = 0;
+  const currentLine = lines[index];
+
+  const typing = setInterval(() => {
+    setDisplayText(currentLine.slice(0, i));
+    i++;
+
+    if (i > currentLine.length) {
+      clearInterval(typing);
+
+      setTimeout(() => {
+        setDisplayText("");
+        setIndex((prev) => (prev + 1) % lines.length);
+      }, 800);
+    }
+  }, 60);
+
+  return () => clearInterval(typing);
+}, [index, lines]);
 
   /* ================= SERVICE SCHEMA (IMPORTANT) ================= */
   const serviceSchema = {
