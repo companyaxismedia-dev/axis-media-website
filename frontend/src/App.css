@@ -1,0 +1,154 @@
+/* ============================================================
+   🌟 GLOBAL PERFORMANCE & SEO SAFE SETTINGS
+   (Smooth scroll + No lag + No CLS issues)
+=============================================================== */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reset for layout stability */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+
+/* ============================================================
+   🌟 ACCESSIBILITY & LOW-END DEVICE OPTIMIZATION
+=============================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   🌟 SAFE GPU ACCELERATION (ONLY WHERE NEEDED)
+   ❌ No global translateZ
+   ✅ Only animated elements use GPU
+=============================================================== */
+
+.animate,
+.package-card,
+.fade-in,
+.slide-up {
+  will-change: transform, opacity;
+}
+
+/* ============================================================
+   🌟 PACKAGE / CARD FADE-UP ANIMATION (LIGHTWEIGHT)
+=============================================================== */
+
+.package-card {
+  opacity: 0;
+  transform: translateY(35px);
+  animation: fadeUp 0.9s ease-out forwards;
+}
+
+.package-card:nth-child(1) { animation-delay: 0.2s; }
+.package-card:nth-child(2) { animation-delay: 0.4s; }
+.package-card:nth-child(3) { animation-delay: 0.6s; }
+.package-card:nth-child(4) { animation-delay: 0.8s; }
+.package-card:nth-child(5) { animation-delay: 1s; }
+.package-card:nth-child(6) { animation-delay: 1.2s; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   🌟 GENERIC FADE / SLIDE UTILITIES (OPTIONAL USE)
+=============================================================== */
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   🌟 IMAGE PERFORMANCE (NO LAYOUT SHIFT)
+=============================================================== */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================
+   🌟 REACT DEFAULT CLEANUP (SAFE TO KEEP)
+=============================================================== */
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
