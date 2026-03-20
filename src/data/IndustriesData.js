@@ -2,7 +2,6 @@ import {
   FaStore,
   FaUtensils,
   FaBuilding,
-  FaIndustry,
   FaHeartbeat,
   FaEllipsisH,
   FaGraduationCap,

@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, NavLink, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { FaCheckCircle, FaStar, FaQuoteLeft } from "react-icons/fa";
+import { FaCheckCircle, FaStar } from "react-icons/fa";
 import servicesData from "../data/servicesData";
 
 export default function ServiceDetailPage() {

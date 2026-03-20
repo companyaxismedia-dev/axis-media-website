@@ -15,12 +15,12 @@ import {
 } from "react-icons/fa";
 
 export default function GrowBusinessPage() {
-  const lines = [
-    "Grow Your Business With Powerful Digital Strategies 🚀",
-    "Get More Customers & Boost Your Sales",
-    "Rank Higher on Google With SEO",
-    "Build Strong Online Presence Across Platforms",
-  ];
+const lines = React.useMemo(() => [
+  "Grow Your Business With Powerful Digital Strategies 🚀",
+  "Get More Customers & Boost Your Sales",
+  "Rank Higher on Google With SEO",
+  "Build Strong Online Presence Across Platforms",
+], []);
 
   const [index, setIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
