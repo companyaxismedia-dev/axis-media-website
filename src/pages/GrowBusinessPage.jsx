@@ -39,7 +39,7 @@ const lines = React.useMemo(() => [
       }
     }, 60);
     return () => clearInterval(typing);
-  }, [index]);
+  }, [index, lines]);
 
   /* ================= SERVICE SCHEMA (IMPORTANT) ================= */
   const serviceSchema = {
